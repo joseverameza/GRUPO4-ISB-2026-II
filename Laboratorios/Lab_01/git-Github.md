@@ -23,3 +23,12 @@ Git es un sistema de control de versiones que corre localmente en la computadora
 En la práctica, puedes editar y actualizar tu proyecto en tu computadora local sin depender de internet. De esta forma, cada integrante del equipo puede avanzar en su propia copia offline y luego sincronizar sus cambios con el repositorio remoto.
 
 En lugar de hacer estos cambios desde la terminal, usamos VS Code. Con gh (GitHub CLI) instalado, se asocia la cuenta de Git con la cuenta de GitHub. Desde VS Code se inicia el repositorio y se publica, quedando asociado a tu cuenta de GitHub. A partir de ahí, puedes editar el repositorio y aplicar cambios (commits, push, pull) directamente desde la interfaz de VS Code, sin necesidad de usar la terminal de Git.
+
+---
+
+## Infografía del Laboratorio
+
+<div align="center">
+  <img src="infografia.png" alt="Infografía Git, GitHub y VS Code" width="100%"/>
+</div>
+
