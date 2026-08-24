@@ -26,9 +26,4 @@ En lugar de hacer estos cambios desde la terminal, usamos VS Code. Con gh (GitHu
 
 ---
 
-## Infografía del Laboratorio
-
-<div align="center">
-  <img src="infografia.png" alt="Infografía Git, GitHub y VS Code" width="100%"/>
-</div>
 
