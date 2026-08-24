@@ -15,8 +15,8 @@ Esta extensión permite previsualizar cómo se verá el documento: haciendo clic
 ## Git — GitHub
 Git es un sistema de control de versiones que corre localmente en la computadora, es decir, funciona sin conexión a internet. Organiza el proyecto en cuatro áreas:
 
- **Directorio de trabajo:** donde se crean y editan los archivos.
-* **Staging area:** lugar temporal donde se preparan los cambios antes de guardarlos.
+* **Directorio de trabajo:** donde se crean y editan los archivos.
+* **Área de trabajo:** lugar temporal donde se preparan los cambios antes de guardarlos.
 * **Repositorio local:** copia del proyecto guardada en tu computadora.
 * **Repositorio remoto:** versión compartida del proyecto (en GitHub).
 
