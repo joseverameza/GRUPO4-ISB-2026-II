@@ -22,10 +22,10 @@ De acuerdo a las estrategias de trabajo en equipo del sílabo, los miembros dese
 
 | Integrante | Rol / Coordinación Asignada |
 | :---: | :---: |
-| **José Vera** | Coordinación Principal |
-| **Geraldine Segura** | Coordinación Técnica — Hardware |
-| **Astrid Mejía** | Coordinación Técnica — Software |
-| **Solangel Macedo** | Coordinación Administrativa|
+| **José Fernando Vera Meza** | Coordinación Principal |
+| **Geraldine Mayte Segura Villarreal** | Coordinación Técnica — Hardware |
+| **Astrid Sophia Mejía Barreto** | Coordinación Técnica — Software |
+| **Solangel Macedo Pereira** | Coordinación Administrativa|
 
 ---
 
