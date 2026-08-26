@@ -1,3 +1,34 @@
+<h1 align="center">Git, GitHub y Visual Studio Code</h1>
+<p align="center"><strong>Resumen de Laboratorio 01 — Introducción a Señales Biomédicas</strong></p>
+
+## Índice
+
+1. [Introducción](#1-introducción)
+2. [Objetivos](#2-objetivos)
+3. [Marco teórico](#3-marco-teórico)
+   - [3.1. Git vs. GitHub](#31-git-vs-github)
+   - [3.2. Integración con Visual Studio Code](#32-integración-con-visual-studio-code)
+   - [3.3. Markdown y extensiones de documentación](#33-markdown-y-extensiones-de-documentación)
+   - [3.4 Comandos](#34-comandos)
+4. [Procedimiento](#4-procedimiento)
+   - [4.1. Instalación y verificación de Git](#41-instalación-y-verificación-de-git)
+   - [4.2. Configuración de la identidad del usuario](#42-configuración-de-la-identidad-del-usuario)
+   - [4.3. Instalación de VS Code y vinculación con GitHub](#43-instalación-de-vs-code-y-vinculación-con-github)
+   - [4.4. Creación de la carpeta de trabajo y apertura en VS Code](#44-creación-de-la-carpeta-de-trabajo-y-apertura-en-vs-code)
+   - [4.5. Inicialización del repositorio local](#45-inicialización-del-repositorio-local)
+   - [4.6. Creación de carpetas y archivos dentro del repositorio](#46-creación-de-carpetas-y-archivos-dentro-del-repositorio)
+   - [4.7. Flujo de trabajo con Source Control (staging y commit)](#47-flujo-de-trabajo-con-source-control-staging-y-commit)
+   - [4.8. Publicación del repositorio a GitHub](#48-publicación-del-repositorio-a-github)
+   - [4.9. Clonación de un repositorio para trabajo en equipo](#49-clonación-de-un-repositorio-para-trabajo-en-equipo)
+   - [4.10. Extensión Markdown Preview Enhanced](#410-extensión-markdown-preview-enhanced)
+   - [4.11. Subida de imágenes al repositorio](#411-subida-de-imágenes-al-repositorio)
+   - [4.12. Subida de GIFs como evidencia](#412-subida-de-gifs-como-evidencia)
+5. [Resultados y evidencias](#5-resultados-y-evidencias)
+6. [Buenas prácticas y recomendaciones](#6-buenas-prácticas-y-recomendaciones)
+7. [Referencias](#7-referencias)
+
+---
+
 # 1. Introducción
 
 En el desarrollo de proyectos que requieran programación, organización de archivos y trabajo colectivo, es indispensable contar con un sistema de control de versiones que permita registrar cualquier cambio realizado, retomar el trabajo desde un punto, organizar documentos y mantener un historial ordenado del proyecto. En la sesión de laboratorio se abordan los fundamentos de Git como herramienta de control de versiones locales y Github como una plataforma de alojamiento remoto, además se integrarán dentro del editor Visual Studio Code (VS Code) actuando como el entorno de creación y edición de archivos posteriormente visualizados en Github.
@@ -19,9 +50,10 @@ El docente explicó la diferencia entre las herramientas en conjunto Git y Githu
 
 ## 3.1. Git vs. GitHub
 
-![img1.1](images/img1.1.png)
-
-*Fig 1. Diferencias generales entre Git y GitHub*
+<p align="center">
+  <img src="images/img1.1.png" alt="img1.1" width="700"><br>
+  <em>Fig 1. Diferencias generales entre Git y GitHub</em>
+</p>
 
 En la Tabla 1 se explica la diferencia entre Git y GitHub para la compresión del laboratorio.
 
@@ -45,9 +77,10 @@ Markdown (.md) es un lenguaje conocido en la redacción de documentos de forma s
 
 ## 3.4 Comandos
 
-![img1.2](images/img1.2.png)
-
-*Fig 2. Flujo de comandos de Git entre las áreas de trabajo*
+<p align="center">
+  <img src="images/img1.2.png" alt="img1.2" width="700"><br>
+  <em>Fig 2. Flujo de comandos de Git entre las áreas de trabajo</em>
+</p>
 
 Durante la sesión se trabajaron los comandos básicos que permiten mover un archivo a través de las cuatro áreas de Git (directorio de trabajo, área de preparación, repositorio local y repositorio remoto):
 
@@ -82,17 +115,19 @@ git config --global user.name "Tu Nombre"
 git config --global user.email "tucorreo@upch.pe"
 ```
 
-![img1.3](images/img1.3.png)
-
-*Fig 3. Verificación de la versión de Git y configuración del usuario y correo*
+<p align="center">
+  <img src="images/img1.3.png" alt="img1.3" width="700"><br>
+  <em>Fig 3. Verificación de la versión de Git y configuración del usuario y correo</em>
+</p>
 
 ## 4.3. Instalación de VS Code y vinculación con GitHub
 
 Se descargó e instaló Visual Studio Code y, desde la sección Accounts (parte inferior izquierda del editor), se inició sesión y se vinculó la cuenta de GitHub del estudiante, de manera que VS Code quedará autorizado para publicar y sincronizar repositorios sin solicitar credenciales en cada operación.
 
-![img1.4](images/img1.4.png)
-
-*Fig 4. Autorización de Visual Studio Code para acceder a la cuenta de GitHub*
+<p align="center">
+  <img src="images/img1.4.png" alt="img1.4" width="700"><br>
+  <em>Fig 4. Autorización de Visual Studio Code para acceder a la cuenta de GitHub</em>
+</p>
 
 ## 4.4. Creación de la carpeta de trabajo y apertura en VS Code
 
@@ -108,9 +143,10 @@ git init
 
 También es posible realizar este paso desde la interfaz de VS Code, en la pestaña Source Control, seleccionando el botón Initialize Repository.
 
-![img1.5](images/img1.5.png)
-
-*Fig 5. Inicialización del repositorio local desde la terminal de VS Code*
+<p align="center">
+  <img src="images/img1.5.png" alt="img1.5" width="700"><br>
+  <em>Fig 5. Inicialización del repositorio local desde la terminal de VS Code</em>
+</p>
 
 ## 4.6. Creación de carpetas y archivos dentro del repositorio
 
@@ -124,9 +160,10 @@ Al modificar o crear archivos dentro de la carpeta, estos aparecen listados como
 - Escribir una pequeña descripción del cambio realizado en el campo de mensaje.
 - Presionar el botón Commit para confirmar los cambios en el historial local.
 
-![img1.6](images/img1.6.png)
-
-*Fig 6. Panel de Source Control con el archivo preparado y el mensaje de commit*
+<p align="center">
+  <img src="images/img1.6.png" alt="img1.6" width="700"><br>
+  <em>Fig 6. Panel de Source Control con el archivo preparado y el mensaje de commit</em>
+</p>
 
 ## 4.8. Publicación del repositorio a GitHub
 
@@ -140,29 +177,33 @@ Finalmente, se mostró cómo clonar un repositorio ya existente en GitHub para c
 git clone https://github.com/usuario/repositorio.git
 ```
 
-![img1.7](images/img1.7.png)
-
-*Fig 7. Clonación de un repositorio del equipo mediante git clone*
+<p align="center">
+  <img src="images/img1.7.png" alt="img1.7" width="700"><br>
+  <em>Fig 7. Clonación de un repositorio del equipo mediante git clone</em>
+</p>
 
 ## 4.10. Extensión Markdown Preview Enhanced
 
 Se instaló la extensión Markdown Preview Enhanced desde el panel de extensiones de VS Code, la cual permite visualizar en tiempo real el resultado de los documentos .md mientras se editan, facilitando la revisión del formato antes de subir los cambios al repositorio.
 
-![img1.8](images/img1.8.png)
-
-*Fig 8. Extensión Markdown Preview Enhanced instalada en VS Code*
+<p align="center">
+  <img src="images/img1.8.png" alt="img1.8" width="700"><br>
+  <em>Fig 8. Extensión Markdown Preview Enhanced instalada en VS Code</em>
+</p>
 
 ## 4.11. Subida de imágenes al repositorio
 
 Se explicó el procedimiento para subir imágenes al repositorio: se agregan los archivos de imagen dentro de la carpeta del proyecto (por ejemplo, en una subcarpeta images/) y, al igual que con cualquier otro archivo, se realizan los pasos de stage, commit y push para que queden disponibles en GitHub y puedan referenciarse desde los documentos Markdown.
 
-![img1.9](images/img1.9.png)
+<p align="center">
+  <img src="images/img1.9.png" alt="img1.9" width="700"><br>
+  <em>Fig 9. Referencia de una imagen insertada en un archivo Markdown</em>
+</p>
 
-*Fig 9. Referencia de una imagen insertada en un archivo Markdown*
-
-![img1.10](images/img1.10.png)
-
-*Fig 10. Vista previa de la imagen renderizada en el README del repositorio*
+<p align="center">
+  <img src="images/img1.10.png" alt="img1.10" width="700"><br>
+  <em>Fig 10. Vista previa de la imagen renderizada en el README del repositorio</em>
+</p>
 
 ## 4.12. Subida de GIFs como evidencia
 
