@@ -7,8 +7,9 @@ Markdown es el lenguaje utilizado para documentación, especialmente en GitHub. 
 
 **Pasos:**
 1. Descargar e instalar Visual Studio Code.
-2. Instalar la extensión **"Markdown Preview Enhanced"**.
-3. Crear el archivo `README.md`.
+<img src="Imagenes/Visual Studio Code.png" alt="Visual Studio Code" width="150"/> 
+3. Instalar la extensión **"Markdown Preview Enhanced"**.
+4. Crear el archivo `README.md`.
 
 Esta extensión permite previsualizar cómo se verá el documento: haciendo clic derecho sobre el archivo .md y seleccionando Open Preview. Cada edición se refleja en tiempo real en la ventana de previsualización.
 
