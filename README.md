@@ -22,7 +22,7 @@ Este repositorio albergará el desarrollo del proyecto semestral de la asignatur
 
 | Foto | Integrante | Descripción | Rol / Coordinación Asignada | Correo |
 |:---:|:---:|:---:|:---:|:---:|
-|  | **José Fernando Vera Meza** | Estudiante de octavo ciclo de la carrera de Ingeniería Biomédica. Interés en el campo de Ingeniería Clínica. | Coordinación Principal | <a href="mailto:jose.vera.m@upch.pe">jose.vera.m@upch.pe</a> |
+| <img src="Imagenes/Jose.jpeg" alt="José Fernando Vera Meza" width="150"/>  | **José Fernando Vera Meza** | Estudiante de octavo ciclo de la carrera de Ingeniería Biomédica. Interés en el campo de Ingeniería Clínica. | Coordinación Principal | <a href="mailto:jose.vera.m@upch.pe">jose.vera.m@upch.pe</a> |
 | <img src="Imagenes/Geraldine.png" alt="Geraldine Mayte Segura Villarreal" width="150"/> | **Geraldine Mayte Segura Villarreal** | Estudiante de octavo ciclo de la carrera de Ingeniería Biomédica. Interés en el campo de Señales e Imágenes, e Ingeniería Clínica. | Coordinación Técnica — Hardware | <a href="mailto:geraldine.segura@upch.pe">geraldine.segura@upch.pe</a> |
 | <img src="Imagenes/Astrid.jpeg" alt="Astrid Sophia Mejía Barreto" width="150"/> | **Astrid Sophia Mejía Barreto** | Estudiante de séptimo ciclo de Ingeniería Biomédica. Interés en el campo de Señales e Imágenes, y Tejidos y Biomateriales. | Coordinación Técnica — Software | <a href="mailto:astrid.mejia@upch.pe">astrid.mejia@upch.pe</a> |
 | <img src="Imagenes/Solangel.jpeg" alt="Solangel Macedo Pereira" width="150"/> | **Solangel Macedo Pereira** | Estudiante de septimo ciclo de Ingenería Biomédica. Interés en el campo de Biomateriales e Ingenería Clínica | Coordinación Administrativa | <a href="mailto:solangel.macedo@upch.pe">solangel.macedo@upch.pe</a> |
