@@ -5,6 +5,8 @@
 **Facultad de Ciencias e Ingeniería \| Departamento Académico de Ingeniería**
 *Universidad Peruana Cayetano Heredia (UPCH) — Pontificia Universidad Católica del Perú (PUCP)*
 
+<img src="Imagenes/Portada.gif" alt="Portada" width="600"/>
+
 </div>
 
 ---
@@ -17,8 +19,6 @@ Este repositorio albergará el desarrollo del proyecto semestral de la asignatur
 
 
 ## 2. Integrantes del Equipo — GRUPO 4
-
-De acuerdo a las estrategias de trabajo en equipo del sílabo, los miembros desempeñan las siguientes coordinaciones:
 
 | Foto | Integrante | Descripción | Rol / Coordinación Asignada | Correo |
 |:---:|:---:|:---:|:---:|:---:|
