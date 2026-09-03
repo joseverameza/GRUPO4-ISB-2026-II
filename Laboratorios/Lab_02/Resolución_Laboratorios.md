@@ -162,6 +162,10 @@ duration_total_2 = record_2.sig_len / record_2.fs
 print(f"Duración total      : {duration_total_2:.2f} segundos")
 print("=" * 55)
 ```
+<p align="center">
+  <img src="images/1.1.png" alt="1.1" width="700"><br>
+</p>
+
 > Comparando los valores del REGISTRO 1 con el REGISTRO 2, se observa que la frecuencia de muestreo, el número de muestras, el número de canales, las unidades y la duración total son los mismos. Lo que cambia son los nombres de los canales: en el REGISTRO 1 son ['MLII', 'V5'] y en el REGISTRO 2 son ['MLII', 'V1'].
 
 **Comparación de morfología y amplitud:**
