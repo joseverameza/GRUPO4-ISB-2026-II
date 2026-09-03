@@ -1377,7 +1377,7 @@ plt.show()
 
 10. **Conclusiones:** 
 
-El registro `16265` fue analizado en los dominios temporal, frecuencial y tiempo-frecuencia. En el dominio temporal se observaron picos repetitivos y una amplitud aproximada entre -1 mV y 3 mV. Mediante la FFT se identificó una frecuencia dominante cercana a 3.200 Hz y se observó que la mayor parte del contenido frecuencial se concentra en bajas y medias frecuencias. Al eliminar la componente DC se redujo la contribución asociada al valor medio de la señal. Finalmente, la STFT permitió visualizar cómo cambia la energía de las componentes frecuenciales a lo largo del tiempo. Por ello, las tres representaciones proporcionan información complementaria para analizar la señal biomédica.
+    El registro `16265` fue analizado en los dominios temporal, frecuencial y tiempo-frecuencia. En el dominio temporal se observaron picos repetitivos y una amplitud aproximada entre -1 mV y 3 mV. Mediante la FFT se identificó una frecuencia dominante cercana a 3.200 Hz y se observó que la mayor parte del contenido frecuencial se concentra en bajas y medias frecuencias. Al eliminar la componente DC se redujo la contribución asociada al valor medio de la señal. Finalmente, la STFT permitió visualizar cómo cambia la energía de las componentes frecuenciales a lo largo del tiempo. Por ello, las tres representaciones proporcionan información complementaria para analizar la señal biomédica.
 
 ---
 
