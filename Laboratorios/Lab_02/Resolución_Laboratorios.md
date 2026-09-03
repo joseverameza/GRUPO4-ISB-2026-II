@@ -584,7 +584,7 @@ print(f"Número de muestras  : {N_f}")
 
 ```
 <p align="center">
-  <img src="images/1.12.png" alt="1.12" width="700"><br>
+  <img src="images/1.11a.png" alt="1.11a" width="700"><br>
 </p>
 
 
@@ -608,7 +608,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.13.png" alt="1.13" width="700"><br>
+  <img src="images/1.12.png" alt="1.12" width="700"><br>
 </p>
 
 
@@ -633,7 +633,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.14.png" alt="1.14" width="700"><br>
+  <img src="images/1.13.png" alt="1.13" width="700"><br>
 </p>
 
 ```python
@@ -662,7 +662,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.15.png" alt="1.15" width="700"><br>
+  <img src="images/1.14.png" alt="1.14" width="700"><br>
 </p>
 
 **7. Estadísticas**
@@ -686,7 +686,7 @@ print(f"Máximo            : {max_value_f:.4f}")
 print(f"Rango             : {max_value_f - min_value_f:.4f}")
 ```
 <p align="center">
-  <img src="images/1.16.png" alt="1.16" width="700"><br>
+  <img src="images/1.15.png" alt="1.15" width="700"><br>
 </p>
 
 
@@ -722,7 +722,7 @@ print(f"Mínimo int16    : {ecg_int16_f.min()}")
 print(f"Máximo int16    : {ecg_int16_f.max()}")
 ```
 <p align="center">
-  <img src="images/1.17.png" alt="1.17" width="700"><br>
+  <img src="images/1.16.png" alt="1.16" width="700"><br>
 </p>
 
 ```python
@@ -738,7 +738,13 @@ wavfile.write(
 
 print(f"Archivo WAV generado correctamente:")
 print(OUTPUT_WAV_FINAL)
+
 ```
+<p align="center">
+  <img src="images/1.17.png" alt="1.17" width="700"><br>
+</p>
+
+
 ```python
 # ============================================
 # DESCARGAR WAV EN GOOGLE COLAB
