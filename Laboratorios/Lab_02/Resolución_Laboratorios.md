@@ -117,9 +117,92 @@
 ### Ejercicio 1 — Cambiar de registro (registro 200 vs. 100)
 
 **Comparación de frecuencia de muestreo, canales y unidades:**
+```python
+RECORD_2 = "200"
+record_2 = wfdb.rdrecord(
+    RECORD_2,
+    pn_dir=DATABASE
+)
+fs_2 = record_2.fs
+
+# Frecuencia de muestreo, número de canales y nombre de canales
+print("=" * 55)
+print("INFORMACIÓN DEL REGISTRO 1")
+print("=" * 55)
+
+print(f"Base de datos       : {DATABASE}")
+print(f"Registro            : {RECORD}")
+print(f"Frecuencia muestreo : {record.fs} Hz")
+print(f"Número de muestras  : {record.sig_len}")
+print(f"Número de canales   : {record.n_sig}")
+print(f"Canales             : {record.sig_name}")
+print(f"Unidades            : {record.units}")
+
+duration_total = record.sig_len / record.fs
+
+print(f"Duración total      : {duration_total:.2f} segundos")
+print("=" * 55)
+
+
+
+print("=" * 55)
+print("INFORMACIÓN DEL REGISTRO 2 ")
+print("=" * 55)
+
+print(f"Base de datos       : {DATABASE}")
+print(f"Registro            : {RECORD_2}")
+print(f"Frecuencia muestreo : {record_2.fs} Hz")
+print(f"Número de muestras  : {record_2.sig_len}")
+print(f"Número de canales   : {record_2.n_sig}")
+print(f"Canales             : {record_2.sig_name}")
+print(f"Unidades            : {record_2.units}")
+
+duration_total_2 = record_2.sig_len / record_2.fs
+
+print(f"Duración total      : {duration_total_2:.2f} segundos")
+print("=" * 55)
+```
 > Comparando los valores de REGISTRO 1 con REGISTRO 2, vemos que el valor de frecuencia de muestreo, número de muestras, número de canales, unidades y duración total son las mismas. Lo que cambia son los nombres de los canales, en REGISTRO 1 es ['MLII', 'V5'] y en REGISTRO 2 es ['MLII', 'V1'].
 
 **Comparación de morfología y amplitud:**
+```python
+# Morfología y Amplitud
+signal_2 = record_2.p_signal[:, CHANNEL]
+t_2 = np.arange(len(signal_2)) / fs_2
+N_2 = int(DURATION * fs_2)
+seg_2 = signal_2[:N_2]
+t_2_seg = t_2[:N_2]
+
+plt.figure(figsize=(15, 5))
+
+plt.plot(t_segment, signal_segment)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL]}]")
+plt.title(
+    f"Segmento ECG — primeros {DURATION} segundos REGISTRO 1"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+plt.figure(figsize=(15, 5))
+
+plt.plot(t_2_seg, seg_2)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL]}]")
+plt.title(
+    f"Segmento ECG — primeros {DURATION} segundos REGISTRO 2"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+
 > La morfología del REGISTRO 2 difiere en gran medida del REGISTRO 1, visualizamos las ondas P y T con mayor magnitud y ancho, lo que incrementa el intervalo entre cada complejo QRS. Vemos que la amplitud en el REGISTRO 2 es de -2.0 a 1.0 mV, mayor en comparación del -0.45 a 0.9 mV del REGISTRO 1.
 
 **Comparación de distribución (histograma):**
