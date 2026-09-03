@@ -1075,7 +1075,15 @@ Registro 16420: frecuencia dominante posterior = 6.400 Hz
     plt.tight_layout()
     plt.show()
 ```
-
+<p align="center">
+  <img src="images/2.7.png" alt="2.7" width="900"><br>
+</p>
+<p align="center">
+  <img src="images/2.8.png" alt="2.8" width="900"><br>
+</p>
+<p align="center">
+  <img src="images/2.9.png" alt="2.9" width="900"><br>
+</p>
 
 **Ejercicio 2.2 — Cambiar el tamaño de ventana (registro 16272)**
 
