@@ -23,7 +23,7 @@
 ### Preguntas de análisis 1
 
 **1. ¿Cuál es la frecuencia de muestreo del registro?**
-> La frecuencia de muestra del registro es 360 Hz.
+> La frecuencia de muestreo del registro es 360 Hz.
 
 **2. ¿Cuántos canales tiene?**
 > Tiene 2 canales, 'MLII' y 'V5'.
@@ -38,7 +38,7 @@
 > En 1 segundo, se adquieren 360 muestras.
 
 **6. ¿Cuántas muestras corresponden a un segmento de 10 segundos?**
-> Si en 1 segundo hay 360 muestras, en 10 segundos habrán 3600 muestras.
+> Si en 1 segundo hay 360 muestras, en 10 segundos habrá 3600 muestras.
 
 ### Preguntas de análisis 2
 
@@ -46,73 +46,73 @@
 > No hay amplitud constante, varía de -0.6 mV a 1 mV.
 
 **2. ¿Se pueden identificar visualmente complejos QRS?**
-> No se puede identificar visualmente complejos QRS debido al largo tiempo en el eje X.
+> No se pueden identificar visualmente los complejos QRS debido al largo tiempo abarcado en el eje X.
 
 **3. ¿La morfología permanece igual durante todo el registro?**
-> Vemos que alrededor de los ~1500 s se ve un pico de amplitud -2.5 mV que no concuerda con la morfología de un ECG.
+> No, alrededor de los ~1500 s se observa un pico de amplitud de -2.5 mV que no concuerda con la morfología de un ECG.
 
 **4. ¿Se observa ruido?**
-> Observando la diferencia de amplitudes durante el eje X, podemos inferir que esto es causado por el ruido ya que deberían estar centrados a 0.
+> Observando la diferencia de amplitudes a lo largo del eje X, podemos inferir que esto es causado por ruido, ya que deberían estar centradas en 0.
 
 **5. ¿Qué ventajas tiene visualizar una señal durante varios minutos?**
-> Al visualizar la señal durante varios minutos podemos ver de manera macro cómo es la amplitud y morfología de la señal completa. Asimismo podemos identificar picos extraños como lo explicado en la pregunta 3.
+> Al visualizar la señal durante varios minutos, podemos ver de manera macro cómo es la amplitud y la morfología de la señal completa. Asimismo, podemos identificar picos extraños como el explicado en la pregunta 3.
 
 **6. ¿Qué limitaciones tiene una gráfica demasiado extensa?**
-> No nos permite visualizar el complejo de la señal, en este caso el complejo QRS con claridad.
+> No nos permite visualizar con claridad el complejo de la señal, en este caso el complejo QRS.
 
 ### Preguntas de análisis 3
 
 **1. ¿Dónde se concentra la mayor cantidad de muestras?**
-> La mayor cantidad de muestras es entre el intervalo de [-0.4, -0.2] mV.
+> La mayor cantidad de muestras se encuentra en el intervalo de [-0.4, -0.2] mV.
 
 **2. ¿La distribución parece simétrica?**
-> No, la distribución se encuentra más al lado izquierdo, de amplitud negativa.
+> No, la distribución se concentra más hacia el lado izquierdo, en amplitudes negativas.
 
 **3. ¿Existen valores extremos?**
-> Hay valores extremos en -0.6 mV y por 0.90 mV.
+> Hay valores extremos en -0.6 mV y en 0.90 mV.
 
 **4. ¿Qué podría producir valores de amplitud muy diferentes al valor central?**
-> Pueden ser causados por ruidos del equipo o por artefactos.
+> Pueden ser causados por ruido del equipo o por artefactos.
 
 **5. ¿El histograma conserva información temporal? Explique.**
-> No, el histograma solo muestra la frecuencia de los valores de mV. No indica cuándo eso ocurre.
+> No, el histograma solo muestra la frecuencia de los valores en mV. No indica cuándo ocurre cada uno.
 
 ### Preguntas de análisis 4
 
 **1. ¿Cuántas muestras existen por segundo?**
-> De acuerdo al fs=360 Hz, hay 360 muestras por segundo.
+> De acuerdo con fs=360 Hz, hay 360 muestras por segundo.
 
 **2. ¿Qué ocurre si aumentamos `fs`?**
-> Si se aumenta fs, aumentamos la cantidad de muestras por segundo, significa una mayor resolución de la señal pero toma más tiempo y memoria.
+> Si se aumenta fs, aumenta la cantidad de muestras por segundo, lo que significa una mayor resolución de la señal, pero toma más tiempo y memoria.
 
 **3. ¿Qué ocurre si disminuimos `fs`?**
-> Pasa lo contrario, se pierde la resolución y hay peligro de que incumpla el teorema de Nyquist, que sea menor al doble de frecuencia máxima de la señal.
+> Pasa lo contrario: se pierde resolución y hay peligro de que se incumpla el teorema de Nyquist, es decir, que fs sea menor al doble de la frecuencia máxima de la señal.
 
 **4. ¿Qué representa el eje `n` en una señal discreta?**
-> El eje "n" representa el índice de muestra en la señal discreta, es decir la posición entera en la secuencia discreta.
+> El eje "n" representa el índice de muestra en la señal discreta, es decir, la posición entera en la secuencia discreta.
 
 **5. ¿Cuál es la relación entre `n`, `fs` y `t`?**
-> Se relacionan en la ecuación t[n]= n/fs. Explica el momento en el tiempo en donde la muestra se capturó.
+> Se relacionan mediante la ecuación t[n]=n/fs, que expresa el momento en el tiempo en el que la muestra fue capturada.
 
 ### Preguntas de análisis 5
 
 **1. ¿Puede escuchar claramente la señal?**
-> Se escuchan los golpes repetitivos causados por el complejo QRS, pero la intensidad es baja lo que dificulta escucharlos claramente.
+> Se escuchan los golpes repetitivos causados por el complejo QRS, pero la intensidad es baja, lo que dificulta escucharlos claramente.
 
 **2. ¿El sonido corresponde a un sonido fisiológico real?**
 > No, porque hemos convertido la señal del ECG a un archivo de audio .wav. Solo obtenemos la sonificación de datos eléctricos, no acústicos.
 
 **3. ¿Por qué un ECG puede convertirse a WAV?**
-> Porque ambos (ECG y WAV) son series de números que cambian con el tiempo, se puede sonificar cualquier registro matemático.
+> Porque ambos (ECG y WAV) son series de números que cambian con el tiempo; se puede sonificar cualquier registro matemático.
 
 **4. ¿Qué información se conserva al hacer la conversión?**
-> Al hacer la conversión, se conserva la información estructural como la forma de onda (QRS) y su periodicidad, así como la frecuencia de muestreo.
+> Al hacer la conversión, se conserva la información estructural, como la forma de onda (QRS) y su periodicidad, así como la frecuencia de muestreo.
 
 **5. ¿Qué información fisiológica podría perderse al escucharla?**
-> Se pierde toda información fisiológica de baja amplitud como las ondas P y T, alteraciones del segmento ST e incluso cambio morfológico del complejo QRS.
+> Se pierde toda la información fisiológica de baja amplitud, como las ondas P y T, alteraciones del segmento ST e incluso cambios morfológicos del complejo QRS.
 
 **6. ¿Qué diferencia existe entre representar un ECG gráficamente y reproducirlo como audio?**
-> Al representar un ECG gráficamente se visualiza la escala exacta en gráficas de Amplitud vs tiempo, cuando la frecuencia de valores en el histograma. En reproducción de audio solo percibimos el ritmo del complejo QRS.
+> Al representar un ECG gráficamente se visualiza la escala exacta en gráficas de amplitud vs. tiempo, o la frecuencia de valores en el histograma. En la reproducción de audio, solo se percibe el ritmo del complejo QRS.
 
 ### Ejercicio 1 — Cambiar de registro (registro 200 vs. 100)
 
@@ -162,7 +162,7 @@ duration_total_2 = record_2.sig_len / record_2.fs
 print(f"Duración total      : {duration_total_2:.2f} segundos")
 print("=" * 55)
 ```
-> Comparando los valores de REGISTRO 1 con REGISTRO 2, vemos que el valor de frecuencia de muestreo, número de muestras, número de canales, unidades y duración total son las mismas. Lo que cambia son los nombres de los canales, en REGISTRO 1 es ['MLII', 'V5'] y en REGISTRO 2 es ['MLII', 'V1'].
+> Comparando los valores del REGISTRO 1 con el REGISTRO 2, se observa que la frecuencia de muestreo, el número de muestras, el número de canales, las unidades y la duración total son los mismos. Lo que cambia son los nombres de los canales: en el REGISTRO 1 son ['MLII', 'V5'] y en el REGISTRO 2 son ['MLII', 'V1'].
 
 **Comparación de morfología y amplitud:**
 ```python
@@ -203,23 +203,159 @@ plt.show()
 ```
 
 
-> La morfología del REGISTRO 2 difiere en gran medida del REGISTRO 1, visualizamos las ondas P y T con mayor magnitud y ancho, lo que incrementa el intervalo entre cada complejo QRS. Vemos que la amplitud en el REGISTRO 2 es de -2.0 a 1.0 mV, mayor en comparación del -0.45 a 0.9 mV del REGISTRO 1.
+> La morfología del REGISTRO 2 difiere en gran medida de la del REGISTRO 1: se visualizan las ondas P y T con mayor magnitud y ancho, lo que incrementa el intervalo entre cada complejo QRS. Se observa que la amplitud en el REGISTRO 2 es de -2.0 a 1.0 mV, mayor en comparación con el -0.45 a 0.9 mV del REGISTRO 1.
 
 **Comparación de distribución (histograma):**
-> A comparación de la distribución en el REGISTRO 1 al lado izquierdo con mayor frecuencia en amplitudes negativas, en REGISTRO 2, es para el lado derecho entre el intervalo de -0.5 a 0 mV.
+```python
+# Distribución
+plt.figure(figsize=(9, 5))
+
+plt.hist(
+    signal_segment,
+    bins=50
+)
+
+plt.xlabel(f"Amplitud [{record.units[CHANNEL]}]")
+plt.ylabel("Número de muestras")
+plt.title("Distribución de amplitudes del ECG en REGISTRO 1")
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+plt.figure(figsize=(9, 5))
+
+plt.hist(
+    seg_2,
+    bins=50
+)
+plt.xlabel(f"Amplitud [{record.units[CHANNEL]}]")
+plt.ylabel("Número de muestras")
+plt.title("Distribución de amplitudes del ECG en REGISTRO 2")
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+```
+
+
+> En comparación con la distribución del REGISTRO 1, que se concentra hacia el lado izquierdo con mayor frecuencia en amplitudes negativas, en el REGISTRO 2 se concentra hacia el lado derecho, en el intervalo de -0.5 a 0 mV.
 
 ### Ejercicio 2 — Cambiar de canal (canal 1 del registro 200)
+```python
+CHANNEL_2 = 1
 
+print("=" * 55)
+print("INFORMACIÓN DEL REGISTRO 2 ")
+print("=" * 55)
+
+print(f"Base de datos       : {DATABASE}")
+print(f"Registro            : {RECORD_2}")
+print(f"Frecuencia muestreo : {record_2.fs} Hz")
+print(f"Número de muestras  : {record_2.sig_len}")
+print(f"Número de canales   : {record_2.n_sig}")
+print(f"Canales             : {record_2.sig_name}")
+print(f"Unidades            : {record_2.units}")
+
+```
 **1. ¿Qué nombre tiene el nuevo canal? / 2. ¿Tiene las mismas unidades?**
 > El nombre del nuevo canal es 'V1', tiene las mismas unidades de mV.
 
+```python
+signal_3 = record_2.p_signal[:, CHANNEL_2]
+t_3 = np.arange(len(signal_3)) / fs_2
+N_3 = int(DURATION * fs_2)
+seg_3 = signal_3[:N_3]
+t_3_seg = t_3[:N_3]
+
+
+
+
+
+plt.figure(figsize=(15, 5))
+
+plt.plot(t_2_seg, seg_2)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL]}]")
+plt.title(
+    f"Segmento ECG — primeros {DURATION} segundos REGISTRO 2 CANAL 0"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+##############################################################
+plt.figure(figsize=(15, 5))
+
+plt.plot(t_3_seg, seg_3)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL]}]")
+plt.title(
+    f"Segmento ECG — primeros {DURATION} segundos REGISTRO 2 CANAL 1"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
 **3. ¿La morfología es igual? / 4. ¿Qué diferencias observa?**
-> Tiene similar morfología del canal 0, en el sentido que en el mismo tiempo se presentan los picos característicos. No obstante, en el canal 1 se presenta mayor ruido que distorsiona la morfología, lo que hace que no esté centrado en 0. Asimismo su rango de amplitud disminuyó a -0.1 a 0.2 mV.
+> Tiene una morfología similar a la del canal 0, en el sentido de que en el mismo tiempo se presentan los picos característicos. No obstante, en el canal 1 se presenta mayor ruido que distorsiona la morfología, lo que hace que no esté centrado en 0. Asimismo, su rango de amplitud disminuyó a -0.1 a 0.2 mV.
 
 ### Ejercicio 3 — Cambiar la duración (5 s vs. 20 s)
+```python
+DURATION_A = 5  # segundos
+DURATION_B = 20  # segundos
 
+
+signal_3 = record_2.p_signal[:, CHANNEL_2]
+t_3 = np.arange(len(signal_3)) / fs_2
+
+N_A = int(DURATION_A * fs_2)
+seg_A = signal_3[:N_A]
+t_A = t_3[:N_A]
+
+N_B = int(DURATION_B * fs_2)
+seg_B = signal_3[:N_B]
+t_B = t_3[:N_B]
+
+
+# Duración 5 s
+plt.figure(figsize=(15, 5))
+
+plt.plot(t_A, seg_A)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL]}]")
+plt.title(
+    f"Segmento ECG — primeros {DURATION_A} segundos REGISTRO 2 CANAL 1"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+
+# Duración 20 s
+plt.figure(figsize=(15, 5))
+
+plt.plot(t_B, seg_B)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL]}]")
+plt.title(
+    f"Segmento ECG — primeros {DURATION_B} segundos REGISTRO 2 CANAL 1"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
 **¿Por qué una duración demasiado pequeña o demasiado grande puede dificultar el análisis?**
-> En una duración demasiado pequeña como en 5s se ven menos complejos QRS, lo que es mejor para el detalle pero no nos permite visualizar la variabilidad en el tiempo. Por otro lado, en un tiempo largo, es lo contrario, se dificulta la inspección visual fina pero mejor variabilidad.
+> En una duración demasiado pequeña, como en 5 s, se ven menos complejos QRS, lo que es mejor para el detalle pero no nos permite visualizar la variabilidad en el tiempo. Por otro lado, en un tiempo largo ocurre lo contrario: se dificulta la inspección visual fina, pero se aprecia mejor la variabilidad.
 
 ### Ejercicio 4 — Frecuencia de muestreo ($f_s = 360$ Hz)
 
@@ -233,10 +369,28 @@ plt.show()
 > Si en 1 segundo hay 360 muestras, en 10 segundos hay 3600 muestras.
 
 **d) ¿Qué sucedería si la frecuencia de muestreo fuese reducida significativamente?**
-> Si se reduce mucho, se corre el riesgo de que pierda resolución y que sea menor al límite de Nyquist, lo que causaría distorsión a la señal.
+> Si se reduce mucho, se corre el riesgo de que se pierda resolución y de que quede por debajo del límite de Nyquist, lo que causaría distorsión en la señal.
 
 ### Ejercicio 5 — Análisis de amplitud
+```python
+# ============================================
+# ESTADÍSTICAS BÁSICAS
+# ============================================
 
+mean_value_3 = np.mean(signal_3)
+std_value_3 = np.std(signal_3)
+min_value_3 = np.min(signal_3)
+max_value_3 = np.max(signal_3)
+
+print("ESTADÍSTICAS DEL SEGMENTO")
+print("=" * 40)
+print(f"Media             : {mean_value_3:.4f}")
+print(f"Desviación estándar: {std_value_3:.4f}")
+print(f"Mínimo            : {min_value_3:.4f}")
+print(f"Máximo            : {max_value_3:.4f}")
+print(f"Rango             : {max_value_3 - min_value_3:.4f}")
+
+```
 **Media, desviación estándar, máximo, mínimo y rango — ¿qué información proporciona cada parámetro?**
 > - Media: Nivel promedio de la señal.
 > - Desviación estándar: Dispersión del ciclo cardiaco con el ruido.
@@ -244,41 +398,38 @@ plt.show()
 > - Mínimo: Pico de onda S.
 > - Rango: El rango total del complejo QRS.
 >
-> *(Valores calculados: Media = 0.0632, Desv. estándar = 0.4947, Mínimo = -4.8900, Máximo = 4.9400, Rango = 9.8300)*
 
 ### Preguntas conceptuales
 
-> ⚠️ **Esta sección quedó incompleta en el notebook entregado.** Solo la pregunta 1 tiene una respuesta, y aparece cortada; las preguntas 2 a 10 no tienen respuesta escrita. Se transcribe tal como está en el archivo para que puedan completarla antes de entregarlo.
-
 **1. ¿Qué es PhysioNet?**
-> PhysioNet es una base d *(respuesta incompleta en el notebook)*
+> PhysioNet es una base de datos de señales fisiológicas como el ECG; estas señales se pueden usar en investigaciones con fines tecnológicos en el ámbito biomédico.
 
 **2. ¿Qué diferencia existe entre `DATABASE` y `RECORD`?**
-> *(sin respuesta)*
+> `DATABASE` se refiere a de dónde viene, en este caso, de `mitdb`, mientras que `RECORD` es el registro individual dentro del `DATABASE`.
 
 **3. ¿Qué representa `fs`?**
-> *(sin respuesta)*
+> `fs` es la frecuencia de muestreo, es decir, las muestras por segundo en Hz.
 
 **4. ¿Qué representa `CHANNEL`?**
-> *(sin respuesta)*
+> `CHANNEL` se refiere a la señal específica que se va a utilizar.
 
 **5. ¿Qué representa `record.p_signal`?**
-> *(sin respuesta)*
+> Representa la matriz de las muestras de la señal, con las filas y columnas correspondientes a las muestras y a los canales.
 
 **6. ¿Por qué necesitamos construir un eje temporal?**
-> *(sin respuesta)*
+> Debido a que `p_signal` está basado en índices, hay que usar `t[n]=n/fs` para interpretar la señal en el tiempo.
 
 **7. ¿Qué diferencia existe entre una señal continua y una señal discreta?**
-> *(sin respuesta)*
+> La señal continua es infinita (definida en todo instante), mientras que la discreta está definida solo en instantes muestreados.
 
 **8. ¿Por qué no debemos interpretar directamente un archivo WAV como si fuera una señal ECG?**
-> *(sin respuesta)*
+> Debido a que al pasar de ECG a WAV se pierde información fisiológica, como el offset DC o variaciones de menor amplitud. Hay que recordar que el WAV es solo para audio y NO para el análisis clínico.
 
 **9. ¿Qué ventajas ofrece trabajar con señales biomédicas reales en lugar de señales sintéticas?**
-> *(sin respuesta)*
+> Las señales biomédicas reales incluyen variables como el ruido, patologías, entre otras. Esto nos prepara mejor para realizar aplicaciones clínicas reales.
 
 **10. ¿Qué dificultades encontró durante el laboratorio?**
-> *(sin respuesta)*
+> El uso de los códigos y escuchar el archivo WAV en el propio Google Colab.
 
 ---
 
