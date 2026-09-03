@@ -431,8 +431,8 @@ print(f"Rango             : {max_value_3 - min_value_3:.4f}")
 **10. ¿Qué dificultades encontró durante el laboratorio?**
 > El uso de los códigos y escuchar el archivo WAV en el propio Google Colab.
 
-### Reto final
-## Informe
+## Reto final
+### Informe
 > Presente:
 **1. Identificación de la base de datos**
 > DATABASE_FINAL = "mitdb"
@@ -698,16 +698,23 @@ display(
 )
 ```
 > La señal del "RECORD" 105 presenta una morfología completamente diferente al registro inicial del laboratorio. Presenta un histograma con las frecuencias altas al lado derecho, en amplitudes positivas. Es difícil visualizar el complejo QRS, debido a los valores extremos de las ondas R y T. Por último, presenta un rango menor de 0.7 mV.
+
 > Analizando la información de PhysioNet, se indica lo siguiente: - Digoxin, Nitropaste, Pronestyl - The PVCs are uniform. The predominant feature of this tape is high-grade noise and artifact.
+
 > Los medicamentos Digoxin (arritmia), Nitropaste (dolor de pecho) y Pronestyl (antiarrítmico) indican que la persona tiene una enfermedad cardiovascular.
+
 > Los PVCs uniformes indican que las contracciones ventriculares prematuras son idénticas, lo que significa que se originan de un solo foco en los ventrículos.
+
 > Esta señal presenta interferencia eléctrica que obstruye la señal cardiaca.
 
 **10. Conclusiones**
 
 > Se siguió el flujo del laboratorio para un nuevo registro, 105. De esta manera, se eligieron el canal y la duración de la señal.
+
 > A través de las 4 gráficas, se visualizó el comportamiento de la señal en tiempo, frecuencia y forma discreta.
+
 > Por último, se exportó a formato WAV para percibir el complejo QRS de forma auditiva. Esto no reemplaza el análisis clínico de la señal.
+
 > En conclusión, el laboratorio introduce cómo utilizar la base de datos PhysioNet y, con ello, analizar las señales fisiológicas requeridas. Así, se pueden realizar prácticas con un fin clínico en biomédica.
 ---
 
