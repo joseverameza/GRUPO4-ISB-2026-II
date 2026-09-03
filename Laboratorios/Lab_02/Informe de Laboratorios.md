@@ -955,6 +955,15 @@ for record_name in RECORDS:
     plt.show()
 ```
 
+<p align="center">
+  <img src="images/2.1.png" alt="2.1" width="900"><br>
+</p>
+<p align="center">
+  <img src="images/2.2.png" alt="2.2" width="900"><br>
+</p>
+<p align="center">
+  <img src="images/2.3.png" alt="2.3" width="900"><br>
+</p>
 
 **Ejercicio 2.2 — Cambiar el tamaño de ventana (registro 16272)**
 
