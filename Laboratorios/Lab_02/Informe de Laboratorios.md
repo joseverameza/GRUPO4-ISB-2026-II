@@ -914,6 +914,48 @@ display(
 3. *¿La STFT muestra nuevos eventos?* → Sí, la STFT muestra cómo las concentraciones de energía se desplazan a los nuevos instantes de tiempo en los que ocurren los latidos o los artefactos propios de ese tramo.
 4. *¿Qué diferencias encuentra respecto al segmento original?* → El segmento original suele presentar una fase de estabilización o mayores variaciones en la componente DC al inicio del registro, mientras que un segmento posterior suele mostrar una señal continua con un ritmo más estable o con diferentes artefactos puntuales.
 
+```python
+SAMPFROM_POST = 3600
+
+signals_post = {}
+fft_data_post = {}
+stft_data_post = {}
+
+for record_name in RECORDS:
+
+    # Cargar segmento posterior
+    record_post = wfdb.rdrecord(
+        record_name,
+        pn_dir=DATABASE,
+        sampfrom=SAMPFROM_POST,
+        sampto=SAMPFROM_POST + SAMPLING_POINTS
+    )
+
+    fs = record_post.fs
+    x = record_post.p_signal[:, CHANNEL]
+
+    signals_post[record_name] = x
+
+    # ========================================
+    # 1. DOMINIO TEMPORAL
+    # ========================================
+
+    t = np.arange(len(x)) / fs
+
+    plt.figure(figsize=(12, 4))
+    plt.plot(t, x)
+
+    plt.title(
+        f"Registro {record_name} — segmento posterior"
+    )
+    plt.xlabel("Tiempo relativo [s]")
+    plt.ylabel("Amplitud [mV]")
+    plt.grid(True, linestyle=":")
+    plt.tight_layout()
+    plt.show()
+```
+
+
 **Ejercicio 2.2 — Cambiar el tamaño de ventana (registro 16272)**
 
 1. *¿Cuál permite observar mejor los eventos temporales?* → $n_{perseg} = 32$: al ser una ventana más corta, ofrece mayor resolución temporal, lo que permite precisar el momento exacto en que ocurren los eventos o transitorios rápidos.
