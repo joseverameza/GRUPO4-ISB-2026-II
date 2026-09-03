@@ -875,6 +875,19 @@ display(
 **6. ¿Qué podría ocurrir si se utiliza una ventana demasiado pequeña?**
 > Se mejora la resolución temporal, pero empeora la resolución en frecuencia. Las frecuencias pueden verse menos definidas o más anchas, haciendo más difícil distinguir componentes cercanas entre sí.
 
+### Comparación de los registros
+
+| Característica | Registro 16265 | Registro 16272 | Registro 16420 |
+|---|---|---|---|
+| Frecuencia de muestreo | 128 Hz | 128 Hz | 128 Hz |
+| Número de muestras | 3600 | 3600 | 3600 |
+| Número de canales | 2 | 2 | 2 |
+| Amplitud observada | -1 mV - 3 mV | -0.6 mV - 1.6 mV | -1.1 mV - 2.2 mV |
+| Componente DC | -0.0587 mV | -0.0421 mV | -0.0539 mV |
+| Frecuencias dominantes | 3.200 Hz | 0.142 Hz | 9.458 Hz |
+| Comportamiento STFT | Energía principalmente bajo 25-30 Hz, con bandas horizontales definidas | Eventos breves y localizados en el tiempo, con predominio de bajas frecuencias | Energía más continua y distribuida, aproximadamente hasta 35-40 Hz |
+| Observaciones | Señal periódica, con picos de mayor amplitud y algunos eventos de menor amplitud | Mayor irregularidad temporal y variaciones en la línea base | Señal más uniforme y regular, con contenido frecuencial más distribuido |
+
 ### Discusión — Comparación de los tres registros
 
 **¿Qué registro presenta mayor variabilidad?**
