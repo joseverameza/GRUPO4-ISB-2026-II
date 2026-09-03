@@ -431,6 +431,284 @@ print(f"Rango             : {max_value_3 - min_value_3:.4f}")
 **10. ¿Qué dificultades encontró durante el laboratorio?**
 > El uso de los códigos y escuchar el archivo WAV en el propio Google Colab.
 
+### Reto final
+## Informe
+> Presente:
+**1. Identificación de la base de datos**
+> DATABASE_FINAL = "mitdb"
+
+**2. Identificación del registro**
+> RECORD_FINAL = "105"
+
+**3. Frecuencia de muestreo**
+> fs_f = 360 Hz
+
+**4. Canal seleccionado**
+> CHANNEL_FINAL  = 1
+
+**5. Duración analizada**
+> DURATION_FINAL = 10
+
+```python
+# RETO FINAL
+# ============================================
+# PARÁMETROS DEL LABORATORIO
+# ============================================
+
+DATABASE_FINAL = "mitdb"
+RECORD_FINAL = "105"
+
+CHANNEL_FINAL  = 1
+
+DURATION_FINAL = 10
+
+OUTPUT_WAV_FINAL = f"ecg_record_{RECORD_FINAL}_channel_{DATABASE_FINAL}.wav"
+
+print("Parámetros configurados:")
+print(f"Base de datos : {DATABASE_FINAL}")
+print(f"Registro      : {RECORD_FINAL}")
+print(f"Canal         : {CHANNEL_FINAL }")
+print(f"Duración      : {DURATION_FINAL } s")
+print(f"Archivo WAV   : {OUTPUT_WAV_FINAL}")
+
+```
+```python
+record_f = wfdb.rdrecord(
+    RECORD_FINAL,
+    pn_dir=DATABASE_FINAL
+)
+fs_f = record_f.fs
+signal_f = record_f.p_signal[:, CHANNEL_FINAL]
+
+
+# Frecuencia de muestreo, número de canales y nombre de canales
+print("=" * 55)
+print("INFORMACIÓN DEL REGISTRO 1")
+print("=" * 55)
+
+print(f"Base de datos       : {DATABASE_FINAL}")
+print(f"Registro            : {RECORD_FINAL}")
+print(f"Frecuencia muestreo : {record_f.fs} Hz")
+print(f"Número de muestras  : {record_f.sig_len}")
+print(f"Número de canales   : {record_f.n_sig}")
+print(f"Canales             : {record_f.sig_name}")
+print(f"Unidades            : {record_f.units}")
+
+duration_total_f = record_f.sig_len / record_f.fs
+
+print(f"Duración total      : {duration_total_f:.2f} segundos")
+print("=" * 55)
+```
+
+**6. Las 4 gráficas**
+
+```python
+# ============================================
+# EJE TEMPORAL
+# ============================================
+
+t_f = np.arange(len(signal_f)) / fs
+
+print(f"Frecuencia de muestreo: {fs} Hz")
+print(f"Periodo de muestreo: {1/fs:.6f} segundos")
+print(f"Primer instante: {t[0]:.6f} segundos")
+print(f"Último instante: {t[-1]:.6f} segundos")
+```
+```python
+# ============================================
+# GRÁFICA 1: ECG COMPLETO
+# ============================================
+plt.figure(figsize=(15, 5))
+
+plt.plot(t_f, signal_f)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL_FINAL]}]")
+plt.title(
+    f"ECG completo — PhysioNet / {DATABASE_FINAL} / Record {RECORD_FINAL}"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+```python
+N_f = int(DURATION_FINAL * fs_f)
+
+signal_segment_f = signal_f[:N_f]
+t_segment_f = t_f[:N_f]
+
+print(f"Duración solicitada : {DURATION_FINAL} s")
+print(f"Frecuencia muestreo : {fs_f} Hz")
+print(f"Número de muestras  : {N_f}")
+
+```
+```python
+# ============================================
+# GRÁFICA 2: SEGMENTO ECG
+# ============================================
+
+plt.figure(figsize=(15, 5))
+
+plt.plot(t_segment_f, signal_segment_f)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL_FINAL]}]")
+plt.title(
+    f"Segmento ECG — primeros {DURATION_FINAL} segundos"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+```python
+# ============================================
+# GRÁFICA 3: HISTOGRAMA
+# ============================================
+
+plt.figure(figsize=(9, 5))
+
+plt.hist(
+    signal_segment_f,
+    bins=50
+)
+
+plt.xlabel(f"Amplitud [{record.units[CHANNEL_FINAL]}]")
+plt.ylabel("Número de muestras")
+plt.title("Distribución de amplitudes del ECG")
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+```python
+# ============================================
+# GRÁFICA 4: MUESTRAS DISCRETAS
+# ============================================
+
+N_SAMPLES_f = 100
+
+plt.figure(figsize=(15, 5))
+
+plt.plot(
+    t_segment_f[:N_SAMPLES_f],
+    signal_segment_f[:N_SAMPLES_f],
+    marker="o"
+)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL_FINAL]}]")
+plt.title(
+    f"Representación discreta — primeras {N_SAMPLES_f} muestras"
+)
+
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+**7. Estadísticas**
+
+```python
+# ============================================
+# ESTADÍSTICAS BÁSICAS
+# ============================================
+
+mean_value_f = np.mean(signal_segment_f)
+std_value_f = np.std(signal_segment_f)
+min_value_f = np.min(signal_segment_f)
+max_value_f = np.max(signal_segment_f)
+
+print("ESTADÍSTICAS DEL SEGMENTO")
+print("=" * 40)
+print(f"Media             : {mean_value_f:.4f}")
+print(f"Desviación estándar: {std_value_f:.4f}")
+print(f"Mínimo            : {min_value_f:.4f}")
+print(f"Máximo            : {max_value_f:.4f}")
+print(f"Rango             : {max_value_f - min_value_f:.4f}")
+```
+**8. Archivo WAV**
+
+```python
+# ============================================
+# PREPARAR ECG PARA WAV
+# ============================================
+
+ecg_for_wav_f = signal_segment_f.astype(float).copy()
+
+# 1. Eliminar componente DC
+ecg_for_wav_f = ecg_for_wav_f - np.mean(ecg_for_wav_f)
+
+# 2. Normalizar
+max_abs_f = np.max(np.abs(ecg_for_wav_f))
+
+if max_abs_f == 0:
+    raise ValueError("La señal no puede normalizarse porque todos sus valores son cero.")
+
+ecg_normalized_f = ecg_for_wav_f / max_abs_f
+
+# 3. Convertir a int16
+ecg_int16_f = np.int16(
+    ecg_normalized_f * 32767
+)
+
+print("Conversión preparada correctamente.")
+print(f"Tipo original   : {signal_segment_f.dtype}")
+print(f"Tipo WAV        : {ecg_int16_f.dtype}")
+print(f"Mínimo int16    : {ecg_int16_f.min()}")
+print(f"Máximo int16    : {ecg_int16_f.max()}")
+```
+```python
+# ============================================
+# GUARDAR WAV
+# ============================================
+
+wavfile.write(
+    OUTPUT_WAV_FINAL,
+    int(fs_f),
+    ecg_int16_f
+)
+
+print(f"Archivo WAV generado correctamente:")
+print(OUTPUT_WAV_FINAL)
+```
+```python
+# ============================================
+# DESCARGAR WAV EN GOOGLE COLAB
+# ============================================
+
+try:
+    from google.colab import files
+    files.download(OUTPUT_WAV_FINAL)
+except ImportError:
+    print("Este entorno no es Google Colab.")
+    print(f"El archivo está disponible localmente como: {OUTPUT_WAV}")
+```
+**9. Interpretación de los resultados**
+
+```python
+# Reproducir el archivo WAV
+
+display(
+    Audio(
+       OUTPUT_WAV_FINAL,
+        rate=int(fs_f)
+    )
+)
+```
+> La señal del "RECORD" 105 presenta una morfología completamente diferente al registro inicial del laboratorio. Presenta un histograma con las frecuencias altas al lado derecho, en amplitudes positivas. Es difícil visualizar el complejo QRS, debido a los valores extremos de las ondas R y T. Por último, presenta un rango menor de 0.7 mV.
+> Analizando la información de PhysioNet, se indica lo siguiente: - Digoxin, Nitropaste, Pronestyl - The PVCs are uniform. The predominant feature of this tape is high-grade noise and artifact.
+> Los medicamentos Digoxin (arritmia), Nitropaste (dolor de pecho) y Pronestyl (antiarrítmico) indican que la persona tiene una enfermedad cardiovascular.
+> Los PVCs uniformes indican que las contracciones ventriculares prematuras son idénticas, lo que significa que se originan de un solo foco en los ventrículos.
+> Esta señal presenta interferencia eléctrica que obstruye la señal cardiaca.
+
+**10. Conclusiones**
+
+> Se siguió el flujo del laboratorio para un nuevo registro, 105. De esta manera, se eligieron el canal y la duración de la señal.
+> A través de las 4 gráficas, se visualizó el comportamiento de la señal en tiempo, frecuencia y forma discreta.
+> Por último, se exportó a formato WAV para percibir el complejo QRS de forma auditiva. Esto no reemplaza el análisis clínico de la señal.
+> En conclusión, el laboratorio introduce cómo utilizar la base de datos PhysioNet y, con ello, analizar las señales fisiológicas requeridas. Así, se pueden realizar prácticas con un fin clínico en biomédica.
 ---
 
 # 2. Lab 2 — Análisis de señales biomédicas con PhysioNet
