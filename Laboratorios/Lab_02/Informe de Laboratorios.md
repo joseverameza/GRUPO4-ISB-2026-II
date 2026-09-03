@@ -909,10 +909,10 @@ display(
 
 **Ejercicio 2.1 — Cambiar el segmento temporal**
 
-1. *¿La morfología cambia?* → La morfología general del complejo QRS no cambia drásticamente porque corresponde al mismo paciente, pero sí pueden variar la amplitud de los picos R, la forma de la onda T o la inclinación de la línea base debido a ligeros artefactos de movimiento o respiración en el nuevo segmento.
-2. *¿El espectro cambia?* → Sí, cambia. Aunque el rango general de frecuencias se mantiene similar, la distribución de amplitudes varía según la frecuencia cardíaca instantánea y el nivel de deriva (*drift*) presente en ese tramo específico.
-3. *¿La STFT muestra nuevos eventos?* → Sí, la STFT muestra cómo las concentraciones de energía se desplazan a los nuevos instantes de tiempo en los que ocurren los latidos o los artefactos propios de ese tramo.
-4. *¿Qué diferencias encuentra respecto al segmento original?* → El segmento original suele presentar una fase de estabilización o mayores variaciones en la componente DC al inicio del registro, mientras que un segmento posterior suele mostrar una señal continua con un ritmo más estable o con diferentes artefactos puntuales.
+1. *¿La morfología cambia?* → No, los tres registros conservan el patron general, aunque cambian la amplitud de algunos eventos y la línea base. El registro 16272 sigue siendo el más irregular, mientras que 16265 y 16420 mantienen una morfología más estable.
+2. *¿El espectro cambia?* → Sí. Se observan cambios en la magnitud de las componentes y también en la frecuencia dominante. En el segmento original las frecuencias dominantes eran aproximadamente 3.200 Hz, 0.142 Hz y 9.458 Hz, mientras que en el segmento posterior pasan a 1.564 Hz, 1.031 Hz y 6.400 Hz para 16265, 16272 y 16420, respectivamente.
+3. *¿La STFT muestra nuevos eventos?* → Sí. La STFT del segmento posterior muestra variaciones de energía diferentes a las del segmento original. En 16272 siguen apareciendo eventos breves y localizados en el tiempo, mientras que en 16265 y 16420 la energía se distribuye de forma más continua, principalmente en bajas y medias frecuencias.
+4. *¿Qué diferencias encuentra respecto al segmento original?* → El segmento posterior mantiene las características generales de cada registro, pero presenta cambios en amplitud, distribución espectral y frecuencia dominante. 16265 sigue mostrando energía concentrada principalmente por debajo de 30 Hz, 16272 mantiene eventos temporales bien localizados y 16420 conserva una distribución espectral más amplia.
 
 ```python
 SAMPFROM_POST = 3600
@@ -966,7 +966,7 @@ for record_name in RECORDS:
 </p>
 
 ```python
-# ========================================
+    # ========================================
     # 2. FFT DEL SEGMENTO POSTERIOR
     # ========================================
 
@@ -1036,7 +1036,7 @@ Registro 16420: frecuencia dominante posterior = 6.400 Hz
 </p>
 
 ```python
-# ========================================
+    # ========================================
     # 3. STFT DEL SEGMENTO POSTERIOR
     # ========================================
 
@@ -1087,9 +1087,59 @@ Registro 16420: frecuencia dominante posterior = 6.400 Hz
 
 **Ejercicio 2.2 — Cambiar el tamaño de ventana (registro 16272)**
 
-1. *¿Cuál permite observar mejor los eventos temporales?* → $n_{perseg} = 32$: al ser una ventana más corta, ofrece mayor resolución temporal, lo que permite precisar el momento exacto en que ocurren los eventos o transitorios rápidos.
-2. *¿Cuál proporciona mayor detalle en frecuencia?* → $n_{perseg} = 256$: al incluir más muestras por ventana, ofrece mayor resolución frecuencial, permitiendo diferenciar componentes de frecuencia muy cercanas entre sí.
-3. *¿Cuál considera más apropiada para este registro? Justifique.* → Para el registro 16272 es más apropiada la ventana de $n_{perseg} = 32$. Dado que esta señal presenta variaciones rápidas, artefactos de corta duración y cambios en la línea base, la prioridad es tener una alta resolución temporal para identificar la ocurrencia de estos eventos sin que se diluyan en el tiempo.
+1. *¿Cuál permite observar mejor los eventos temporales?* → La ventana de 32 muestras, porque los eventos aparecen como líneas verticales más estrechas y mejor localizadas en el tiempo. Se puede distinguir con mayor claridad cuándo ocurre cada evento.
+2. *¿Cuál proporciona mayor detalle en frecuencia?* → La ventana de 256 muestras, porque las bandas horizontales están más definidas y se distinguen mejor las componentes frecuenciales.
+3. *¿Cuál considera más apropiada para este registro? Justifique.* → Para el registro 16272, la ventana de 32 muestras es la más apropiada si el objetivo es identificar eventos rápidos y localizados, porque ofrece mejor resolución temporal. La ventana de 128 muestras representa un equilibrio entre resolución temporal y frecuencial, mientras que la de 256 muestras mejora el detalle en frecuencia pero hace que los eventos aparezcan más difuminados en el tiempo.
+
+```python
+record_name = "16272"
+
+x = fft_data[record_name]["signal_ac"]
+fs = sampling_rates[record_name]
+
+window_sizes = [32, 128, 256]
+
+for nperseg in window_sizes:
+
+    f, t_stft, zxx = calculate_stft(
+        x,
+        fs,
+        nperseg=nperseg
+    )
+
+    plt.figure(figsize=(14, 5))
+
+    plt.pcolormesh(
+        t_stft,
+        f,
+        np.abs(zxx),
+        shading="gouraud"
+    )
+
+    plt.title(
+        f"STFT — Registro {record_name} "
+        f"(ventana = {nperseg} muestras)"
+    )
+
+    plt.xlabel("Tiempo [s]")
+    plt.ylabel("Frecuencia [Hz]")
+
+    plt.colorbar(label="Magnitud")
+
+    plt.ylim(0, 64)
+
+    plt.tight_layout()
+    plt.show()
+```
+<p align="center">
+  <img src="images/2.10.png" alt="2.10" width="900"><br>
+</p>
+<p align="center">
+  <img src="images/2.11.png" alt="2.11" width="900"><br>
+</p>
+<p align="center">
+  <img src="images/2.12.png" alt="2.12" width="900"><br>
+</p>
 
 **Ejercicio 2.3 — Comparación FFT vs. STFT**
 > La FFT global calcula el contenido frecuencial integrando la señal completa a lo largo de todo el tiempo de registro. Por esta razón, indica qué frecuencias están presentes y con qué magnitud, pero pierde por completo la información de *cuándo* aparecieron. Por el contrario, la STFT divide la señal en pequeños segmentos de tiempo utilizando una ventana deslizante y calcula una FFT para cada uno. Esto genera una representación bidimensional (tiempo-frecuencia) que permite ubicar con exactitud el instante de tiempo en el que aparece, cambia o desaparece cada componente de frecuencia.
