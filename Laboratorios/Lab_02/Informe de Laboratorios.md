@@ -1019,7 +1019,8 @@ for record_name in RECORDS:
         f"frecuencia dominante posterior = "
         f"{dominant_frequency_post:.3f} Hz"
     )
-
+```
+```text
 Registro 16265: frecuencia dominante posterior = 1.564 Hz
 Registro 16272: frecuencia dominante posterior = 1.031 Hz
 Registro 16420: frecuencia dominante posterior = 6.400 Hz
@@ -1034,6 +1035,46 @@ Registro 16420: frecuencia dominante posterior = 6.400 Hz
   <img src="images/2.6.png" alt="2.6" width="900"><br>
 </p>
 
+```python
+# ========================================
+    # 3. STFT DEL SEGMENTO POSTERIOR
+    # ========================================
+
+    nperseg = WINDOWS[record_name]
+
+    f_post, t_post, zxx_post = calculate_stft(
+        x_dc_removed,
+        fs,
+        nperseg=nperseg
+    )
+
+    stft_data_post[record_name] = {
+        "f": f_post,
+        "t": t_post,
+        "zxx": zxx_post
+    }
+
+    plt.figure(figsize=(14, 5))
+
+    plt.pcolormesh(
+        t_post,
+        f_post,
+        np.abs(zxx_post),
+        shading="gouraud"
+    )
+
+    plt.title(
+        f"STFT — Registro {record_name} — Segmento posterior "
+        f"(ventana = {nperseg} muestras)"
+    )
+
+    plt.xlabel("Tiempo [s]")
+    plt.ylabel("Frecuencia [Hz]")
+    plt.colorbar(label="Magnitud")
+
+    plt.tight_layout()
+    plt.show()
+```
 
 
 **Ejercicio 2.2 — Cambiar el tamaño de ventana (registro 16272)**
