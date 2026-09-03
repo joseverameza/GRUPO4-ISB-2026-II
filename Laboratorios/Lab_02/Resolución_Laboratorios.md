@@ -206,7 +206,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.2.png" alt="1.2" width="700"><br>
+  <img src="images/1.2.png" alt="1.2" width="900"><br>
 </p>
 
 > La morfología del REGISTRO 2 difiere en gran medida de la del REGISTRO 1: se visualizan las ondas P y T con mayor magnitud y ancho, lo que incrementa el intervalo entre cada complejo QRS. Se observa que la amplitud en el REGISTRO 2 es de -2.0 a 1.0 mV, mayor en comparación con el -0.45 a 0.9 mV del REGISTRO 1.
@@ -245,7 +245,7 @@ plt.show()
 
 ```
 <p align="center">
-  <img src="images/1.3.png" alt="1.3" width="700"><br>
+  <img src="images/1.3.png" alt="1.3" width="900"><br>
 </p>
 
 > En comparación con la distribución del REGISTRO 1, que se concentra hacia el lado izquierdo con mayor frecuencia en amplitudes negativas, en el REGISTRO 2 se concentra hacia el lado derecho, en el intervalo de -0.5 a 0 mV.
@@ -315,7 +315,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.5.png" alt="1.5" width="700"><br>
+  <img src="images/1.5.png" alt="1.5" width="900"><br>
 </p>
 
 **3. ¿La morfología es igual? / 4. ¿Qué diferencias observa?**
@@ -371,7 +371,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.6.png" alt="1.6" width="700"><br>
+  <img src="images/1.6.png" alt="1.6" width="900"><br>
 </p>
 
 **¿Por qué una duración demasiado pequeña o demasiado grande puede dificultar el análisis?**
@@ -569,7 +569,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.11.png" alt="1.11" width="700"><br>
+  <img src="images/1.11.png" alt="1.11" width="900"><br>
 </p>
 
 ```python
@@ -608,7 +608,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.12.png" alt="1.12" width="700"><br>
+  <img src="images/1.12.png" alt="1.12" width="900"><br>
 </p>
 
 
@@ -633,7 +633,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.13.png" alt="1.13" width="700"><br>
+  <img src="images/1.13.png" alt="1.13" width="900"><br>
 </p>
 
 ```python
@@ -662,7 +662,7 @@ plt.tight_layout()
 plt.show()
 ```
 <p align="center">
-  <img src="images/1.14.png" alt="1.14" width="700"><br>
+  <img src="images/1.14.png" alt="1.14" width="900"><br>
 </p>
 
 **7. Estadísticas**
