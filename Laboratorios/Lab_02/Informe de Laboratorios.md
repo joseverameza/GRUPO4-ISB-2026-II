@@ -1142,7 +1142,9 @@ for nperseg in window_sizes:
 </p>
 
 **Ejercicio 2.3 — Comparación FFT vs. STFT**
-> La FFT global calcula el contenido frecuencial integrando la señal completa a lo largo de todo el tiempo de registro. Por esta razón, indica qué frecuencias están presentes y con qué magnitud, pero pierde por completo la información de *cuándo* aparecieron. Por el contrario, la STFT divide la señal en pequeños segmentos de tiempo utilizando una ventana deslizante y calcula una FFT para cada uno. Esto genera una representación bidimensional (tiempo-frecuencia) que permite ubicar con exactitud el instante de tiempo en el que aparece, cambia o desaparece cada componente de frecuencia.
+> ¿Por qué una FFT global puede ocultar cuándo ocurre un determinado evento, mientras que una STFT puede localizarlo temporalmente?
+
+ La FFT global calcula el contenido frecuencial integrando la señal completa a lo largo de todo el tiempo de registro. Por esta razón, indica qué frecuencias están presentes y con qué magnitud, pero pierde por completo la información de *cuándo* aparecieron. Por el contrario, la STFT divide la señal en pequeños segmentos de tiempo utilizando una ventana deslizante y calcula una FFT para cada uno. Esto genera una representación bidimensional (tiempo-frecuencia) que permite ubicar con exactitud el instante de tiempo en el que aparece, cambia o desaparece cada componente de frecuencia.
 
 ### Preguntas conceptuales
 
@@ -1178,10 +1180,61 @@ for nperseg in window_sizes:
 
 ### Reto final — Desarrollo completo (registro 16265)
 
-1. **Registro seleccionado:** 16265.
-2. **Frecuencia de muestreo:** 128 Hz.
-3. **Canal analizado:** Canal 0, que corresponde a la señal ECG1 (medida en mV).
-4. **Gráfica temporal:** al graficar la señal en el tiempo, se ve bastante limpia y estable durante los 28.12 segundos (3600 muestras). Los picos R son muy claros, alcanzan amplitudes cercanas a los 3 mV y mantienen un ritmo constante sin cortes ni saltos raros.
+1. **Registro seleccionado:**
+```python
+SELECTED_RECORD = "16265"
+
+print(f"Registro seleccionado: {SELECTED_RECORD}")
+```
+```text
+Registro seleccionado: 16265
+```
+2. **Frecuencia de muestreo:**
+```python
+record = records_data[SELECTED_RECORD]
+
+fs = record.fs
+
+print(f"Frecuencia de muestreo: {fs} Hz")
+```
+```text
+Frecuencia de muestreo: 128 Hz
+```
+3. **Canal analizado:** 
+```python
+print(f"Canal analizado: {CHANNEL}")
+print(f"Nombre del canal: {record.sig_name[CHANNEL]}")
+print(f"Unidad: {record.units[CHANNEL]}")
+```
+```text
+Canal analizado: 0
+Nombre del canal: ECG1
+Unidad: mV
+```
+4. **Gráfica temporal:** 
+
+El segmento analizado contiene 3600 muestras. Por lo tanto, su duración es: 3600/128 = 28.125 Hz. En la gráfica temporal se observan picos repetitivos y un comportamiento aproximadamente periódico. La amplitud se encuentra aproximadamente entre -1 mV - 3 mV. También se observan algunos eventos en los que la amplitud de los picos disminuye respecto al comportamiento predominante.
+
+```python
+x = signals[SELECTED_RECORD]
+t = times[SELECTED_RECORD]
+
+plt.figure(figsize=(12, 4))
+
+plt.plot(t, x)
+
+plt.title(f"Registro {SELECTED_RECORD} — Dominio temporal")
+plt.xlabel("Tiempo [s]")
+plt.ylabel(f"Amplitud [{record.units[CHANNEL]}]")
+
+plt.grid(True, linestyle=":")
+plt.tight_layout()
+plt.show()
+```
+<p align="center">
+  <img src="images/2.13.png" alt="2.13" width="900"><br>
+</p>
+
 5. **FFT con DC:** al sacar la FFT directa de la señal original, el pico en 0 Hz es gigantesco debido al valor medio (la componente DC) y termina aplastando visualmente al resto de las frecuencias en la gráfica.
 6. **FFT sin DC:** al restarle la media a la señal, la gráfica cambia por completo. La componente en 0 Hz desaparece y deja ver claramente que la energía principal del corazón está concentrada en los 3.2 Hz (el ritmo del pulso) y en sus primeros armónicos. Después de los 30 Hz, la energía cae casi a cero.
 7. **Espectrograma STFT:** usando una ventana de 256 muestras, el espectrograma muestra franjas horizontales bien continuas y parejas por debajo de los 25-30 Hz. No hay cortes bruscos ni manchas verticales raras, lo que confirma que el contenido de frecuencia es uniforme a lo largo de todo el tiempo analizado.
