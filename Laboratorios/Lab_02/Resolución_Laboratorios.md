@@ -205,7 +205,9 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
-
+<p align="center">
+  <img src="images/1.2.png" alt="1.2" width="700"><br>
+</p>
 
 > La morfología del REGISTRO 2 difiere en gran medida de la del REGISTRO 1: se visualizan las ondas P y T con mayor magnitud y ancho, lo que incrementa el intervalo entre cada complejo QRS. Se observa que la amplitud en el REGISTRO 2 es de -2.0 a 1.0 mV, mayor en comparación con el -0.45 a 0.9 mV del REGISTRO 1.
 
@@ -242,7 +244,9 @@ plt.tight_layout()
 plt.show()
 
 ```
-
+<p align="center">
+  <img src="images/1.3.png" alt="1.3" width="700"><br>
+</p>
 
 > En comparación con la distribución del REGISTRO 1, que se concentra hacia el lado izquierdo con mayor frecuencia en amplitudes negativas, en el REGISTRO 2 se concentra hacia el lado derecho, en el intervalo de -0.5 a 0 mV.
 
@@ -263,6 +267,10 @@ print(f"Canales             : {record_2.sig_name}")
 print(f"Unidades            : {record_2.units}")
 
 ```
+<p align="center">
+  <img src="images/1.4.png" alt="1.4" width="700"><br>
+</p>
+
 **1. ¿Qué nombre tiene el nuevo canal? / 2. ¿Tiene las mismas unidades?**
 > El nombre del nuevo canal es 'V1', tiene las mismas unidades de mV.
 
@@ -306,6 +314,10 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+<p align="center">
+  <img src="images/1.5.png" alt="1.5" width="700"><br>
+</p>
+
 **3. ¿La morfología es igual? / 4. ¿Qué diferencias observa?**
 > Tiene una morfología similar a la del canal 0, en el sentido de que en el mismo tiempo se presentan los picos característicos. No obstante, en el canal 1 se presenta mayor ruido que distorsiona la morfología, lo que hace que no esté centrado en 0. Asimismo, su rango de amplitud disminuyó a -0.1 a 0.2 mV.
 
@@ -358,6 +370,10 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+<p align="center">
+  <img src="images/1.6.png" alt="1.6" width="700"><br>
+</p>
+
 **¿Por qué una duración demasiado pequeña o demasiado grande puede dificultar el análisis?**
 > En una duración demasiado pequeña, como en 5 s, se ven menos complejos QRS, lo que es mejor para el detalle pero no nos permite visualizar la variabilidad en el tiempo. Por otro lado, en un tiempo largo ocurre lo contrario: se dificulta la inspección visual fina, pero se aprecia mejor la variabilidad.
 
@@ -395,13 +411,17 @@ print(f"Máximo            : {max_value_3:.4f}")
 print(f"Rango             : {max_value_3 - min_value_3:.4f}")
 
 ```
+<p align="center">
+  <img src="images/1.7.png" alt="1.7" width="700"><br>
+</p>
+
 **Media, desviación estándar, máximo, mínimo y rango — ¿qué información proporciona cada parámetro?**
 > - Media: Nivel promedio de la señal.
 > - Desviación estándar: Dispersión del ciclo cardiaco con el ruido.
 > - Máximo: Pico de onda R.
 > - Mínimo: Pico de onda S.
 > - Rango: El rango total del complejo QRS.
->
+
 
 ### Preguntas conceptuales
 
@@ -476,6 +496,11 @@ print(f"Duración      : {DURATION_FINAL } s")
 print(f"Archivo WAV   : {OUTPUT_WAV_FINAL}")
 
 ```
+<p align="center">
+  <img src="images/1.8.png" alt="1.8" width="700"><br>
+</p>
+
+
 ```python
 record_f = wfdb.rdrecord(
     RECORD_FINAL,
@@ -503,6 +528,9 @@ duration_total_f = record_f.sig_len / record_f.fs
 print(f"Duración total      : {duration_total_f:.2f} segundos")
 print("=" * 55)
 ```
+<p align="center">
+  <img src="images/1.9.png" alt="1.9" width="700"><br>
+</p>
 
 **6. Las 4 gráficas**
 
@@ -518,6 +546,10 @@ print(f"Periodo de muestreo: {1/fs:.6f} segundos")
 print(f"Primer instante: {t[0]:.6f} segundos")
 print(f"Último instante: {t[-1]:.6f} segundos")
 ```
+<p align="center">
+  <img src="images/1.10.png" alt="1.10" width="700"><br>
+</p>
+
 ```python
 # ============================================
 # GRÁFICA 1: ECG COMPLETO
@@ -536,6 +568,10 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+<p align="center">
+  <img src="images/1.11.png" alt="1.11" width="700"><br>
+</p>
+
 ```python
 N_f = int(DURATION_FINAL * fs_f)
 
@@ -547,6 +583,11 @@ print(f"Frecuencia muestreo : {fs_f} Hz")
 print(f"Número de muestras  : {N_f}")
 
 ```
+<p align="center">
+  <img src="images/1.12.png" alt="1.12" width="700"><br>
+</p>
+
+
 ```python
 # ============================================
 # GRÁFICA 2: SEGMENTO ECG
@@ -566,6 +607,11 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+<p align="center">
+  <img src="images/1.13.png" alt="1.13" width="700"><br>
+</p>
+
+
 ```python
 # ============================================
 # GRÁFICA 3: HISTOGRAMA
@@ -586,6 +632,10 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+<p align="center">
+  <img src="images/1.14.png" alt="1.14" width="700"><br>
+</p>
+
 ```python
 # ============================================
 # GRÁFICA 4: MUESTRAS DISCRETAS
@@ -611,6 +661,9 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+<p align="center">
+  <img src="images/1.15.png" alt="1.15" width="700"><br>
+</p>
 
 **7. Estadísticas**
 
@@ -632,6 +685,11 @@ print(f"Mínimo            : {min_value_f:.4f}")
 print(f"Máximo            : {max_value_f:.4f}")
 print(f"Rango             : {max_value_f - min_value_f:.4f}")
 ```
+<p align="center">
+  <img src="images/1.16.png" alt="1.16" width="700"><br>
+</p>
+
+
 **8. Archivo WAV**
 
 ```python
@@ -663,6 +721,10 @@ print(f"Tipo WAV        : {ecg_int16_f.dtype}")
 print(f"Mínimo int16    : {ecg_int16_f.min()}")
 print(f"Máximo int16    : {ecg_int16_f.max()}")
 ```
+<p align="center">
+  <img src="images/1.17.png" alt="1.17" width="700"><br>
+</p>
+
 ```python
 # ============================================
 # GUARDAR WAV
