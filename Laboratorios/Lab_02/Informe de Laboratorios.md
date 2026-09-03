@@ -965,6 +965,62 @@ for record_name in RECORDS:
   <img src="images/2.3.png" alt="2.3" width="900"><br>
 </p>
 
+```python
+# ========================================
+    # 2. FFT DEL SEGMENTO POSTERIOR
+    # ========================================
+
+    frequencies, magnitude_original, magnitude_ac, x_dc_removed = calculate_fft(
+        x, fs
+    )
+
+    fft_data_post[record_name] = {
+        "frequencies": frequencies,
+        "magnitude_original": magnitude_original,
+        "magnitude_ac": magnitude_ac,
+        "signal_ac": x_dc_removed
+    }
+
+    # Comparación FFT original vs posterior
+    plt.figure(figsize=(12, 4))
+
+    plt.plot(
+        fft_data[record_name]["frequencies"],
+        fft_data[record_name]["magnitude_ac"],
+        label="Segmento original"
+    )
+
+    plt.plot(
+        frequencies,
+        magnitude_ac,
+        label="Segmento posterior",
+        alpha=0.8
+    )
+
+    plt.title(
+        f"FFT — Registro {record_name} — Original vs posterior"
+    )
+    plt.xlabel("Frecuencia [Hz]")
+    plt.ylabel("Magnitud")
+    plt.xlim(0, frequencies[-1])
+    plt.legend()
+    plt.grid(True, linestyle=":")
+    plt.tight_layout()
+    plt.show()
+
+
+    # Frecuencia dominante del segmento posterior
+    idx = np.argmax(magnitude_ac[1:]) + 1
+
+    dominant_frequency_post = frequencies[idx]
+
+    print(
+        f"Registro {record_name}: "
+        f"frecuencia dominante posterior = "
+        f"{dominant_frequency_post:.3f} Hz"
+    )
+```
+
 **Ejercicio 2.2 — Cambiar el tamaño de ventana (registro 16272)**
 
 1. *¿Cuál permite observar mejor los eventos temporales?* → $n_{perseg} = 32$: al ser una ventana más corta, ofrece mayor resolución temporal, lo que permite precisar el momento exacto en que ocurren los eventos o transitorios rápidos.
