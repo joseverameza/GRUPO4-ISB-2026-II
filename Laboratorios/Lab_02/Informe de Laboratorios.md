@@ -1213,7 +1213,7 @@ Unidad: mV
 ```
 4. **Gráfica temporal:** 
 
-El segmento analizado contiene 3600 muestras. Por lo tanto, su duración es: 3600/128 = 28.125 Hz. En la gráfica temporal se observan picos repetitivos y un comportamiento aproximadamente periódico. La amplitud se encuentra aproximadamente entre -1 mV - 3 mV. También se observan algunos eventos en los que la amplitud de los picos disminuye respecto al comportamiento predominante.
+    El segmento analizado contiene 3600 muestras. Por lo tanto, su duración es: 3600/128 = 28.125 Hz. En la gráfica temporal se observan picos repetitivos y un comportamiento aproximadamente periódico. La amplitud se encuentra aproximadamente entre -1 mV - 3 mV. También se observan algunos eventos en los que la amplitud de los picos disminuye respecto al comportamiento predominante.
 
 ```python
 x = signals[SELECTED_RECORD]
@@ -1235,15 +1235,149 @@ plt.show()
   <img src="images/2.13.png" alt="2.13" width="900"><br>
 </p>
 
-5. **FFT con DC:** al sacar la FFT directa de la señal original, el pico en 0 Hz es gigantesco debido al valor medio (la componente DC) y termina aplastando visualmente al resto de las frecuencias en la gráfica.
-6. **FFT sin DC:** al restarle la media a la señal, la gráfica cambia por completo. La componente en 0 Hz desaparece y deja ver claramente que la energía principal del corazón está concentrada en los 3.2 Hz (el ritmo del pulso) y en sus primeros armónicos. Después de los 30 Hz, la energía cae casi a cero.
-7. **Espectrograma STFT:** usando una ventana de 256 muestras, el espectrograma muestra franjas horizontales bien continuas y parejas por debajo de los 25-30 Hz. No hay cortes bruscos ni manchas verticales raras, lo que confirma que el contenido de frecuencia es uniforme a lo largo de todo el tiempo analizado.
-8. **Comparación de resultados:** el análisis en el tiempo nos deja ver la forma y tamaño del latido, pero oculta qué frecuencias componen la señal. La FFT nos muestra todo el rango de frecuencias presente, pero pierde el tiempo en el que ocurrieron. Finalmente, la STFT junta ambos mundos y nos confirma que esas frecuencias del ECG se mantuvieron estables segundo a segundo sin interferencias.
+5. **FFT con DC:** 
+
+```python
+frequencies, magnitude_original, magnitude_ac, x_dc_removed = calculate_fft(
+    x,
+    fs
+)
+
+plt.figure(figsize=(12, 4))
+
+plt.plot(
+    frequencies,
+    magnitude_original
+)
+
+plt.title(
+    f"FFT — Registro {SELECTED_RECORD} — Componente DC presente"
+)
+
+plt.xlabel("Frecuencia [Hz]")
+plt.ylabel("Magnitud")
+
+plt.xlim(0, frequencies[-1])
+
+plt.grid(True, linestyle=":")
+plt.tight_layout()
+plt.show()
+```
+<p align="center">
+  <img src="images/2.14.png" alt="2.14" width="900"><br>
+</p>
+
+6. **FFT sin DC:** 
+```python
+plt.figure(figsize=(12, 4))
+
+plt.plot(
+    frequencies,
+    magnitude_ac
+)
+
+plt.title(
+    f"FFT — Registro {SELECTED_RECORD} — Componente DC eliminada"
+)
+
+plt.xlabel("Frecuencia [Hz]")
+plt.ylabel("Magnitud")
+
+plt.xlim(0, frequencies[-1])
+
+plt.grid(True, linestyle=":")
+plt.tight_layout()
+plt.show()
+
+idx = np.argmax(magnitude_ac[1:]) + 1
+
+dominant_frequency = frequencies[idx]
+dominant_magnitude = magnitude_ac[idx]
+
+print(
+    f"Frecuencia dominante: "
+    f"{dominant_frequency:.3f} Hz"
+)
+
+print(
+    f"Magnitud dominante: "
+    f"{dominant_magnitude:.3f}"
+)
+```
+```text
+Frecuencia dominante: 3.200 Hz
+Magnitud dominante: 230.841
+```
+<p align="center">
+  <img src="images/2.15.png" alt="2.15" width="900"><br>
+</p>
+
+7. **Espectrograma STFT:** 
+```python
+nperseg = WINDOWS[SELECTED_RECORD]
+
+f_stft, t_stft, zxx = calculate_stft(
+    x_dc_removed,
+    fs,
+    nperseg=nperseg
+)
+
+plt.figure(figsize=(14, 5))
+
+plt.pcolormesh(
+    t_stft,
+    f_stft,
+    np.abs(zxx),
+    shading="gouraud"
+)
+
+plt.title(
+    f"STFT — Registro {SELECTED_RECORD} "
+    f"(ventana = {nperseg} muestras)"
+)
+
+plt.xlabel("Tiempo [s]")
+plt.ylabel("Frecuencia [Hz]")
+
+plt.colorbar(label="Magnitud")
+
+plt.tight_layout()
+plt.show()
+```
+<p align="center">
+  <img src="images/2.16.png" alt="2.16" width="900"><br>
+</p>
+
+8. **Comparación de resultados:** 
+
+    Las tres representaciones proporcionan información complementaria:
+
+- **Dominio temporal:** permite observar la amplitud, periodicidad, forma de la señal y eventos particulares.
+- **FFT:** permite identificar las componentes frecuenciales presentes en todo el segmento y determinar la frecuencia dominante.
+- **STFT:** permite observar cómo cambia el contenido frecuencial a lo largo del tiempo y localizar temporalmente los cambios de energía.
+
+    Por ello, la FFT proporciona información global de frecuencia, mientras que la STFT permite relacionar las frecuencias con el momento en el que ocurren.
+
 9. **Respuestas a las preguntas de análisis:**
-   - *¿Qué aporta el dominio temporal?* Nos sirve para medir la amplitud de los picos, revisar la forma del latido y darnos cuenta a simple vista si hay desplazamientos en la línea base.
-   - *¿Por qué quitamos la componente DC?* Porque su magnitud es enorme comparada con la señal del ECG. Si no se la restamos, el gráfico se satura en 0 Hz y no nos deja analizar el espectro real que nos interesa.
-   - *¿Qué ventaja nos da la STFT?* Nos permite localizar exactamente cuándo ocurren los cambios o ruidos en el espectro a lo largo del tiempo, algo que la FFT normal no es capaz de hacer porque promedia todo.
-10. **Conclusiones:** el registro 16265 es una señal muy estable, con latidos periódicos claros y casi toda su energía útil concentrada por debajo de los 30 Hz. Quitar la media de la señal es un paso obligatorio antes de hacer cualquier análisis de frecuencias para no saturar los resultados con la componente DC. Es necesario combinar el tiempo, la FFT y la STFT para entender la señal de forma completa, ya que cada método muestra cosas que los otros no pueden ver por sí solos.
+   
+   **¿Se observan patrones periódicos?**  
+   Sí. En la señal temporal se observan picos repetitivos distribuidos de manera aproximadamente periódica.
+
+   **¿En qué intervalo de frecuencias se concentra la mayor parte de la energía?**  
+   La mayor parte de la energía se concentra principalmente por debajo de 25-30 Hz.
+
+   **¿Qué ocurre con la componente DC al eliminar la media?**  
+   La componente en 0 Hz disminuye considerablemente porque se elimina el valor medio de la señal.
+
+   **¿Qué información adicional proporciona la STFT?**  
+   Permite determinar en qué momentos cambian las componentes frecuenciales y la energía de la señal.
+
+   **¿Por qué no es suficiente analizar solamente la señal en el tiempo?**  
+   Porque la gráfica temporal permite observar la forma de la señal, pero no permite identificar directamente las frecuencias que la componen. Para ello se requiere complementar el análisis con FFT y STFT.
+
+10. **Conclusiones:** 
+
+El registro `16265` fue analizado en los dominios temporal, frecuencial y tiempo-frecuencia. En el dominio temporal se observaron picos repetitivos y una amplitud aproximada entre -1 mV y 3 mV. Mediante la FFT se identificó una frecuencia dominante cercana a 3.200 Hz y se observó que la mayor parte del contenido frecuencial se concentra en bajas y medias frecuencias. Al eliminar la componente DC se redujo la contribución asociada al valor medio de la señal. Finalmente, la STFT permitió visualizar cómo cambia la energía de las componentes frecuenciales a lo largo del tiempo. Por ello, las tres representaciones proporcionan información complementaria para analizar la señal biomédica.
 
 ---
 
