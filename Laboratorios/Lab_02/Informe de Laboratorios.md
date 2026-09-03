@@ -1019,7 +1019,22 @@ for record_name in RECORDS:
         f"frecuencia dominante posterior = "
         f"{dominant_frequency_post:.3f} Hz"
     )
+
+Registro 16265: frecuencia dominante posterior = 1.564 Hz
+Registro 16272: frecuencia dominante posterior = 1.031 Hz
+Registro 16420: frecuencia dominante posterior = 6.400 Hz
 ```
+<p align="center">
+  <img src="images/2.4.png" alt="2.4" width="900"><br>
+</p>
+<p align="center">
+  <img src="images/2.5.png" alt="2.5" width="900"><br>
+</p>
+<p align="center">
+  <img src="images/2.6.png" alt="2.6" width="900"><br>
+</p>
+
+
 
 **Ejercicio 2.2 — Cambiar el tamaño de ventana (registro 16272)**
 
