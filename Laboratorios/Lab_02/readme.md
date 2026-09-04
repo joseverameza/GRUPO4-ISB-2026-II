@@ -258,10 +258,7 @@ Para cargar una señal es necesario indicar la base de datos y el registro corre
 La duración de una señal puede calcularse mediante:
 
 $$
-\text{duración} =
-\text{número de muestras}\times T_s
-=
-\frac{\text{número de muestras}}{f_s}
+\text{duración} = \text{número de muestras}\times T_s = \frac{\text{número de muestras}}{f_s}
 $$
 
 Una señal fisiológica sin procesar puede contener diferentes componentes, como desplazamientos de línea base, ruido o artefactos. La variación natural de amplitud de una señal fisiológica no implica por sí sola que se encuentre contaminada, por lo que es necesario analizarla antes de decidir qué procesamiento aplicar.
