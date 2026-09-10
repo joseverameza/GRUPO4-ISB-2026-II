@@ -19,12 +19,12 @@
 
 ## Medición del pulgar
 <p align="center">
-  <img src="Imagenes/Pulgar 1.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/pulgar_1.png" alt="1.1" width="700"><br>
 </p>
 Figura 1. Extraído de “BITalino (r)evolution Lab Guide” [Online]. Available:https://support.pluxbiosignals.com/wp-content/uploads/2022/04/HomeGuide1_EMG.pdf 
 
 <p align="center">
-  <img src="Imagenes/Pulgar 2.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/pulgar_2.jpeg" alt="1.1" width="700"><br>
 </p>
 
 ## Medición del músculo flexor radial del carpo
