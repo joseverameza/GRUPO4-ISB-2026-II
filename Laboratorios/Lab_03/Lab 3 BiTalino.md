@@ -96,7 +96,6 @@ En reposo
   <img src="Imagenes/open_reposo_carpo.jpg" alt="1.1" width="700"><br>
 </p>
 
-
 Movimiento leve
 <p align="center">
   <img src="Imagenes/open_leve_carpo.jpg" alt="1.1" width="700"><br>
@@ -179,6 +178,16 @@ Movimiento con opsición
 </p>
 
 ### Análisis
+
+Como se puede ver en las tres gráficas, hay una relación bastante clara entre el nivel de esfuerzo y la señal EMG registrada.
+
+En reposo, la señal se mantiene prácticamente plana, oscilando apenas entre -0.02 y 0.01 mV, sin ninguna ráfaga o pico que indique contracción muscular. En el espectro de frecuencia de esta parte se nota un pico bien marcado cerca de los 60 Hz y otro alrededor de los 400 Hz, que son compatibles con interferencia eléctrica o ruido de la línea eléctrica y no a actividad muscular real, lo cual tiene sentido porque en teoría el músculo no debería estar activo.
+
+En movimiento leve la cosa cambia bastante: aparecen tres ráfagas claras de activación (alrededor de los segundos 5, 47 y 95), con una amplitud que llega hasta 0.4 mV en el pico más alto. Fuera de esas ráfagas la señal vuelve a estar cerca de cero, lo que confirma que cada una corresponde a una contracción puntual del músculo. En el espectro se ve que la energía se concentra más que nada entre 0 y 150 Hz, con una caída conforme sube la frecuencia, un patrón bastante típico de EMG.
+
+Con oposición, la amplitud sube muchísimo más, llegando hasta ±1.5 mV, casi cuatro veces lo que se vio en movimiento leve. Las tres ráfagas (cerca de los segundos 10, 60 y 115) también se ven más anchas y sostenidas, como si la contracción durara más tiempo y con más fuerza, que es justo lo que se espera cuando el músculo tiene que vencer resistencia. El espectro también sube de nivel en general, con magnitudes entre -60 y -80 dB en las frecuencias más bajas, comparado con los -100 dB que se veían en movimiento leve, aunque la forma general del espectro (concentrado en frecuencias bajas y medias) se mantiene parecida.
+
+En resumen, se ve claramente cómo a mayor esfuerzo o resistencia aumenta tanto la amplitud como la duración de la actividad muscular, mientras que en reposo lo único presente es ruido de fondo sin ningún patrón de contracción.
 
 ## Cuestionario
 **¿Cuáles son las frecuencias significativas para las adquisiciones de EMG? ¿Son las mismas en todas las áreas del cuerpo, como el área facial?**
