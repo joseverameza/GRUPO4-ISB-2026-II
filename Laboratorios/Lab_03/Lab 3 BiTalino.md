@@ -31,7 +31,7 @@ En este laboratorio se realizaron mediciones de señales EMG en dos grupos muscu
 | Cables y electrodos | 3 |
 | Laptop | 1 |
 
-<<<<<<< HEAD
+
 # 3. Protocolo de adquisición
  
 Previo a la colocación de los electrodos, se limpió la zona de la piel con alcohol isopropílico y se dejó secar para asegurar una mejor conductividad y minimizar el ruido en la señal. 
@@ -51,7 +51,7 @@ Previo a la colocación de los electrodos, se limpió la zona de la piel con alc
   <img src="Imagenes/limpieza2.jpeg" alt="1.1" width="700"><br>
 </p>
 
-<<<<<<< HEAD
+
 Los electrodos se colocaron siguiendo la guía de colocación de electrodos de BITalino, asegurando que los dos electrodos se colocaran en dirección a las fibras musuclares a medir, además del tercer electrodo colocado en el codo tomandolo como tierra para ambas mediciones musculares.
 <p align="center">
   <img src="Imagenes/colocar1.jpeg" alt="1.1" width="700"><br>
@@ -104,17 +104,17 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 ### Señal en OpenSignals
 En reposo
 <p align="center">
-  <img src="Imagenes/open_reposo_carpo.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/rep_pul.jpeg" alt="1.1" width="700"><br>
 </p>
 
 Movimiento leve
 <p align="center">
-  <img src="Imagenes/open_leve_carpo.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/mov_pul.jpeg" alt="1.1" width="700"><br>
 </p>
 
 Movimiento con opsición
 <p align="center">
-  <img src="Imagenes/open_contra_carpo.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/contra_pul.jpeg" alt="1.1" width="700"><br>
 </p>
 
 ### Ploteo en Phyton
@@ -134,6 +134,14 @@ Movimiento con opsición
   <img src="Imagenes/movimiento en contra.png" alt="1.1" width="700"><br>
 </p>
 
+###Análisis
+En reposo, la señal se mantiene prácticamente plana, oscilando apenas entre -0.015 y 0.013 mV, con la envolvente pegada casi en línea recta alrededor de 0.003-0.004 mV: no hay ninguna ráfaga ni pico que sugiera contracción muscular, tal como se esperaba. En el espectro de esta parte no aparece nada parecido a un patrón EMG: el piso de ruido es bastante parejo entre -10 y -20 dB, pero sobresalen dos picos angostos y bien marcados cerca de 200 Hz y 400 Hz que casi tocan los 0 dB. Como el músculo no estaba activo, estos picos no pueden ser actividad muscular real, sino que parecen ruido electrónico o digital del propio sistema de adquisición (se nota además el "hueco" justo en 60 Hz, que confirma que el notch de red sí está funcionando). Como esos picos dominan la energía total, la MDF calculada para este tramo sale bastante alta (222.8 Hz), pero ese valor no tiene un significado fisiológico real, simplemente refleja dónde está el ruido.
+
+En movimiento controlado aparecen tres ráfagas de activación bien definidas, ubicadas aproximadamente en los segundos 4, 43 y 86, cada una separada por los tramos de reposo del protocolo. Dos de las ráfagas se mueven en un rango de amplitud de hasta ±0.3-0.4 mV, mientras que la del segundo repetición (~43 s) tiene un pico aislado y muy angosto que llega hasta casi -1.0 mV, probablemente un artefacto de contacto o de movimiento del electrodo más que una contracción sostenida de esa magnitud, ya que la envolvente en ese mismo punto solo llega a 0.14 mV. Fuera de las tres ráfagas la señal vuelve a estar prácticamente en cero, confirmando que cada una corresponde a un evento puntual de contracción. El espectro ya no tiene los picos angostos del reposo: la energía se reparte de forma más amplia entre 20 y 300 Hz, sin una caída tan abrupta como en el reposo, y la MDF baja a 179.3 Hz, coherente con que ahora sí hay actividad muscular real mezclada con el ruido de fondo.
+
+En movimiento de contrafuerza el cambio es mucho más notorio: las tres ráfagas (~0-16 s, ~49-62 s y ~117-132 s) son visiblemente más anchas y sostenidas que en movimiento controlado, y la amplitud sube muchísimo, con la envolvente alcanzando picos de hasta 0.83 mV y la señal cruda oscilando hasta ±1.8 mV, más de cuatro veces lo visto en movimiento controlado. Esto es justo lo esperado cuando el músculo tiene que vencer resistencia: se reclutan más unidades motoras y la contracción se mantiene más tiempo. El espectro también cambia de forma: ahora sí se nota una concentración clara de energía por debajo de ~150 Hz, con niveles bastante más altos (entre 0 y -20 dB) que en las otras dos condiciones, y la MDF cae a 91.0 Hz, reflejando ese corrimiento hacia frecuencias bajas típico de contracciones más fuertes y sostenidas.
+
+En resumen, en el abductor pollicis se ve la misma tendencia esperada: a mayor esfuerzo, mayor amplitud y mayor duración de cada ráfaga de activación, y el espectro se va concentrando cada vez más en frecuencias bajas (MDF cayendo de ~223 Hz a ~91 Hz). La diferencia particular de nuestros datos es que en reposo el "ruido" no es un piso parejo sino que tiene picos marcados en 200 y 400 Hz, así que conviene tenerlo en cuenta al interpretar la MDF de ese tramo, ya que no representa actividad muscular.
 
 ## 5.2 Músculo del antebrazo
 <p align="center">
