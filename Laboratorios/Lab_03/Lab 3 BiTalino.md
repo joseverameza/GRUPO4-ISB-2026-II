@@ -38,6 +38,23 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 |:------------------:|:----------------------:|:----------------------:|
 | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4) |
 
+### Señal en OpenSignals
+En reposo
+<p align="center">
+  <img src="Imagenes/open_reposo_carpo.jpg" alt="1.1" width="700"><br>
+</p>
+
+
+Movimiento leve
+<p align="center">
+  <img src="Imagenes/open_leve_carpo.jpg" alt="1.1" width="700"><br>
+</p>
+
+Movimiento con opsición
+<p align="center">
+  <img src="Imagenes/open_contra_carpo.jpg" alt="1.1" width="700"><br>
+</p>
+
 
 ### Ploteo en Phyton
 En reposo
