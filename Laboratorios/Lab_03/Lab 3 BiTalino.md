@@ -43,7 +43,7 @@ Previo a la colocación de los electrodos, se limpió la zona de la piel con alc
 
 
 ## Medición del abductor pollicis brevis (pulgar)
->>>>>>> origin/main
+
 <p align="center">
   <img src="Imagenes/limpieza1.jpeg" alt="1.1" width="700"><br>
 </p>
