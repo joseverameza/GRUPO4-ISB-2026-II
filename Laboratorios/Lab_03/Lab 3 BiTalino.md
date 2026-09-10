@@ -17,7 +17,7 @@
 
 
 
-## Medición del pulgar
+## Medición del abductor pollicis brevis (pulgar)
 <p align="center">
   <img src="Imagenes/pulgar_1.png" alt="1.1" width="700"><br>
 </p>
