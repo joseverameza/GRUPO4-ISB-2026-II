@@ -47,7 +47,19 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 | <video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4" controls></video> | <video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4" controls></video> | <video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4" controls></video> |
 
 
+### Demostración
 
+**En reposo**
+
+<video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4" controls></video>
+
+**Movimiento leve**
+
+<video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4" controls></video>
+
+**Movimiento con oposición**
+
+<video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4" controls></video>
 
 
 
