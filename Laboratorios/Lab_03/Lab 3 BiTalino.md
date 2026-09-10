@@ -99,7 +99,7 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 
 | **En reposo** | **Movimiento leve** | **Movimiento con oposición** |
 |:------------------:|:----------------------:|:----------------------:|
-| [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_reposo.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_m_leve.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_cont.mp4) |
+| [▶️ Ver video](https://drive.google.com/file/d/1gBiZwOX9izUqLjEHnkTY46UA3IK60XBE/view?usp=drive_link) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_m_leve.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_cont.mp4) |
 
 ### Señal en OpenSignals
 En reposo
