@@ -77,7 +77,7 @@ Movimiento con opsición
 
 Como se puede ver en las tres gráficas, hay una relación bastante clara entre el nivel de esfuerzo y la señal EMG registrada.
 
-En reposo, la señal se mantiene prácticamente plana, oscilando apenas entre -0.02 y 0.01 mV, sin ninguna ráfaga o pico que indique contracción muscular. En el espectro de frecuencia de esta parte se nota un pico bien marcado cerca de los 60 Hz y otro alrededor de los 400 Hz, que corresponden a ruido de la línea eléctrica y no a actividad muscular real, lo cual tiene sentido porque en teoría el músculo no debería estar activo.
+En reposo, la señal se mantiene prácticamente plana, oscilando apenas entre -0.02 y 0.01 mV, sin ninguna ráfaga o pico que indique contracción muscular. En el espectro de frecuencia de esta parte se nota un pico bien marcado cerca de los 60 Hz y otro alrededor de los 400 Hz, que son compatibles con interferencia eléctrica o ruido de la línea eléctrica y no a actividad muscular real, lo cual tiene sentido porque en teoría el músculo no debería estar activo.
 
 En movimiento leve la cosa cambia bastante: aparecen tres ráfagas claras de activación (alrededor de los segundos 5, 47 y 95), con una amplitud que llega hasta 0.4 mV en el pico más alto. Fuera de esas ráfagas la señal vuelve a estar cerca de cero, lo que confirma que cada una corresponde a una contracción puntual del músculo. En el espectro se ve que la energía se concentra más que nada entre 0 y 150 Hz, con una caída conforme sube la frecuencia, un patrón bastante típico de EMG.
 
