@@ -38,7 +38,7 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 
 
 
-| **En reposo** | **Movimiento leve* | **Movimiento con oposición** |
+| **En reposo** | **Movimiento leve** | **Movimiento con oposición** |
 |:------------------:|:----------------------:|:----------------------:|
 | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4) |
 
