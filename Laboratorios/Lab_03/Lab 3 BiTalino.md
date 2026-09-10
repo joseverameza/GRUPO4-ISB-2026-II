@@ -33,7 +33,7 @@ En este laboratorio se realizaron mediciones de señales EMG en dos grupos muscu
 
 
 # 3. Protocolo de adquisición
- 
+
 Previo a la colocación de los electrodos, se limpió la zona de la piel con alcohol isopropílico y se dejó secar para asegurar una mejor conductividad y minimizar el ruido en la señal. 
 =======
 
@@ -90,12 +90,12 @@ Se calculó el espectro de frecuencia mediante la Transformada Rápida de Fourie
 <p align="center">
   <img src="Imagenes/pulgar.png" alt="1.1" width="700"><br>
 </p>
-Figura X. Extraído de “BITalino (r)evolution Lab Guide” [Online]. Available:https://support.pluxbiosignals.com/wp-content/uploads/2022/04/HomeGuide1_EMG.pdf 
+Figura 1. Extraído de “BITalino (r)evolution Lab Guide” [Online]. Available:https://support.pluxbiosignals.com/wp-content/uploads/2022/04/HomeGuide1_EMG.pdf 
 
 <p align="center">
   <img src="Imagenes/pos_pul.jpeg" alt="1.1" width="700"><br>
 </p>
-De acuerdo con la Figura X, los electrodos se colocan para realizar la medición de la actividad del músculo abductor pollicis. Los dos electrodos de medición se ubican longitudinalmente sobre la base del dedo pulgar, con 2 cm de espaciado,  mientras que el electrodo de referencia, utilizado como tierra, se coloca a nivel del codo.
+De acuerdo con la Figura 1, los electrodos se colocan para realizar la medición de la actividad del músculo abductor pollicis. Los dos electrodos de medición se ubican longitudinalmente sobre la base del dedo pulgar, con 2 cm de espaciado,  mientras que el electrodo de referencia, utilizado como tierra, se coloca a nivel del codo.
 
 | **En reposo** | **Movimiento leve** | **Movimiento con oposición** |
 |:------------------:|:----------------------:|:----------------------:|
@@ -147,13 +147,13 @@ En resumen, en el abductor pollicis se ve la misma tendencia esperada: a mayor e
 <p align="center">
   <img src="Imagenes/1-tri.jpg" alt="1.1" width="700"><br>
 </p>
-Figura X. Extraído de “BITalino (r)evolution Lab Guide” [Online]. Available:https://support.pluxbiosignals.com/wp-content/uploads/2022/04/HomeGuide1_EMG.pdf 
+Figura 2. Extraído de “BITalino (r)evolution Lab Guide” [Online]. Available:https://support.pluxbiosignals.com/wp-content/uploads/2022/04/HomeGuide1_EMG.pdf 
 
 
 <p align="center">
   <img src="Imagenes/2-tri.jpg" alt="1.1" width="700"><br>
 </p>
-De acuerdo con la Figura X, los electrodos se colocan para realizar la medición de la actividad del músculo flexor radial del carpo. Los dos electrodos de medición se ubican longitudinalmente sobre la fibra muscular, con 2 cm de espaciado,  mientras que el electrodo de referencia, utilizado como tierra, se coloca a nivel del codo.
+De acuerdo con la Figura 2, los electrodos se colocan para realizar la medición de la actividad del músculo flexor radial del carpo. Los dos electrodos de medición se ubican longitudinalmente sobre la fibra muscular, con 2 cm de espaciado,  mientras que el electrodo de referencia, utilizado como tierra, se coloca a nivel del codo.
 
 
 
