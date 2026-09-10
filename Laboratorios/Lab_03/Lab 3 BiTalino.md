@@ -31,7 +31,7 @@ En este laboratorio se realizaron mediciones de señales EMG en dos grupos muscu
 | Cables y electrodos | 3 |
 | Laptop | 1 |
 
-<<<<<<< HEAD
+
 # 3. Protocolo de adquisición
  
 Previo a la colocación de los electrodos, se limpió la zona de la piel con alcohol isopropílico y se dejó secar para asegurar una mejor conductividad y minimizar el ruido en la señal. 
@@ -51,7 +51,7 @@ Previo a la colocación de los electrodos, se limpió la zona de la piel con alc
   <img src="Imagenes/limpieza2.jpeg" alt="1.1" width="700"><br>
 </p>
 
-<<<<<<< HEAD
+
 Los electrodos se colocaron siguiendo la guía de colocación de electrodos de BITalino, asegurando que los dos electrodos se colocaran en dirección a las fibras musuclares a medir, además del tercer electrodo colocado en el codo tomandolo como tierra para ambas mediciones musculares.
 <p align="center">
   <img src="Imagenes/colocar1.jpeg" alt="1.1" width="700"><br>
@@ -104,17 +104,17 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 ### Señal en OpenSignals
 En reposo
 <p align="center">
-  <img src="Imagenes/open_reposo_carpo.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/rep_pul.jpeg" alt="1.1" width="700"><br>
 </p>
 
 Movimiento leve
 <p align="center">
-  <img src="Imagenes/open_leve_carpo.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/mov_pul.jpeg" alt="1.1" width="700"><br>
 </p>
 
 Movimiento con opsición
 <p align="center">
-  <img src="Imagenes/open_contra_carpo.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/contra_pul.jpeg" alt="1.1" width="700"><br>
 </p>
 
 ### Ploteo en Phyton
