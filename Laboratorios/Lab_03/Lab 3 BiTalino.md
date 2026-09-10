@@ -1,9 +1,5 @@
 <h1 align="center">LABORATORIO 3: BiTalino</h1>
 
-## Índice
-
-
-
 ## Introducción
 
 
