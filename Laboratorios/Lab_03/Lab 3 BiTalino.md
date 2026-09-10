@@ -22,6 +22,9 @@
 
 
 ## Medición del pulgar
+
+
+## Medición del músculo flexor radial del carpo
 <p align="center">
   <img src="Imagenes/1-tri.jpg" alt="1.1" width="700"><br>
 </p>
@@ -57,9 +60,6 @@ Movimiento con opsición
 </p>
 
 ### Análisis
-
-## Medición del músculo flexor radial del carpo
-
 
 ## Cuestionario
 **¿Cuáles son las frecuencias significativas para las adquisiciones de EMG? ¿Son las mismas en todas las áreas del cuerpo, como el área facial?**
