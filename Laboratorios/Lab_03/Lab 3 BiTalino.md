@@ -29,6 +29,11 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 
 
 
+| **En reposo** | **Movimiento leve* | **Movimiento con oposición** |
+|:------------------:|:----------------------:|:----------------------:|
+| [▶️ Ver video](URL_DEL_VIDEO_1) | [▶️ Ver video](URL_DEL_VIDEO_2) | [▶️ Ver video](URL_DEL_VIDEO_3) |
+
+
 ## Medición del músculo flexor radial del carpo
 
 
