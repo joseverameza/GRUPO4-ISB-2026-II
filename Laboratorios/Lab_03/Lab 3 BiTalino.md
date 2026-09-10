@@ -9,6 +9,11 @@
 
 
 ## Materiales y equipo
+| Equipo | Cantidad |
+| :--- | :--- |
+| Kit Bitalino | 1 |
+| Cables y electrodos | 3 |
+| Laptop | 1 |
 
 
 
