@@ -42,6 +42,15 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 |:------------------:|:----------------------:|:----------------------:|
 | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4) |
 
+| **En reposo** | **Movimiento leve** | **Movimiento con oposición** |
+|:------------------:|:----------------------:|:----------------------:|
+|<video src=https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4></video> | <video src=https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4></video> | <video src=https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4></video>|
+
+
+
+
+
+
 ### Ploteo en Phyton
 En reposo
 <p align="center">
