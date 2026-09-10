@@ -35,7 +35,6 @@ En este laboratorio se realizaron mediciones de señales EMG en dos grupos muscu
 # 3. Protocolo de adquisición
  
 Previo a la colocación de los electrodos, se limpió la zona de la piel con alcohol isopropílico y se dejó secar para asegurar una mejor conductividad y minimizar el ruido en la señal. 
-=======
 
 
 ## Procedimiento
