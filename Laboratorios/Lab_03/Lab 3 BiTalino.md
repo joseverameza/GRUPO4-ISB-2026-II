@@ -27,6 +27,11 @@ Figura 1. Extraído de “BITalino (r)evolution Lab Guide” [Online]. Available
   <img src="Imagenes/pulgar_2.jpeg" alt="1.1" width="700"><br>
 </p>
 
+
+
+| **En reposo** | **Movimiento leve** | **Movimiento con oposición** |
+|:------------------:|:----------------------:|:----------------------:|
+| [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_reposo.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_m_leve.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_cont.mp4) |
 ## Medición del músculo flexor radial del carpo
 <p align="center">
   <img src="Imagenes/1-tri.jpg" alt="1.1" width="700"><br>
