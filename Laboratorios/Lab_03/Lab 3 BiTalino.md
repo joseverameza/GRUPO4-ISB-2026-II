@@ -57,3 +57,14 @@ Movimiento con opsición
 
 
 ## Cuestionario
+**¿Cuáles son las frecuencias significativas para las adquisiciones de EMG? ¿Son las mismas en todas las áreas del cuerpo, como el área facial?**
+> XXXX
+
+**¿Qué tipo de filtro es esencial al trabajar con señales de EMG? ¿Por qué necesitamos aplicar dicho filtro?**
+> XXXX
+
+**¿Cómo varía la amplitud en cada contracción muscular? ¿Hay diferencia según la ubicación en el cuerpo?**
+> XXXX
+
+**¿Equivale la amplitud de la EMG a la cantidad de fuerza que has generado con tu músculo?**
+> XXXX
