@@ -31,9 +31,19 @@ En este laboratorio se realizaron mediciones de señales EMG en dos grupos muscu
 | Cables y electrodos | 3 |
 | Laptop | 1 |
 
+<<<<<<< HEAD
 # 3. Protocolo de adquisición
  
 Previo a la colocación de los electrodos, se limpió la zona de la piel con alcohol isopropílico y se dejó secar para asegurar una mejor conductividad y minimizar el ruido en la señal. 
+=======
+
+
+## Procedimiento
+
+
+
+## Medición del abductor pollicis brevis (pulgar)
+>>>>>>> origin/main
 <p align="center">
   <img src="Imagenes/limpieza1.jpeg" alt="1.1" width="700"><br>
 </p>
@@ -88,7 +98,7 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 
 | **En reposo** | **Movimiento leve** | **Movimiento con oposición** |
 |:------------------:|:----------------------:|:----------------------:|
-| [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4) |
+| [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_reposo.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_m_leve.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/pulgar_cont.mp4) |
 
 ### Señal en OpenSignals
 En reposo
