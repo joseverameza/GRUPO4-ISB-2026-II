@@ -18,12 +18,12 @@
 
 ## Medición del pulgar
 <p align="center">
-  <img src="images/1-tri.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/1-tri.jpg" alt="1.1" width="700"><br>
 </p>
 Figura X. Extraído de “BITalino (r)evolution Lab Guide” [Online]. Available:https://support.pluxbiosignals.com/wp-content/uploads/2022/04/HomeGuide1_EMG.pdf 
 
 <p align="center">
-  <img src="images/2-tri.jpg" alt="1.1" width="700"><br>
+  <img src="Imagenes/2-tri.jpg" alt="1.1" width="700"><br>
 </p>
 De acuerdo con la Figura X, los electrodos se colocan para realizar la medición de la actividad del músculo flexor radial del carpo. Los dos electrodos de medición se ubican longitudinalmente sobre la fibra muscular, con 2 cm de espaciado,  mientras que el electrodo de referencia, utilizado como tierra, se coloca a nivel del codo.
 
