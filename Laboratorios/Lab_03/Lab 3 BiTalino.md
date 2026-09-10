@@ -42,26 +42,6 @@ De acuerdo con la Figura X, los electrodos se colocan para realizar la medición
 |:------------------:|:----------------------:|:----------------------:|
 | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4) | [▶️ Ver video](https://github.com/joseverameza/GRUPO4-ISB-2026-II/blob/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4) |
 
-| **En reposo** | **Movimiento leve** | **Movimiento con oposición** |
-|:------------------:|:----------------------:|:----------------------:|
-| <video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4" controls></video> | <video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4" controls></video> | <video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4" controls></video> |
-
-
-### Demostración
-
-**En reposo**
-
-<video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/Carpo_reposo.mp4" controls></video>
-
-**Movimiento leve**
-
-<video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/leve_carpo_f.mp4" controls></video>
-
-**Movimiento con oposición**
-
-<video src="https://raw.githubusercontent.com/joseverameza/GRUPO4-ISB-2026-II/main/Laboratorios/Lab_03/Imagenes/contra_carpo_f.mp4" controls></video>
-
-
 
 ### Ploteo en Phyton
 En reposo
