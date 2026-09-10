@@ -51,6 +51,7 @@ Previo a la colocación de los electrodos, se limpió la zona de la piel con alc
   <img src="Imagenes/limpieza2.jpeg" alt="1.1" width="700"><br>
 </p>
 
+<<<<<<< HEAD
 Los electrodos se colocaron siguiendo la guía de colocación de electrodos de BITalino, asegurando que los dos electrodos se colocaran en dirección a las fibras musuclares a medir, además del tercer electrodo colocado en el codo tomandolo como tierra para ambas mediciones musculares.
 <p align="center">
   <img src="Imagenes/colocar1.jpeg" alt="1.1" width="700"><br>
