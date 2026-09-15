@@ -1,6 +1,6 @@
 <h1 align="center">Electrocardiograma (ECG): Reposo, Hiperventilación, Hipoventilación y Actividad Aeróbica</h1>
 <p align="center"><em>Laboratorio 4 — Introducción a Señales Biomédicas</em></p>
-## Índice
+# Índice
  
 - [1. Introducción](#1-introducción)
 - [2. Materiales](#2-materiales)
