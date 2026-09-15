@@ -1,5 +1,6 @@
 <h1 align="center">Electrocardiograma (ECG): Reposo, Hiperventilación, Hipoventilación y Actividad Aeróbica</h1>
 <p align="center"><em>Laboratorio 4 — Introducción a Señales Biomédicas</em></p>
+
 # Índice
  
 - [1. Introducción](#1-introducción)
@@ -23,8 +24,9 @@
 - [9. Respuestas al cuestionario](#9-respuestas-al-cuestionario)
 - [10. Referencias](#10-referencias)
 # 1. Introducción
- 
-*[Completar: objetivo del laboratorio — adquirir señales de electrocardiograma (ECG) con el sensor BITalino, explorando las tres derivaciones bipolares de Einthoven (DI, DII, DIII) bajo cuatro condiciones fisiológicas distintas (reposo, hiperventilación, hipoventilación y actividad aeróbica), y relacionar los cambios observados con la fisiología cardíaca y respiratoria vista en clase.]*
+El corazón bombea sangre oxigenada de la aurícula izquierda al ventrículo izquierdo, a la aorta y hacia el resto del cuerpo; el nódulo sinoatrial (SA node) inicia la actividad eléctrica, se propaga al nodo atrioventricular (AV node) conocido como el marcapasos del corazón, de ahí se propaga a las ramas del haz y las fibras de Purkinje. Durante la excitación de una célula, esta se vuelve más positiva que sus vecinas, generando un dipolo; la suma de estos dipolos forma un vector que se puede medir en la superficie de la piel. Cada etapa del ciclo cardíaco representa un componente distinto de la señal representada en un electrocardiograma.
+El electrocardiograma es una prueba que permite registrar la actividad eléctrica del corazón producida por cada latido. El músculo cardiaco puede producir señales eléctricas que son detectables en la superficie de la piel usando un sensor ECG. Durante el laboratorio se desarrolla la recolección de la actividad eléctrica del músculo cardiaco mediante el sensor de ECG de BITalino.
+
  
 # 2. Materiales
  
@@ -32,12 +34,13 @@
 - 1x BITalino (r)evolution Assembled Core BT
 - 1x Sensor de Electrocardiografía (ECG) ensamblado
 - 3x Electrodos desechables autoadhesivos gelificados Ag/AgCl
-- 1x Dongle Bluetooth
+
 # 3. Procedimiento de toma de muestras
  
 ## 3.1 Actividades realizadas
  
 Para cada una de las siguientes condiciones se registró la señal ECG en las tres derivaciones (DI, DII, DIII), recolocando los electrodos entre cada derivación:
+Se realizaron 4 actividades de medición, 30 segundos midiendo durante el reposo, 30 segundos midiendo después de un proceso de hiperventilación, 30 segundos midiendo después de un proceso de hipoventilación y 30 segundos midiendo después de un proceso de actividad aeróbica, realizando las 3 derivaciones en una sola pasada. 
  
 | Actividad | DI | DII | DIII |
 |---|---|---|---|
@@ -50,58 +53,60 @@ Para cada una de las siguientes condiciones se registró la señal ECG en las tr
  
 1. Colocar los electrodos según la posición correspondiente a la derivación en turno (ver sección 4).
 2. **Reposo:** iniciar grabación y mantener 30 s sin hablar ni moverse, en postura cómoda.
-3. **Hiperventilación:** iniciar grabación y, *durante* los 30 s de registro, realizar el ciclo inhalar–retener–exhalar de forma repetida (la maniobra se realiza mientras se graba, no antes).
-4. **Hipoventilación:** iniciar grabación y retener la respiración el mayor tiempo posible *durante* el registro.
-5. **Actividad aeróbica:** realizar la actividad física indicada, sentarse rápidamente y grabar de inmediato para capturar la frecuencia cardíaca elevada.
+3. **Hiperventilación:** iniciar grabación y, después de los 30 s de registro, realizar el ciclo inhalar–retener–exhalar de forma repetida (la maniobra se realiza para llenar los pulmones con la mayor cantidad de oxígeno).
+4. **Hipoventilación:** iniciar grabación y retener la respiración el mayor tiempo posible antes del registro.
+5. **Actividad aeróbica:** realizar la actividad física indicada durante un periodo de 6-10 minutos hasta llegar a la fatiga muscular, sentarse rápidamente y grabar de inmediato para capturar la frecuencia cardíaca elevada. En el caso del laboratorio se realizaron saltos y trote durante 8 minutos.
 6. Entre cada derivación (DI → DII → DIII) descansar ~30 s–1 min para permitir recolocar los electrodos y que el ritmo cardíaco se estabilice antes de la siguiente toma.
-*[Completar con cualquier detalle adicional propio de la sesión: hora, duración exacta de cada actividad aeróbica, observaciones del participante, etc.]*
+
  
 # 4. Ubicación de electrodos por derivación
- 
-El electrodo de referencia (REF, blanco) se coloca siempre en el punto que **no** se usa como medición en esa derivación, siguiendo el triángulo de Einthoven:
+
+La señal se mide entre un electrodo negativo y uno positivo, el tamaño de la deflexión depende del ángulo de la derivación respecto al dipolo, y el signo depende de la dirección del dipolo.
+El electrodo de referencia (REF, blanco) se coloca siempre en el punto que **no** se usa como medición en esa derivación, siguiendo el triángulo de Einthoven.
+En el laboratorio utilizamos una variante de la posición, se colocaron los electrodos en ambas muñecas y en la cresta iliaca izquierda.
  
 | Derivación | IN+ (rojo) | IN− (negro) | REF (blanco) |
 |---|---|---|---|
-| **DI** | LA (brazo/muñeca izq.) | RA (brazo/muñeca der.) | LF (pierna/tobillo izq.) |
-| **DII** | LF (pierna/tobillo izq.) | RA (brazo/muñeca der.) | LA (brazo/muñeca izq.) |
-| **DIII** | LF (pierna/tobillo izq.) | LA (brazo/muñeca izq.) | RA (brazo/muñeca der.) |
+| **DI** | LA (brazo/muñeca izq.) | RA (brazo/muñeca der.) | LF (pierna/cresta iliaca izq.) |
+| **DII** | LF (pierna/cresta iliaca izq.) | RA (brazo/muñeca der.) | LA (brazo/muñeca izq.) |
+| **DIII** | LF (pierna/cresta iliaca izq.) | LA (brazo/muñeca izq.) | RA (brazo/muñeca der.) |
  
-*[Completar: justificar por qué se colocaron los electrodos en huesos/prominencias óseas (muñecas, tobillo) en vez de sobre tejido muscular — reduce el ruido por artefactos de movimiento muscular (EMG) que se superpone a la señal ECG — y por qué esta ubicación específica (muñecas/tobillo vs. clavículas/cresta ilíaca vs. pecho) fue la elegida para esta sesión.]*
+<p align="center"><img src="images/ubicacion_electrodos.png" alt="Electrodos ubicación" width="700"><br><em>Fig 1. Ubicación de los electrodos. </em></p>
  
 # 5. Señal en OpenSignals
  
 ## 5.1 Reposo
  
 **DI:**
-<p align="center"><img src="images/opensignals_reposo_DI.png" alt="OpenSignals Reposo DI" width="700"><br><em>Fig 1. Señal ECG en reposo, derivación DI, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_reposo_DI.png" alt="OpenSignals Reposo DI" width="700"><br><em>Fig 2. Señal ECG en reposo, derivación DI, vista en OpenSignals.</em></p>
 **DII:**
-<p align="center"><img src="images/opensignals_reposo_DII.png" alt="OpenSignals Reposo DII" width="700"><br><em>Fig 2. Señal ECG en reposo, derivación DII, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_reposo_DII.png" alt="OpenSignals Reposo DII" width="700"><br><em>Fig 3. Señal ECG en reposo, derivación DII, vista en OpenSignals.</em></p>
 **DIII:**
-<p align="center"><img src="images/opensignals_reposo_DIII.png" alt="OpenSignals Reposo DIII" width="700"><br><em>Fig 3. Señal ECG en reposo, derivación DIII, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_reposo_DIII.png" alt="OpenSignals Reposo DIII" width="700"><br><em>Fig 4. Señal ECG en reposo, derivación DIII, vista en OpenSignals.</em></p>
 ## 5.2 Hiperventilación
  
 **DI:**
-<p align="center"><img src="images/opensignals_hiperventilacion_DI.png" alt="OpenSignals Hiperventilación DI" width="700"><br><em>Fig 4. Señal ECG durante hiperventilación, derivación DI, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_hiperventilacion_DI.png" alt="OpenSignals Hiperventilación DI" width="700"><br><em>Fig 5. Señal ECG durante hiperventilación, derivación DI, vista en OpenSignals.</em></p>
 **DII:**
-<p align="center"><img src="images/opensignals_hiperventilacion_DII.png" alt="OpenSignals Hiperventilación DII" width="700"><br><em>Fig 5. Señal ECG durante hiperventilación, derivación DII, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_hiperventilacion_DII.png" alt="OpenSignals Hiperventilación DII" width="700"><br><em>Fig 6. Señal ECG durante hiperventilación, derivación DII, vista en OpenSignals.</em></p>
 **DIII:**
-<p align="center"><img src="images/opensignals_hiperventilacion_DIII.png" alt="OpenSignals Hiperventilación DIII" width="700"><br><em>Fig 6. Señal ECG durante hiperventilación, derivación DIII, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_hiperventilacion_DIII.png" alt="OpenSignals Hiperventilación DIII" width="700"><br><em>Fig 7. Señal ECG durante hiperventilación, derivación DIII, vista en OpenSignals.</em></p>
 ## 5.3 Hipoventilación
  
 **DI:**
-<p align="center"><img src="images/opensignals_hipoventilacion_DI.png" alt="OpenSignals Hipoventilación DI" width="700"><br><em>Fig 7. Señal ECG durante hipoventilación, derivación DI, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_hipoventilacion_DI.png" alt="OpenSignals Hipoventilación DI" width="700"><br><em>Fig 8. Señal ECG durante hipoventilación, derivación DI, vista en OpenSignals.</em></p>
 **DII:**
-<p align="center"><img src="images/opensignals_hipoventilacion_DII.png" alt="OpenSignals Hipoventilación DII" width="700"><br><em>Fig 8. Señal ECG durante hipoventilación, derivación DII, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_hipoventilacion_DII.png" alt="OpenSignals Hipoventilación DII" width="700"><br><em>Fig 9. Señal ECG durante hipoventilación, derivación DII, vista en OpenSignals.</em></p>
 **DIII:**
-<p align="center"><img src="images/opensignals_hipoventilacion_DIII.png" alt="OpenSignals Hipoventilación DIII" width="700"><br><em>Fig 9. Señal ECG durante hipoventilación, derivación DIII, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_hipoventilacion_DIII.png" alt="OpenSignals Hipoventilación DIII" width="700"><br><em>Fig 10. Señal ECG durante hipoventilación, derivación DIII, vista en OpenSignals.</em></p>
 ## 5.4 Actividad aeróbica
  
 **DI:**
-<p align="center"><img src="images/opensignals_aerobica_DI.png" alt="OpenSignals Actividad aeróbica DI" width="700"><br><em>Fig 10. Señal ECG tras actividad aeróbica, derivación DI, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_aerobica_DI.png" alt="OpenSignals Actividad aeróbica DI" width="700"><br><em>Fig 11. Señal ECG tras actividad aeróbica, derivación DI, vista en OpenSignals.</em></p>
 **DII:**
-<p align="center"><img src="images/opensignals_aerobica_DII.png" alt="OpenSignals Actividad aeróbica DII" width="700"><br><em>Fig 11. Señal ECG tras actividad aeróbica, derivación DII, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_aerobica_DII.png" alt="OpenSignals Actividad aeróbica DII" width="700"><br><em>Fig 12. Señal ECG tras actividad aeróbica, derivación DII, vista en OpenSignals.</em></p>
 **DIII:**
-<p align="center"><img src="images/opensignals_aerobica_DIII.png" alt="OpenSignals Actividad aeróbica DIII" width="700"><br><em>Fig 12. Señal ECG tras actividad aeróbica, derivación DIII, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_aerobica_DIII.png" alt="OpenSignals Actividad aeróbica DIII" width="700"><br><em>Fig 13. Señal ECG tras actividad aeróbica, derivación DIII, vista en OpenSignals.</em></p>
 # 6. Video de muestra
  
 📹 *[Insertar enlace o miniatura del video de muestra de la toma de datos, p. ej. colocación de electrodos y/o registro en vivo]*
@@ -113,35 +118,35 @@ El electrodo de referencia (REF, blanco) se coloca siempre en el punto que **no*
 ## 7.1 Reposo
  
 **DI:**
-<p align="center"><img src="images/python_reposo_DI.png" alt="Python Reposo DI" width="700"><br><em>Fig 13. Señal ECG en reposo, derivación DI, procesada en Python.</em></p>
+<p align="center"><img src="images/python_reposo_DI.png" alt="Python Reposo DI" width="700"><br><em>Fig 14. Señal ECG en reposo, derivación DI, procesada en Python.</em></p>
 **DII:**
-<p align="center"><img src="images/python_reposo_DII.png" alt="Python Reposo DII" width="700"><br><em>Fig 14. Señal ECG en reposo, derivación DII, procesada en Python.</em></p>
+<p align="center"><img src="images/python_reposo_DII.png" alt="Python Reposo DII" width="700"><br><em>Fig 15. Señal ECG en reposo, derivación DII, procesada en Python.</em></p>
 **DIII:**
-<p align="center"><img src="images/python_reposo_DIII.png" alt="Python Reposo DIII" width="700"><br><em>Fig 15. Señal ECG en reposo, derivación DIII, procesada en Python.</em></p>
+<p align="center"><img src="images/python_reposo_DIII.png" alt="Python Reposo DIII" width="700"><br><em>Fig 16. Señal ECG en reposo, derivación DIII, procesada en Python.</em></p>
 ## 7.2 Hiperventilación
  
 **DI:**
-<p align="center"><img src="images/python_hiperventilacion_DI.png" alt="Python Hiperventilación DI" width="700"><br><em>Fig 16. Señal ECG durante hiperventilación, derivación DI, procesada en Python.</em></p>
+<p align="center"><img src="images/python_hiperventilacion_DI.png" alt="Python Hiperventilación DI" width="700"><br><em>Fig 17. Señal ECG durante hiperventilación, derivación DI, procesada en Python.</em></p>
 **DII:**
-<p align="center"><img src="images/python_hiperventilacion_DII.png" alt="Python Hiperventilación DII" width="700"><br><em>Fig 17. Señal ECG durante hiperventilación, derivación DII, procesada en Python.</em></p>
+<p align="center"><img src="images/python_hiperventilacion_DII.png" alt="Python Hiperventilación DII" width="700"><br><em>Fig 18. Señal ECG durante hiperventilación, derivación DII, procesada en Python.</em></p>
 **DIII:**
-<p align="center"><img src="images/python_hiperventilacion_DIII.png" alt="Python Hiperventilación DIII" width="700"><br><em>Fig 18. Señal ECG durante hiperventilación, derivación DIII, procesada en Python.</em></p>
+<p align="center"><img src="images/python_hiperventilacion_DIII.png" alt="Python Hiperventilación DIII" width="700"><br><em>Fig 19. Señal ECG durante hiperventilación, derivación DIII, procesada en Python.</em></p>
 ## 7.3 Hipoventilación
  
 **DI:**
-<p align="center"><img src="images/python_hipoventilacion_DI.png" alt="Python Hipoventilación DI" width="700"><br><em>Fig 19. Señal ECG durante hipoventilación, derivación DI, procesada en Python.</em></p>
+<p align="center"><img src="images/python_hipoventilacion_DI.png" alt="Python Hipoventilación DI" width="700"><br><em>Fig 20. Señal ECG durante hipoventilación, derivación DI, procesada en Python.</em></p>
 **DII:**
-<p align="center"><img src="images/python_hipoventilacion_DII.png" alt="Python Hipoventilación DII" width="700"><br><em>Fig 20. Señal ECG durante hipoventilación, derivación DII, procesada en Python.</em></p>
+<p align="center"><img src="images/python_hipoventilacion_DII.png" alt="Python Hipoventilación DII" width="700"><br><em>Fig 21. Señal ECG durante hipoventilación, derivación DII, procesada en Python.</em></p>
 **DIII:**
-<p align="center"><img src="images/python_hipoventilacion_DIII.png" alt="Python Hipoventilación DIII" width="700"><br><em>Fig 21. Señal ECG durante hipoventilación, derivación DIII, procesada en Python.</em></p>
+<p align="center"><img src="images/python_hipoventilacion_DIII.png" alt="Python Hipoventilación DIII" width="700"><br><em>Fig 22. Señal ECG durante hipoventilación, derivación DIII, procesada en Python.</em></p>
 ## 7.4 Actividad aeróbica
  
 **DI:**
-<p align="center"><img src="images/python_aerobica_DI.png" alt="Python Actividad aeróbica DI" width="700"><br><em>Fig 22. Señal ECG tras actividad aeróbica, derivación DI, procesada en Python.</em></p>
+<p align="center"><img src="images/python_aerobica_DI.png" alt="Python Actividad aeróbica DI" width="700"><br><em>Fig 23. Señal ECG tras actividad aeróbica, derivación DI, procesada en Python.</em></p>
 **DII:**
-<p align="center"><img src="images/python_aerobica_DII.png" alt="Python Actividad aeróbica DII" width="700"><br><em>Fig 23. Señal ECG tras actividad aeróbica, derivación DII, procesada en Python.</em></p>
+<p align="center"><img src="images/python_aerobica_DII.png" alt="Python Actividad aeróbica DII" width="700"><br><em>Fig 24. Señal ECG tras actividad aeróbica, derivación DII, procesada en Python.</em></p>
 **DIII:**
-<p align="center"><img src="images/python_aerobica_DIII.png" alt="Python Actividad aeróbica DIII" width="700"><br><em>Fig 24. Señal ECG tras actividad aeróbica, derivación DIII, procesada en Python.</em></p>
+<p align="center"><img src="images/python_aerobica_DIII.png" alt="Python Actividad aeróbica DIII" width="700"><br><em>Fig 25. Señal ECG tras actividad aeróbica, derivación DIII, procesada en Python.</em></p>
 # 8. Análisis
  
 ## 8.1 Comparación entre derivaciones (DI, DII, DIII)
@@ -156,11 +161,11 @@ El electrodo de referencia (REF, blanco) se coloca siempre en el punto que **no*
  
 **1. ¿Cuáles son las fuentes de ruido más típicas que afectan al ECG?**
  
-*[Respuesta]*
+Las fuentes de ruido más típicas son la interferencia electromagnética (60Hz en Perú) y el fenómeno de ruido muscular, por eso buscamos colocar los electrodos en regiones de baja actividad muscular para reducir el ruido de las activaciones musuclares.
  
 **2. ¿Por qué cambia la señal de ECG al cambiar la posición de los sensores (Lead I–III)? ¿Cómo cambian sus componentes?**
  
-*[Respuesta]*
+
  
 **3. Describe si hay diferencias importantes en la señal al adquirirla desde distintas ubicaciones corporales (p. ej. muñeca/clavícula/pecho). ¿Cuál podría ser la causa? ¿Esperabas estos cambios?**
  
@@ -182,4 +187,4 @@ El electrodo de referencia (REF, blanco) se coloca siempre en el punto que **no*
  
 - PLUX Wireless Biosignals. *BITalino (r)evolution Home Guide #2 — Electrocardiography (ECG)*. OD.LB.03.04, 2021.
 - Meza, M.; Cáceres, J.A. *Electrocardiograma: Anatomía del corazón, Ondas del ECG, Derivaciones, Características y Arritmias* (material de clase, Introducción a Señales Biomédicas).
-- *[Agregar cualquier otra referencia citada en el análisis]*
+- 
