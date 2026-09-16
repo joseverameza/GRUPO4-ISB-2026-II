@@ -141,12 +141,15 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
  
 **DI:**
 <p align="center"><img src="images/python_hiperventilacion_DI.png" alt="Python Hiperventilación DI" width="700"><br><em>Fig 17. Señal ECG durante hiperventilación, derivación DI, procesada en Python.</em></p>
+DI – Hiperventilación -> FC media: 104.0 bpm | Amplitud R: media 0.308 mV, máx 0.404 mV  (duración: 40.6 s, análisis desde 0 s)
 
 **DII:**
 <p align="center"><img src="images/python_hiperventilacion_DII.png" alt="Python Hiperventilación DII" width="700"><br><em>Fig 18. Señal ECG durante hiperventilación, derivación DII, procesada en Python.</em></p>
+DII – Hiperventilación -> FC media: 116.4 bpm | Amplitud R: media 0.443 mV, máx 0.552 mV  (duración: 31.8 s, análisis desde 0 s)
 
 **DIII:**
 <p align="center"><img src="images/python_hiperventilacion_DIII.png" alt="Python Hiperventilación DIII" width="700"><br><em>Fig 19. Señal ECG durante hiperventilación, derivación DIII, procesada en Python.</em></p>
+DIII – Hiperventilación -> FC media: 88.8 bpm | Amplitud R: media 0.285 mV, máx 0.512 mV  (duración: 72.6 s, análisis desde 0 s)
 
 ## 7.3 Hipoventilación
  
@@ -176,7 +179,10 @@ DIII – Actividad aeróbica -> FC media: 123.8 bpm | Amplitud R: media 0.296 mV
 # 8. Análisis
  
 ## 8.1 Comparación entre derivaciones (DI, DII, DIII)
- 
+
+**Hiperventilación:**
+Durante la hiperventilación la DII presentó la mayor frecuencia cardíaca media, con 116.4 bpm, y también la mayor amplitud media de la onda R, con 0.443 mV, seguida de DI con 104.0 bpm y 0.308 mV, mientras que DIII mostró 88.8 bpm y 0.285 mV. Además, en DIII se puede observar mayor variabilidad y ruido, posiblemente relacionado con el movimiento del tórax durante la respiración rápida y con pequeños cambios en el contacto de los electrodos. La guía indica que la respiración puede modificar la amplitud de los picos R y que el movimiento puede generar artefactos en la señal. Finalmente, al comparar la Ley de Einthoven (DI + DIII = 0.594 mV frente a DII = 0.443 mV) se obtuvo una diferencia de 0.150 mV, equivalente al 33.9 % de DII, la cual es una diferencia considerable; sin embargo, esto puede deberse a que las derivaciones fueron registradas en momentos distintos, además de posibles artefactos de movimiento y variaciones en la colocación de los electrodos.
+
 **Actividad aeróbica:**
 La frecuencia cardíaca medida después de realizar la actividad aeróbica dió resultados de 165.0 bpm en DI, 145.7 bpm en DII y 123.8 bpm en DIII. Se puede observar la curva de recuperación esperada, coincidiendo los valores con el orden de medición: DI (165.0) > DII (145.7) > DIII (123.8). La frecuencia cardiáca más alta se registra en la toma más cercana al inicio de la recuperación (DI) y la más baja en la última toma (DIII).
 La amplitud media del pico R es de 0.253 mV en DI, 0.457 mV en DII y 0.296 mV en DIII, con una amplitud máxima cercana a la media en las tres derivaciones (0.325, 0.567 y 0.429 mV respectivamente), no hay picos de artefacto contaminando el cálculo.
@@ -194,11 +200,11 @@ Las fuentes de ruido más típicas son la interferencia electromagnética (60Hz 
  
 **2. ¿Por qué cambia la señal de ECG al cambiar la posición de los sensores (Lead I–III)? ¿Cómo cambian sus componentes?**
  
-
+Porque cada derivación de Einthoven observa la actividad eléctrica del corazón desde un ángulo diferente: DI registra de brazo derecho a brazo izquierdo, DII de brazo derecho a pierna izquierda y DIII de brazo izquierdo a pierna izquierda. Por ello, aunque la actividad cardíaca sea la misma, las ondas P, QRS y T pueden cambiar principalmente en amplitud y polaridad.
  
 **3. Describe si hay diferencias importantes en la señal al adquirirla desde distintas ubicaciones corporales (p. ej. muñeca/clavícula/pecho). ¿Cuál podría ser la causa? ¿Esperabas estos cambios?**
  
-*[Respuesta]*
+Sí se esperan diferencias al registrar el ECG en distintas ubicaciones del cuerpo. La señal tomada cerca del corazón, especialmente en el pecho, suele ser más clara y permite distinguir mejor los complejos P-QRS-T, mientras que en muñecas o clavículas la señal puede presentar menor claridad o mayor interferencia. Esto ocurre porque la ubicación de los electrodos modifica cómo se capta la actividad eléctrica cardíaca y porque el movimiento muscular puede introducir artefactos. Por ello, era esperable encontrar cambios entre las señales obtenidas en pecho, clavículas y muñecas.
  
 **4. Los sistemas cardíaco y respiratorio están interconectados. ¿Esperas que distintos tipos de respiración (más rápida, más profunda) influyan en la señal de ECG? Muestra capturas de las señales en las distintas circunstancias respiratorias y describe las variaciones si las hay.**
  
