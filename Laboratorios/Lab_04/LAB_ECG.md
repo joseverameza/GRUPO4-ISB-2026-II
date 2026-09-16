@@ -71,7 +71,7 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
 | **DII** | LF (pierna/cresta iliaca izq.) | RA (brazo/muñeca der.) | LA (brazo/muñeca izq.) |
 | **DIII** | LF (pierna/cresta iliaca izq.) | LA (brazo/muñeca izq.) | RA (brazo/muñeca der.) |
  
-<p align="center"><img src="images/ubicacion_electrodos.png" alt="Electrodos ubicación" width="700"><br><em>Fig 1. Ubicación de los electrodos. </em></p>
+<p align="center"><img src="images/ubicacion_electrodos.jpeg" alt="Electrodos ubicación" width="700"><br><em>Fig 1. Ubicación de los electrodos. </em></p>
  
 # 5. Señal en OpenSignals
  
