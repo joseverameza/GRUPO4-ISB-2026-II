@@ -118,6 +118,7 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
 
 **DIII:**
 <p align="center"><img src="images/opensignals_aerobica_DIII.png" alt="OpenSignals Actividad aeróbica DIII" width="700"><br><em>Fig 13. Señal ECG tras actividad aeróbica, derivación DIII, vista en OpenSignals.</em></p>
+
 # 6. Video de muestra
  
 📹 *[Insertar enlace o miniatura del video de muestra de la toma de datos, p. ej. colocación de electrodos y/o registro en vivo]*
