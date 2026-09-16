@@ -79,32 +79,43 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
  
 **DI:**
 <p align="center"><img src="images/opensignals_reposo_DI.png" alt="OpenSignals Reposo DI" width="700"><br><em>Fig 2. Señal ECG en reposo, derivación DI, vista en OpenSignals.</em></p>
+
 **DII:**
 <p align="center"><img src="images/opensignals_reposo_DII.png" alt="OpenSignals Reposo DII" width="700"><br><em>Fig 3. Señal ECG en reposo, derivación DII, vista en OpenSignals.</em></p>
+
 **DIII:**
 <p align="center"><img src="images/opensignals_reposo_DIII.png" alt="OpenSignals Reposo DIII" width="700"><br><em>Fig 4. Señal ECG en reposo, derivación DIII, vista en OpenSignals.</em></p>
+
 ## 5.2 Hiperventilación
  
 **DI:**
 <p align="center"><img src="images/opensignals_hiperventilacion_DI.png" alt="OpenSignals Hiperventilación DI" width="700"><br><em>Fig 5. Señal ECG durante hiperventilación, derivación DI, vista en OpenSignals.</em></p>
+
 **DII:**
 <p align="center"><img src="images/opensignals_hiperventilacion_DII.png" alt="OpenSignals Hiperventilación DII" width="700"><br><em>Fig 6. Señal ECG durante hiperventilación, derivación DII, vista en OpenSignals.</em></p>
+
 **DIII:**
 <p align="center"><img src="images/opensignals_hiperventilacion_DIII.png" alt="OpenSignals Hiperventilación DIII" width="700"><br><em>Fig 7. Señal ECG durante hiperventilación, derivación DIII, vista en OpenSignals.</em></p>
+
 ## 5.3 Hipoventilación
  
 **DI:**
 <p align="center"><img src="images/opensignals_hipoventilacion_DI.png" alt="OpenSignals Hipoventilación DI" width="700"><br><em>Fig 8. Señal ECG durante hipoventilación, derivación DI, vista en OpenSignals.</em></p>
+
 **DII:**
 <p align="center"><img src="images/opensignals_hipoventilacion_DII.png" alt="OpenSignals Hipoventilación DII" width="700"><br><em>Fig 9. Señal ECG durante hipoventilación, derivación DII, vista en OpenSignals.</em></p>
+
 **DIII:**
 <p align="center"><img src="images/opensignals_hipoventilacion_DIII.png" alt="OpenSignals Hipoventilación DIII" width="700"><br><em>Fig 10. Señal ECG durante hipoventilación, derivación DIII, vista en OpenSignals.</em></p>
+
 ## 5.4 Actividad aeróbica
  
 **DI:**
 <p align="center"><img src="images/opensignals_aerobica_DI.png" alt="OpenSignals Actividad aeróbica DI" width="700"><br><em>Fig 11. Señal ECG tras actividad aeróbica, derivación DI, vista en OpenSignals.</em></p>
+
 **DII:**
 <p align="center"><img src="images/opensignals_aerobica_DII.png" alt="OpenSignals Actividad aeróbica DII" width="700"><br><em>Fig 12. Señal ECG tras actividad aeróbica, derivación DII, vista en OpenSignals.</em></p>
+
 **DIII:**
 <p align="center"><img src="images/opensignals_aerobica_DIII.png" alt="OpenSignals Actividad aeróbica DIII" width="700"><br><em>Fig 13. Señal ECG tras actividad aeróbica, derivación DIII, vista en OpenSignals.</em></p>
 # 6. Video de muestra
@@ -119,39 +130,57 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
  
 **DI:**
 <p align="center"><img src="images/python_reposo_DI.png" alt="Python Reposo DI" width="700"><br><em>Fig 14. Señal ECG en reposo, derivación DI, procesada en Python.</em></p>
+
 **DII:**
 <p align="center"><img src="images/python_reposo_DII.png" alt="Python Reposo DII" width="700"><br><em>Fig 15. Señal ECG en reposo, derivación DII, procesada en Python.</em></p>
+
 **DIII:**
 <p align="center"><img src="images/python_reposo_DIII.png" alt="Python Reposo DIII" width="700"><br><em>Fig 16. Señal ECG en reposo, derivación DIII, procesada en Python.</em></p>
+
 ## 7.2 Hiperventilación
  
 **DI:**
 <p align="center"><img src="images/python_hiperventilacion_DI.png" alt="Python Hiperventilación DI" width="700"><br><em>Fig 17. Señal ECG durante hiperventilación, derivación DI, procesada en Python.</em></p>
+
 **DII:**
 <p align="center"><img src="images/python_hiperventilacion_DII.png" alt="Python Hiperventilación DII" width="700"><br><em>Fig 18. Señal ECG durante hiperventilación, derivación DII, procesada en Python.</em></p>
+
 **DIII:**
 <p align="center"><img src="images/python_hiperventilacion_DIII.png" alt="Python Hiperventilación DIII" width="700"><br><em>Fig 19. Señal ECG durante hiperventilación, derivación DIII, procesada en Python.</em></p>
+
 ## 7.3 Hipoventilación
  
 **DI:**
 <p align="center"><img src="images/python_hipoventilacion_DI.png" alt="Python Hipoventilación DI" width="700"><br><em>Fig 20. Señal ECG durante hipoventilación, derivación DI, procesada en Python.</em></p>
+
 **DII:**
 <p align="center"><img src="images/python_hipoventilacion_DII.png" alt="Python Hipoventilación DII" width="700"><br><em>Fig 21. Señal ECG durante hipoventilación, derivación DII, procesada en Python.</em></p>
+
 **DIII:**
 <p align="center"><img src="images/python_hipoventilacion_DIII.png" alt="Python Hipoventilación DIII" width="700"><br><em>Fig 22. Señal ECG durante hipoventilación, derivación DIII, procesada en Python.</em></p>
+
 ## 7.4 Actividad aeróbica
  
 **DI:**
 <p align="center"><img src="images/python_aerobica_DI.png" alt="Python Actividad aeróbica DI" width="700"><br><em>Fig 23. Señal ECG tras actividad aeróbica, derivación DI, procesada en Python.</em></p>
+DI – Actividad aeróbica -> FC media: 165.0 bpm | Amplitud R: media 0.253 mV, máx 0.325 mV  (duración: 32.9 s, análisis desde 7 s)
+
 **DII:**
 <p align="center"><img src="images/python_aerobica_DII.png" alt="Python Actividad aeróbica DII" width="700"><br><em>Fig 24. Señal ECG tras actividad aeróbica, derivación DII, procesada en Python.</em></p>
+DII – Actividad aeróbica -> FC media: 145.7 bpm | Amplitud R: media 0.457 mV, máx 0.567 mV  (duración: 30.6 s, análisis desde 5 s)
+
 **DIII:**
 <p align="center"><img src="images/python_aerobica_DIII.png" alt="Python Actividad aeróbica DIII" width="700"><br><em>Fig 25. Señal ECG tras actividad aeróbica, derivación DIII, procesada en Python.</em></p>
+DIII – Actividad aeróbica -> FC media: 123.8 bpm | Amplitud R: media 0.296 mV, máx 0.429 mV  (duración: 31.2 s, análisis desde 5 s)
+
 # 8. Análisis
  
 ## 8.1 Comparación entre derivaciones (DI, DII, DIII)
  
-*[Completar: para cada actividad, comparar la amplitud y morfología del complejo QRS entre las tres derivaciones. Relacionar con el ángulo de cada derivación respecto al vector de despolarización (triángulo de Einthoven) y con la Ley de Einthoven (DII = DI + DIII).]*
+**Actividad aeróbica:**
+La frecuencia cardíaca medida después de realizar la actividad aeróbica dió resultados de 165.0 bpm en DI, 145.7 bpm en DII y 123.8 bpm en DIII. Se puede observar la curva de recuperación esperada, coincidiendo los valores con el orden de medición: DI (165.0) > DII (145.7) > DIII (123.8). La frecuencia cardiáca más alta se registra en la toma más cercana al inicio de la recuperación (DI) y la más baja en la última toma (DIII).
+La amplitud media del pico R es de 0.253 mV en DI, 0.457 mV en DII y 0.296 mV en DIII, con una amplitud máxima cercana a la media en las tres derivaciones (0.325, 0.567 y 0.429 mV respectivamente), no hay picos de artefacto contaminando el cálculo.
+La comprobación de la Ley de Einthoven (DI + DIII = 0.549 mV frente a DII = 0.457 mV, diferencia del 20.1%), la relacion entre derivaciones se mantiene cercana a lo esperado, la variación se puede atribuir a que los electrodos no ocupan exactamente los vértices ideales del triangulo y se registraron en diferentes momentos.
  
 ## 8.2 Comparación entre actividades (reposo, hiperventilación, hipoventilación, actividad aeróbica)
  
