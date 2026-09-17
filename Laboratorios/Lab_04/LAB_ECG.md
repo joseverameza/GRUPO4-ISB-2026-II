@@ -131,12 +131,15 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
  
 **DI:**
 <p align="center"><img src="images/python_reposo_DI.png" alt="Python Reposo DI" width="700"><br><em>Fig 14. Señal ECG en reposo, derivación DI, procesada en Python.</em></p>
+DI – Reposo -> FC media: 91.9 bpm | Amplitud R: media 0.519 mV, máx 0.637 mV  (duración: 42.5 s, análisis desde 0 s)
 
 **DII:**
 <p align="center"><img src="images/python_reposo_DII.png" alt="Python Reposo DII" width="700"><br><em>Fig 15. Señal ECG en reposo, derivación DII, procesada en Python.</em></p>
+DII – Reposo -> FC media: 88.4 bpm | Amplitud R: media 0.471 mV, máx 0.544 mV  (duración: 38.5 s, análisis desde 0 s)
 
 **DIII:**
 <p align="center"><img src="images/python_reposo_DIII.png" alt="Python Reposo DIII" width="700"><br><em>Fig 16. Señal ECG en reposo, derivación DIII, procesada en Python.</em></p>
+DIII – Reposo -> FC media: 90.7 bpm | Amplitud R: media 0.202 mV, máx 0.292 mV  (duración: 38.2 s, análisis desde 0 s)
 
 ## 7.2 Hiperventilación
  
