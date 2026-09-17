@@ -121,9 +121,9 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
 
 # 6. Video de muestra
  
-📹 *[Insertar enlace o miniatura del video de muestra de la toma de datos, p. ej. colocación de electrodos y/o registro en vivo]*
+ Registro en vivo de la actividad eléctrica del corazón
  
-`[Ver video de muestra](videos/video_muestra_lab04.mp4)`
+[Ver video de muestra](https://drive.google.com/file/d/1EQ2QB8mGWPUM06r3pd5i2gLZVdr0OeQH/view?usp=drive_link)
  
 # 7. Señal procesada en Python
  
