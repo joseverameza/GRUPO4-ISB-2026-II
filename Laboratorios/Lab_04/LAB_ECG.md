@@ -252,7 +252,7 @@ El movimiento puede introducir artefactos en la señal ECG debido a cambios en e
 La bradicardia y la taquicardia pueden detectarse identificando los picos R del ECG y calculando los intervalos R-R entre latidos consecutivos. A partir de estos intervalos se obtiene la frecuencia cardíaca mediante:
 
 \[
-FC = \frac{60}{RR}
+FC = 60/RR
 \]
 
 donde \(RR\) se expresa en segundos. Intervalos R-R más largos corresponden a una frecuencia cardíaca menor, mientras que intervalos R-R más cortos corresponden a una frecuencia cardíaca mayor. Como referencia general en adultos en reposo, una frecuencia menor de 60 bpm suele denominarse bradicardia y una frecuencia mayor de 100 bpm, taquicardia, aunque la interpretación clínica depende del contexto fisiológico y del paciente.
