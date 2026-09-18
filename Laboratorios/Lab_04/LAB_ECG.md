@@ -257,7 +257,82 @@ FC = 60/RR
 
 donde \(RR\) se expresa en segundos. Intervalos R-R más largos corresponden a una frecuencia cardíaca menor, mientras que intervalos R-R más cortos corresponden a una frecuencia cardíaca mayor. Como referencia general en adultos en reposo, una frecuencia menor de 60 bpm suele denominarse bradicardia y una frecuencia mayor de 100 bpm, taquicardia, aunque la interpretación clínica depende del contexto fisiológico y del paciente.
 
-# 10. Referencias
+
+# 8. Análisis
  
-- PLUX Wireless Biosignals. *BITalino (r)evolution Home Guide #2 — Electrocardiography (ECG)*. OD.LB.03.04, 2021.
-- Meza, M.; Cáceres, J.A. *Electrocardiograma: Anatomía del corazón, Ondas del ECG, Derivaciones, Características y Arritmias* (material de clase, Introducción a Señales Biomédicas).
+## 8.1 Comparación entre derivaciones (DI, DII, DIII)
+
+**Reposo:**  
+Los valores de frecuencia cardíaca resultaron similares en las tres derivaciones, como es esperable al encontrarse en condiciones basales: DI presentó 91.9 bpm, DII 88.4 bpm y DIII 90.7 bpm, con una diferencia máxima de 3.5 bpm entre derivaciones. Respecto a la amplitud media de la onda R, DI presentó el valor más alto (0.519 mV), seguida de DII (0.471 mV) y DIII (0.202 mV). Esta diferencia de amplitud es esperable debido a que cada derivación registra una proyección distinta del vector eléctrico cardíaco según su orientación respecto al triángulo de Einthoven. Al realizar una comprobación aproximada de la Ley de Einthoven con las amplitudes R medias, DI + DIII = 0.721 mV frente a DII = 0.471 mV, obteniéndose una diferencia de 53.1 %. Esta discrepancia no debe interpretarse como un incumplimiento directo de la ley, ya que las tres derivaciones fueron adquiridas en momentos distintos y se están comparando amplitudes medias de registros independientes, además de posibles variaciones por respiración, colocación de electrodos y ruido experimental.
+
+**Hiperventilación:**  
+Durante la hiperventilación, DII presentó la mayor frecuencia cardíaca media, con 116.4 bpm, y también la mayor amplitud media de la onda R, con 0.443 mV. DI presentó 104.0 bpm y 0.308 mV, mientras que DIII mostró 88.8 bpm y 0.285 mV. En DIII se observa mayor variabilidad de la señal y presencia de ruido, posiblemente relacionada con el movimiento del tórax durante la respiración rápida y con pequeños cambios en el contacto de los electrodos. La respiración puede modificar tanto la amplitud de los picos R como la estabilidad de la línea de base, mientras que el movimiento puede introducir artefactos en la señal. Al realizar una comprobación aproximada de la Ley de Einthoven, DI + DIII = 0.594 mV frente a DII = 0.443 mV, obteniéndose una diferencia de 0.150 mV, equivalente aproximadamente al 33.9 % de DII. Esta discrepancia puede deberse a que las derivaciones fueron registradas en momentos distintos, además de posibles artefactos de movimiento y variaciones en la colocación de los electrodos.
+
+**Hipoventilación:**  
+Durante la hipoventilación, DI presentó una frecuencia cardíaca media de 87.3 bpm y una amplitud media de la onda R de 0.412 mV; DII registró 81.6 bpm y 0.531 mV; mientras que DIII presentó 61.8 bpm y 0.234 mV. DII mostró la mayor amplitud media de la onda R, lo que puede explicarse por una orientación más favorable de esta derivación respecto al vector de despolarización ventricular. DIII presentó la menor amplitud de las tres derivaciones. Además, la frecuencia cardíaca calculada en DIII fue considerablemente menor que en DI y DII, por lo que este valor debe interpretarse con cautela, ya que una menor amplitud del complejo QRS puede dificultar la detección automática de algunos picos R y producir una subestimación de la frecuencia cardíaca. En la comprobación aproximada de la Ley de Einthoven, DI + DIII = 0.646 mV frente a DII = 0.531 mV, obteniéndose una diferencia aproximada del 21.5 %. Esta discrepancia puede explicarse porque las derivaciones fueron registradas en momentos distintos y no de manera simultánea, además de posibles variaciones respiratorias, cambios en el contacto de los electrodos y ruido experimental.
+
+**Actividad aeróbica:**  
+La frecuencia cardíaca medida después de realizar la actividad aeróbica presentó valores de 165.0 bpm en DI, 145.7 bpm en DII y 123.8 bpm en DIII. Se observa una disminución progresiva de la frecuencia cardíaca coincidente con el orden de medición: DI (165.0 bpm) > DII (145.7 bpm) > DIII (123.8 bpm). Esto es consistente con un proceso de recuperación cardiovascular, ya que DI fue registrada más cerca del final de la actividad física y DIII en un momento posterior. La amplitud media del pico R fue de 0.253 mV en DI, 0.457 mV en DII y 0.296 mV en DIII, con amplitudes máximas de 0.325 mV, 0.567 mV y 0.429 mV, respectivamente. No se observan artefactos de gran amplitud que dominen el cálculo de los picos R en los segmentos analizados. En la comprobación aproximada de la Ley de Einthoven, DI + DIII = 0.549 mV frente a DII = 0.457 mV, con una diferencia aproximada del 20.1 %. La relación entre derivaciones se mantiene relativamente cercana a lo esperado, y la variación puede atribuirse a que los electrodos no ocupan exactamente los vértices ideales del triángulo de Einthoven y a que las derivaciones fueron registradas en momentos diferentes.
+
+## 8.2 Comparación entre actividades (reposo, hiperventilación, hipoventilación, actividad aeróbica)
+
+Al comparar las cuatro condiciones se observan diferencias claras en la frecuencia cardíaca y en la estabilidad de la señal. En reposo, las tres derivaciones mostraron valores similares, aproximadamente entre 88 y 92 bpm, con complejos QRS regulares y menor presencia de variaciones asociadas al movimiento.
+
+Durante la hiperventilación, la frecuencia cardíaca aumentó especialmente en DI y DII, alcanzando 104.0 bpm y 116.4 bpm, respectivamente. Además, se observó mayor variabilidad en la línea de base y cambios de amplitud que pueden relacionarse con el movimiento respiratorio y con cambios en el contacto entre los electrodos y la piel.
+
+Durante la hipoventilación, DI y DII presentaron frecuencias cardíacas de 87.3 bpm y 81.6 bpm, respectivamente, mientras que DIII reportó 61.8 bpm. Este último valor debe interpretarse con cautela debido a la menor amplitud de sus picos R, lo cual puede dificultar su detección automática. En esta condición también se observaron diferencias de amplitud entre derivaciones, siendo DII la de mayor amplitud media de la onda R.
+
+La actividad aeróbica produjo los valores de frecuencia cardíaca más elevados, con 165.0 bpm en DI, 145.7 bpm en DII y 123.8 bpm en DIII. Debido a que las derivaciones fueron registradas secuencialmente durante la recuperación, esta disminución progresiva es consistente con el retorno gradual de la frecuencia cardíaca hacia valores basales después del ejercicio.
+
+En conjunto, las condiciones con respiración forzada o actividad física presentaron mayor variabilidad de la señal que el reposo, debido tanto a cambios fisiológicos cardiovasculares como a la presencia de artefactos asociados al movimiento y a la respiración.
+
+# 9. Respuestas al cuestionario
+ 
+**1. ¿Cuáles son las fuentes de ruido más típicas que afectan al ECG?**
+ 
+Las fuentes de ruido más típicas que afectan al ECG son la interferencia electromagnética, especialmente la asociada a la red eléctrica de 60 Hz, y la actividad muscular. También pueden presentarse artefactos causados por el movimiento del paciente o por cambios en el contacto entre los electrodos y la piel. Por esta razón, se recomienda colocar los electrodos en regiones de baja actividad muscular y reducir al mínimo los movimientos durante la adquisición.
+ 
+**2. ¿Por qué cambia la señal de ECG al cambiar la posición de los sensores (Lead I–III)? ¿Cómo cambian sus componentes?**
+ 
+Cada derivación de Einthoven observa la actividad eléctrica del corazón desde un ángulo diferente. DI registra la diferencia de potencial entre brazo derecho y brazo izquierdo, DII entre brazo derecho y pierna izquierda, y DIII entre brazo izquierdo y pierna izquierda. Por ello, aunque la actividad eléctrica cardíaca sea la misma, la proyección del vector cardíaco sobre cada derivación cambia, lo que puede modificar principalmente la amplitud y la polaridad de las ondas P, del complejo QRS y de la onda T.
+ 
+**3. Describe si hay diferencias importantes en la señal al adquirirla desde distintas ubicaciones corporales (p. ej. muñeca/clavícula/pecho). ¿Cuál podría ser la causa? ¿Esperabas estos cambios?**
+ 
+Sí, se esperan diferencias al registrar el ECG en distintas ubicaciones del cuerpo. La señal tomada cerca del corazón, especialmente en el pecho, suele ser más clara y permite distinguir mejor los complejos P-QRS-T. En muñecas o clavículas la señal puede presentar menor amplitud o mayor interferencia. Esto ocurre porque la ubicación de los electrodos modifica la forma en que se proyecta y se capta la actividad eléctrica cardíaca, además de que el movimiento muscular puede introducir artefactos. Por ello, era esperable encontrar cambios entre las señales obtenidas en pecho, clavículas y muñecas.
+ 
+**4. Los sistemas cardíaco y respiratorio están interconectados. ¿Esperas que distintos tipos de respiración (más rápida, más profunda) influyan en la señal de ECG? Muestra capturas de las señales en las distintas circunstancias respiratorias y describe las variaciones si las hay.**
+ 
+Sí. La respiración puede influir en la señal ECG tanto por efectos fisiológicos como por efectos mecánicos. Durante la inspiración y la espiración pueden producirse variaciones en los intervalos R-R debido a la modulación autonómica de la frecuencia cardíaca. Además, el movimiento del tórax modifica ligeramente la posición relativa entre el corazón y los electrodos, lo que puede producir cambios en la amplitud de los picos R y en la línea de base.
+
+En los registros obtenidos, la hiperventilación presentó frecuencias cardíacas mayores en DI y DII respecto al reposo, además de una mayor variabilidad de la señal. Durante la hipoventilación también se observaron cambios en la frecuencia cardíaca y en la amplitud entre derivaciones. Parte de estas diferencias puede relacionarse con el patrón respiratorio, aunque también influyen la orientación de cada derivación, el movimiento y el contacto de los electrodos.
+
+**5. En el Home-Guide #1 (EMG) se vio que distintos niveles de fuerza generan distintas amplitudes en la señal muscular. ¿Cómo influye el movimiento en la señal de ECG?**
+ 
+El movimiento puede introducir artefactos en la señal ECG debido a cambios en el contacto entre el electrodo y la piel, desplazamiento de los electrodos y actividad eléctrica de los músculos esqueléticos. Estos artefactos pueden producir desplazamientos de la línea de base, picos espurios y variaciones de amplitud que dificultan la identificación de las ondas P, del complejo QRS y de la onda T. Por esta razón, durante las adquisiciones de ECG se busca minimizar el movimiento y colocar los electrodos en zonas de baja actividad muscular.
+ 
+**6. Según lo aprendido, ¿cómo se puede detectar bradicardia y taquicardia en la señal de ECG?**
+ 
+La bradicardia y la taquicardia pueden detectarse identificando los picos R del ECG y calculando los intervalos R-R entre latidos consecutivos. A partir de estos intervalos se obtiene la frecuencia cardíaca mediante:
+
+\[
+FC = \frac{60}{RR}
+\]
+
+donde \(RR\) se expresa en segundos. Intervalos R-R más largos corresponden a una frecuencia cardíaca menor, mientras que intervalos R-R más cortos corresponden a una frecuencia cardíaca mayor. Como referencia general en adultos en reposo, una frecuencia menor de 60 bpm suele denominarse bradicardia y una frecuencia mayor de 100 bpm, taquicardia, aunque la interpretación clínica depende del contexto fisiológico y del paciente.
+
+
+# 10. Referencias
+
+- PLUX Wireless Biosignals. *BITalino (r)evolution Home Guide #2 — Electrocardiography (ECG): Exploring Cardiac Signals at the Skin Surface*. OD.LB.03.04, 2021.
+
+- Meza, M.; Cáceres, J. A. *Electrocardiograma: Anatomía del corazón, ondas del ECG, derivaciones, características y arritmias*. Material de clase, Introducción a Señales Biomédicas.
+
+- Rhoades, R. A.; Bell, D. R. *Medical Physiology: Principles for Clinical Medicine*. Lippincott Williams & Wilkins, 2012.
+
+- OpenStax. *Anatomy and Physiology: Cardiac Muscle and Electrical Activity*. OpenStax, Rice University.
+
+- Georg Thieme Verlag. *Elektrophysiologie des Herzens: EKG – physikalische Grundlagen*. Via Medici.
+
+- Georg Thieme Verlag. *Elektrophysiologie des Herzens: EKG – Verlauf der EKG-Kurve und Vektorschleife*. Via Medici.
+
+- PLUX Wireless Biosignals. *Assembled Electrocardiography (ECG) Sensor Datasheet*. PLUX.
