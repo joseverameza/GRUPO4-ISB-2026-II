@@ -120,11 +120,26 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
 <p align="center"><img src="images/opensignals_aerobica_DIII.png" alt="OpenSignals Actividad aeróbica DIII" width="700"><br><em>Fig 13. Señal ECG tras actividad aeróbica, derivación DIII, vista en OpenSignals.</em></p>
 
 # 6. Video de muestra
- 
- Registro en vivo de la actividad eléctrica del corazón
- 
-[Ver video de muestra](https://drive.google.com/file/d/1EQ2QB8mGWPUM06r3pd5i2gLZVdr0OeQH/view?usp=drive_link)
- 
+## 6.1 Reposo
+
+ | **DI** | **DII** | **DIII** |
+|:------------------:|:----------------------:|:----------------------:|
+| [▶️ Ver video](https://drive.google.com/file/d/1Is_0n4MKWp-RFuz93vnR0-nZAXjpu_zP/view?usp=drive_link) | [▶️ Ver video](https://drive.google.com/file/d/184-bhFMmhL3oiEK7wBd74Tr_VPf9NNlT/view?usp=drive_link) | [▶️ Ver video](https://drive.google.com/file/d/1UeGdBfpXWWjwMymRj67MjMF0xjmjh0ow/view?usp=drive_link) |
+
+## 6.2 Hiperventilación
+ | **DI** | **DII** | **DIII** |
+|:------------------:|:----------------------:|:----------------------:|
+| [▶️ Ver video](https://drive.google.com/file/d/1xpydgQKiv52piLDww4bx7B70xyLpxbAv/view?usp=drive_link) | [▶️ Ver video](https://drive.google.com/file/d/1Yke1RVRTWrsape5e63XBsZBwWRkLsUcG/view?usp=drive_link) | [▶️ Ver video](https://drive.google.com/file/d/1U-P7cIUO5o53JaBSXu9epPL-bRrU1WqU/view?usp=drive_link) |
+
+## 6.3 Hipoventilación
+ |  **DIII** |
+|:------------------:|
+| [▶️ Ver video](https://drive.google.com/file/d/1TKZ9tC9piCY4ISO0vHcS-RGhu30FgNC1/view?usp=drive_link) | 
+
+## 6.4 Actividad aeróbica
+| [▶️ Ver video](https://drive.google.com/file/d/1DAfq1h6xi4Ny2h_7EDH5pyD-RhOMMMj5/view?usp=drive_link) | 
+
+
 # 7. Señal procesada en Python
  
 ## 7.1 Reposo
