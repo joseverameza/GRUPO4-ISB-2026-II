@@ -129,7 +129,7 @@ En el laboratorio utilizamos una variante de la posición, se colocaron los elec
 ## 6.2 Hiperventilación
  | **DI** | **DII** | **DIII** |
 |:------------------:|:----------------------:|:----------------------:|
-| [▶️ Ver video](https://drive.google.com/file/d/1xpydgQKiv52piLDww4bx7B70xyLpxbAv/view?usp=drive_link) | [▶️ Ver video](https://drive.google.com/file/d/1Yke1RVRTWrsape5e63XBsZBwWRkLsUcG/view?usp=drive_link) | [▶️ Ver video](https://drive.google.com/file/d/1U-P7cIUO5o53JaBSXu9epPL-bRrU1WqU/view?usp=drive_link) |
+| [▶️ Ver video](https://drive.google.com/file/d/1xpydgQKiv52piLDww4bx7B70xyLpxbAv/view?usp=drive_link) | [▶️ Ver video](https://drive.google.com/file/d/13VaUvFSHw1yTAU2y-H5h12M7ZFPUaNlI/view?usp=drive_link) | [▶️ Ver video](https://drive.google.com/file/d/1U-P7cIUO5o53JaBSXu9epPL-bRrU1WqU/view?usp=drive_link) |
 
 ## 6.3 Hipoventilación
  |  **DIII** |
