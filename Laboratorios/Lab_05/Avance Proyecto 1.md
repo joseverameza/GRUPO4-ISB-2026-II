@@ -110,3 +110,9 @@ En esta etapa, el boceto representará el diseño y las funciones previstas del 
 [3] S.-H. Liu, C.-B. Lin, Y. Chen, W. Chen, T.-S. Huang, and C.-Y. Hsu, "An EMG Patch for the Real-Time Monitoring of Muscle-Fatigue Conditions During Exercise," *Sensors*, vol. 19, no. 14, p. 3108, 2019, doi: 10.3390/s19143108.
 
 [4] M. Cifrek, V. Medved, S. Tonković, and S. Ostojić, "Surface EMG based muscle fatigue evaluation in biomechanics," *Clinical Biomechanics*, vol. 24, no. 4, pp. 327–340, 2009, doi: 10.1016/j.clinbiomech.2009.01.010.
+
+
+# 7. Video
+
+Se adjunta el link del video sobre la exposición del Avance 1
+- **Link:** https://drive.google.com/file/d/1NAJPu152YpR1plD9VdZDqn7v5LFkZxaq/view?usp=sharing
