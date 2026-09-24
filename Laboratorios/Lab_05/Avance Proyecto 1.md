@@ -12,7 +12,7 @@
 *- José Vera Meza*
 
 
-**Video de presentación:** 📹 *[Insertar enlace de YouTube o Drive]*
+**Video de presentación:** https://drive.google.com/file/d/1NAJPu152YpR1plD9VdZDqn7v5LFkZxaq/view?usp=sharing
 
 **Base de datos:** Las señales serán adquiridas por el grupo con BITalino.
 
@@ -111,8 +111,3 @@ En esta etapa, el boceto representará el diseño y las funciones previstas del 
 
 [4] M. Cifrek, V. Medved, S. Tonković, and S. Ostojić, "Surface EMG based muscle fatigue evaluation in biomechanics," *Clinical Biomechanics*, vol. 24, no. 4, pp. 327–340, 2009, doi: 10.1016/j.clinbiomech.2009.01.010.
 
-
-# 7. Video
-
-Se adjunta el link del video sobre la exposición del Avance 1
-- **Link:** https://drive.google.com/file/d/1NAJPu152YpR1plD9VdZDqn7v5LFkZxaq/view?usp=sharing
