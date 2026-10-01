@@ -6,11 +6,43 @@
 
 
 # 1. Introducción
+La electroencefalografía (EEG) registra la actividad eléctrica del cerebro mediante
+electrodos colocados sobre el cuero cabelludo. La señal proviene principalmente de las
+neuronas piramidales de la corteza, cuya orientación perpendicular a la superficie
+cortical hace que sus potenciales postsinápticos sean lo bastante intensos como para
+detectarse desde el cuero cabelludo. Por ello, cada electrodo refleja la actividad de
+la región cerebral que tiene debajo.
 
+La señal EEG se analiza por bandas de frecuencia:
+
+| Banda | Frecuencia (Hz) | Asociación típica |
+|-------|-----------------|-------------------|
+| Delta | 0 – 4 | Sueño profundo |
+| Theta | 4 – 8 | Somnolencia, carga cognitiva (p. ej. tarea N-back) |
+| Alpha | 8 – 12 | Relajación con ojos cerrados; se suprime al abrir los ojos o con actividad mental |
+| Beta | 12 – 25 | Mente activa, concentración |
+| Gamma | > 25 | Resolución de problemas, concentración |
+
+Las posiciones de los electrodos se describen con el **sistema internacional 10-20**,
+donde la letra indica el lóbulo (F: frontal, T: temporal, C: central, P: parietal,
+O: occipital), los números impares corresponden al hemisferio izquierdo, los pares al
+derecho y la "z" a la línea media.
+
+**Objetivos del laboratorio:**
+- Realizar adquisiciones EEG en tiempo real con el sistema BITalino.
+- Observar cómo cambia la señal según el estado o la tarea (ojos abiertos/cerrados,
+  carga cognitiva, estímulo auditivo).
+- Familiarizarse con las bandas de frecuencia de interés, en particular alpha y beta.
+- Identificar los artefactos que afectan al registro y cómo minimizarlos.
 
  
 # 2. Materiales
- 
+- Software OpenSignals (r)evolution
+- BITalino (r)evolution Core BT
+- Sensor EEG ensamblado (configuración bipolar, pines IN+ e IN−)
+- Electrodos autoadhesivos desechables de Ag/AgCl con gel (2 para el sensor, 1 para la
+  referencia)
+- Antifaz/gafas para cubrir los ojos, audífonos
 
 
 # 3. Procedimiento
