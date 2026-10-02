@@ -81,7 +81,7 @@ Dado que la señal es muy sensible a artefactos, se tomaron estas medidas:
  
 ## 4.1 Lectura basal
  
-<p align="center"><img src="images/opensignals_basal.jpeg" alt="OpenSignals Basal" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
+<p align="center"><img src="images/opensignals_basal.jpeg" alt="OpenSignals Basal" width="700"><br><em>Fig X. Señal EEG en basal, vista en OpenSignals. </em></p>
  
 
 
@@ -101,10 +101,10 @@ Dado que la señal es muy sensible a artefactos, se tomaron estas medidas:
  
 ## 5.1 Lectura basal
 **Tiempo**
-<p align="center"><img src="images/phyton_basal_tiempo.png" alt="Phyton Basal Tiempo" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
+<p align="center"><img src="images/phyton_basal_tiempo.png" alt="Phyton Basal Tiempo" width="700"><br><em>Fig X. Señal EEG en basal, Amplitud vs. Tiempo, procesada en Python. </em></p>
 
 **Espectrograma**
-<p align="center"><img src="images/phyton_basal_espectograma.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
+<p align="center"><img src="images/phyton_basal_espectograma.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X. Señal EEG en basal, Espectrograma, procesada en Python. </em></p>
 
 
 ## 5.2 Apertura y cierre de ojos
@@ -121,9 +121,9 @@ Dado que la señal es muy sensible a artefactos, se tomaron estas medidas:
 
 # 6. Análisis
 
-<p align="center"><img src="images/phyton_frecuencias.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
+<p align="center"><img src="images/phyton_frecuencias.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X. Densidad espectral de potencia de las señales, procesada en Python. </em></p>
 
-<p align="center"><img src="images/phyton_bandpower.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
+<p align="center"><img src="images/phyton_bandpower.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X. Porcentakes de banda en señales, procesada en Python. </em></p>
 
 
 
