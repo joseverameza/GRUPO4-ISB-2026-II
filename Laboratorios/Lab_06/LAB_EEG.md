@@ -228,9 +228,29 @@ En los espectrogramas, ambas señales presentan actividad entre 0 y 40 Hz, sin o
 
 ## 6.5 Música lofi y música estruendosa
 
-## 6.6 Comparación general
+Durante esta etapa se comparó la señal EEG registrada mientras la participante escuchaba música lofi y música estruendosa. En ambas condiciones se mantuvieron los ojos cubiertos y se utilizaron audífonos, con el objetivo de reducir la influencia de estímulos visuales externos y mantener condiciones similares entre ambos registros.
 
-[Integrar los hallazgos de las diferentes actividades, identificando los cambios observados en las señales EEG y las limitaciones experimentales.]
+En las señales en el dominio del tiempo (Fig. 23 y Fig. 25) se observa un comportamiento general similar entre ambas condiciones. No se aprecia una diferencia evidente únicamente mediante la inspección de la señal RAW, ya que en ambas grabaciones se presentan oscilaciones de amplitud comparable y una señal de alta densidad.
+
+En los espectrogramas (Fig. 24 y Fig. 26) también se observa una distribución de potencia relativamente similar a lo largo del tiempo. Sin embargo, al analizar la potencia relativa por bandas se identificaron pequeñas diferencias entre ambos estímulos. Durante la música lofi se obtuvo 4.6 % en delta, 17.5 % en theta, 11.4 % en alpha, 23.4 % en beta y 37.6 % en gamma; mientras que durante la música estruendosa se obtuvo 5.0 % en delta, 18.5 % en theta, 9.9 % en alpha, 24.7 % en beta y 36.1 % en gamma.
+
+La diferencia más relevante fue una disminución de la banda alpha de 11.4 % a 9.9 % y un incremento de beta de 23.4 % a 24.7 % al pasar de música lofi a música estruendosa. Considerando que la actividad alpha se relaciona con estados de vigilia más relajados y beta con mayor actividad mental, estos resultados son compatibles con una ligera mayor activación durante la exposición a la música estruendosa. :chatgpt-content-reference{index="0"}
+
+No obstante, las diferencias observadas fueron pequeñas, por lo que no se puede afirmar que el tipo de música haya producido por sí solo un cambio marcado en la actividad EEG. Además, la respuesta puede depender de la percepción individual del estímulo auditivo y de la presencia de artefactos durante el registro.
+
+
+### 6.6 Comparación general
+
+Al comparar las diferentes condiciones experimentales se observaron cambios en la señal EEG asociados al estado visual, la atención, la carga cognitiva y el estímulo auditivo. Sin embargo, estos cambios no siempre fueron claramente distinguibles mediante la inspección directa de la señal en el dominio del tiempo.
+
+Durante la lectura basal, realizada con los ojos cerrados y en condiciones de reposo, se esperaba una mayor presencia relativa de actividad alpha. Durante la apertura y cierre de ojos se observaron cambios bruscos de amplitud asociados principalmente al movimiento ocular y al parpadeo, debido a la ubicación frontal de los electrodos.
+
+En la condición de mirada fija se esperaba una reducción de la actividad alpha y una mayor participación de frecuencias rápidas asociadas con atención. En las preguntas de dificultad variable se buscó comparar condiciones de distinta carga cognitiva; sin embargo, la interpretación de estos registros debe realizarse considerando las limitaciones experimentales y posibles cambios en la adquisición.
+
+En la comparación entre música lofi y música estruendosa se observaron diferencias pequeñas en la potencia relativa de las bandas. La música estruendosa presentó una ligera reducción de alpha y un aumento de beta respecto a la música lofi, lo que es compatible con un mayor nivel de activación durante el estímulo auditivo más intenso.
+
+En general, los resultados muestran que las diferencias entre condiciones se identifican mejor mediante análisis en frecuencia, como el espectrograma, la densidad espectral de potencia y la potencia relativa por bandas, que mediante la observación de la señal RAW. Asimismo, debe considerarse que el EEG es sensible a artefactos producidos por parpadeos, movimientos oculares, actividad muscular, movimiento corporal e interferencia eléctrica.
+
 
 
 
