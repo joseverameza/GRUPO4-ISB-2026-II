@@ -121,9 +121,9 @@ Dado que la señal es muy sensible a artefactos, se tomaron estas medidas:
 
 ## 4.5 Música lofi y música estruendosa
 
-<p align="center"><img src="images/opensignals_lofi.jpeg" alt="OpenSignals Lofi" width="700"><br><em>Fig 11. Señal EEG durante música lofi, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_lofi.jpg" alt="OpenSignals Lofi" width="700"><br><em>Fig 11. Señal EEG durante música lofi, vista en OpenSignals.</em></p>
 
-<p align="center"><img src="images/opensignals_rock.jpeg" alt="OpenSignals Rock" width="700"><br><em>Fig 12. Señal EEG durante música estruendosa, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_rock.jpg" alt="OpenSignals Rock" width="700"><br><em>Fig 12. Señal EEG durante música estruendosa, vista en OpenSignals.</em></p>
 
 # 5. Señal procesada en Python
 
