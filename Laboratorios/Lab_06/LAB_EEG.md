@@ -181,11 +181,20 @@ Dado que la señal es muy sensible a artefactos, se tomaron estas medidas:
 
 # 6. Análisis
 
-<p align="center"><img src="images/phyton_frecuencias.png" alt="Python PSD" width="700"><br><em>Fig 27. Densidad espectral de potencia (Welch) de las señales, procesada en Python.</em></p>
+<p align="center"><img src="images/phyton_bandpower.png" alt="Python Potencia por banda" width="700"><br><em>Fig 27. Densidad espectral de potencia (Welch) de las señales, procesada en Python.</em></p>
 
-<p align="center"><img src="images/phyton_bandpower.png" alt="Python Potencia por banda" width="700"><br><em>Fig 28. Porcentaje de potencia por banda en cada señal, procesada en Python.</em></p>
+<p align="center"><img src="images/phyton_frecuencias.png" alt="Python PSD" width="700"><br><em>Fig 28. Porcentaje de potencia por banda en cada señal, procesada en Python.</em></p>
+
 
 ## 6.1 Lectura basal
+
+En esta parte de la actividad se registró al participante en reposo, con los ojos cerrados y tapados, sin hablar ni mover la boca, con las luces apagadas y los audífonos colocados. Este registro sirve como referencia del estado de reposo, contra la cual se comparan las demás actividades. Según la tabla de bandas de la sección 1, se esperaba una señal estable y con pocos artefactos, y cierta presencia de actividad alpha (8–12 Hz), asociada a la relajación con los ojos cerrados.
+
+De acuerdo, en la señal en el tiempo (Fig 13), la amplitud se mantiene aproximadamente constante a lo largo del registro, sin las deflexiones bruscas que aparecen en la apertura y cierre de ojos. Esto indica que las medidas de control del entorno (ojos cerrados, sin movimientos oculares ni de mandíbula) redujeron los artefactos, lo que hace que la señal sea adecuada como línea base.
+
+Por otro lado, en el espectrograma (Fig 14), predominan los tonos verdes, con franjas amarillas en las frecuencias bajas (0–4 Hz). Como el amarillo representa la mayor potencia, esto indica que la energía de la señal se concentra en las frecuencias bajas, lo que es coherente con la potencia relativa por banda.
+
+En la potencia relativa por banda (Fig 28), la lectura basal presentó 57.8% de delta, 11.8% de theta, 9.6% de alpha, 11.5% de beta y 4.2% de gamma. El predominio de delta no debe interpretarse como somnolencia o sueño profundo: el espectro del EEG concentra de forma natural más potencia en las frecuencias bajas, y a esto pudieron sumarse la deriva lenta de la línea base por el contacto electrodo-piel y los potenciales oculares lentos, dada la ubicación frontal del sensor cerca de los ojos.
 
 ## 6.2 Apertura y cierre de ojos
 
