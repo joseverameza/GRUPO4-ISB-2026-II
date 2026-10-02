@@ -229,7 +229,7 @@ En los espectrogramas, ambas señales presentan actividad entre 0 y 40 Hz, sin o
 
 **1. ¿Cuáles son las frecuencias significativas para las adquisiciones de EEG? ¿Son las mismas en todas las áreas cerebrales?**
 
-Las principales bandas de frecuencia utilizadas en el análisis de EEG son delta, theta, alpha, beta y gamma. En el material de clase se consideran aproximadamente los siguientes rangos: delta entre 0.5 y 4 Hz, theta entre 4 y 8 Hz, alpha entre 8 y 13 Hz, beta entre 13 y 30 Hz y gamma por encima de 30 Hz. Cada banda se relaciona con distintos estados funcionales; por ejemplo, alpha se asocia con vigilia relajada y beta con una mayor actividad mental. :chatgpt-content-reference{index="0"}
+Las principales bandas de frecuencia utilizadas en el análisis de EEG son delta, theta, alpha, beta y gamma. En el material de clase se consideran aproximadamente los siguientes rangos: delta entre 0.5 y 4 Hz, theta entre 4 y 8 Hz, alpha entre 8 y 13 Hz, beta entre 13 y 30 Hz y gamma por encima de 30 Hz. Cada banda se relaciona con distintos estados funcionales; por ejemplo, alpha se asocia con vigilia relajada y beta con una mayor actividad mental.
 
 Estas frecuencias pueden encontrarse en diferentes regiones cerebrales, pero no necesariamente presentan la misma amplitud o predominio en todas ellas. La actividad registrada depende de la región cortical, del estado del participante y de la tarea realizada. Por ejemplo, la actividad alpha suele ser más evidente en regiones posteriores durante condiciones de relajación y ojos cerrados, mientras que la actividad beta puede incrementarse durante tareas de mayor actividad mental.
 
