@@ -233,13 +233,13 @@ Las principales bandas de frecuencia utilizadas en el análisis de EEG son delta
 
 Estas frecuencias pueden encontrarse en diferentes regiones cerebrales, pero no necesariamente presentan la misma amplitud o predominio en todas ellas. La actividad registrada depende de la región cortical, del estado del participante y de la tarea realizada. Por ejemplo, la actividad alpha suele ser más evidente en regiones posteriores durante condiciones de relajación y ojos cerrados, mientras que la actividad beta puede incrementarse durante tareas de mayor actividad mental.
 
-Además, la ubicación de los electrodos se organiza mediante el sistema internacional 10-20, donde cada posición representa una región cerebral determinada. :chatgpt-content-reference{index="1"}
+Además, la ubicación de los electrodos se organiza mediante el sistema internacional 10-20, donde cada posición representa una región cerebral determinada.
 
 **2. ¿Qué tipo de filtro es esencial al trabajar con señales de EEG? ¿Por qué es necesario aplicar dicho filtro?**
 
 Al trabajar con señales EEG es importante emplear un filtrado que permita conservar las frecuencias de interés y reducir componentes no deseados. En la práctica, suele utilizarse un filtro pasa banda para limitar el análisis al rango fisiológico de interés del EEG y, adicionalmente, un filtro notch para reducir la interferencia de la red eléctrica.
 
-El filtrado es necesario porque el EEG presenta amplitudes pequeñas y puede contaminarse fácilmente por ruido eléctrico, movimientos, parpadeos, actividad muscular y otros artefactos. El material de clase señala que el ruido, los parpadeos, la actividad muscular, el movimiento y la interferencia eléctrica pueden afectar significativamente la calidad del registro. :chatgpt-content-reference{index="2"}
+El filtrado es necesario porque el EEG presenta amplitudes pequeñas y puede contaminarse fácilmente por ruido eléctrico, movimientos, parpadeos, actividad muscular y otros artefactos. El material de clase señala que el ruido, los parpadeos, la actividad muscular, el movimiento y la interferencia eléctrica pueden afectar significativamente la calidad del registro.
 
 Por ello, el procesamiento de la señal permite mejorar la relación señal-ruido y analizar con mayor confiabilidad las bandas de frecuencia asociadas a la actividad cerebral.
 
@@ -247,7 +247,7 @@ Por ello, el procesamiento de la señal permite mejorar la relación señal-ruid
 
 Sí, la actividad cerebral puede cambiar según el estado mental o la tarea realizada. Esto no significa que una persona pueda generar voluntariamente una onda específica de manera aislada, sino que determinadas actividades pueden favorecer cambios en la potencia relativa de ciertas bandas de frecuencia.
 
-Por ejemplo, una condición de relajación con los ojos cerrados puede favorecer la actividad alpha, mientras que una tarea que requiere atención, razonamiento o concentración puede aumentar la participación de frecuencias más rápidas como beta. Según el material de clase, alpha se relaciona con vigilia calmada y beta con incremento de actividad mental. :chatgpt-content-reference{index="3"}
+Por ejemplo, una condición de relajación con los ojos cerrados puede favorecer la actividad alpha, mientras que una tarea que requiere atención, razonamiento o concentración puede aumentar la participación de frecuencias más rápidas como beta. Según el material de clase, alpha se relaciona con vigilia calmada y beta con incremento de actividad mental.
 
 En el experimento se realizaron distintas tareas para producir estos cambios, como abrir y cerrar los ojos, fijar la mirada, responder preguntas de distinta dificultad y escuchar diferentes tipos de música.
 
@@ -265,7 +265,7 @@ Esto puede explicarse por la ubicación frontal de los electrodos, ya que la act
 
 **5. ¿Existe alguna diferencia en la señal entre las dos ubicaciones, FP1 y FP2?**
 
-FP1 y FP2 corresponden a posiciones frontopolares ubicadas en lados diferentes de la cabeza. Según el sistema internacional 10-20, los números impares corresponden al hemisferio izquierdo y los pares al hemisferio derecho, por lo que FP1 corresponde al lado izquierdo y FP2 al lado derecho. :chatgpt-content-reference{index="4"}
+FP1 y FP2 corresponden a posiciones frontopolares ubicadas en lados diferentes de la cabeza. Según el sistema internacional 10-20, los números impares corresponden al hemisferio izquierdo y los pares al hemisferio derecho, por lo que FP1 corresponde al lado izquierdo y FP2 al lado derecho.
 
 En principio, pueden existir diferencias entre ambas posiciones debido a que la actividad eléctrica cerebral no es completamente uniforme y cada electrodo refleja principalmente la actividad de la región cercana.
 
@@ -277,7 +277,7 @@ Por esta razón, con esta adquisición no es posible establecer de forma directa
 
 Las bandas que se esperaba que presentaran mayores cambios durante las tareas fueron principalmente alpha y beta.
 
-La actividad alpha, aproximadamente entre 8 y 13 Hz, se relaciona con un estado de vigilia relajada y puede ser más evidente durante el cierre de los ojos. Por otro lado, beta, aproximadamente entre 13 y 30 Hz, se asocia con una mayor actividad mental y concentración. :chatgpt-content-reference{index="5"}
+La actividad alpha, aproximadamente entre 8 y 13 Hz, se relaciona con un estado de vigilia relajada y puede ser más evidente durante el cierre de los ojos. Por otro lado, beta, aproximadamente entre 13 y 30 Hz, se asocia con una mayor actividad mental y concentración.
 
 Por esta razón, durante la lectura basal con ojos cerrados se esperaba una mayor presencia relativa de alpha. Durante la apertura de los ojos, fijación de la mirada, resolución de preguntas o exposición a estímulos auditivos más intensos se esperaba una disminución relativa de alpha y una mayor participación de frecuencias rápidas como beta.
 
@@ -291,9 +291,9 @@ Por esta razón, los cambios asociados a cada banda se identifican con mayor cla
 
 No necesariamente. Una mayor amplitud en la señal EEG no implica de forma directa un mayor nivel de concentración.
 
-La amplitud del EEG depende, entre otros factores, del grado de sincronización de la actividad de las poblaciones neuronales. El material de clase indica que, cuando existe una mayor coordinación neuronal, pueden generarse señales de menor frecuencia y mayor amplitud, mientras que una actividad más desincronizada puede presentar frecuencias mayores y amplitudes menores. :chatgpt-content-reference{index="6"}
+La amplitud del EEG depende, entre otros factores, del grado de sincronización de la actividad de las poblaciones neuronales. El material de clase indica que, cuando existe una mayor coordinación neuronal, pueden generarse señales de menor frecuencia y mayor amplitud, mientras que una actividad más desincronizada puede presentar frecuencias mayores y amplitudes menores.
 
-Además, la señal registrada en el cuero cabelludo también está influenciada por la ubicación de los electrodos y por la atenuación causada por las meninges, el cráneo y el cuero cabelludo. El EEG superficial corresponde, por tanto, a una versión atenuada y dispersa de la actividad eléctrica cerebral. :chatgpt-content-reference{index="7"}
+Además, la señal registrada en el cuero cabelludo también está influenciada por la ubicación de los electrodos y por la atenuación causada por las meninges, el cráneo y el cuero cabelludo. El EEG superficial corresponde, por tanto, a una versión atenuada y dispersa de la actividad eléctrica cerebral.
 
 También pueden aparecer incrementos de amplitud debido a artefactos generados por movimientos oculares, actividad muscular o desplazamientos del participante, por lo que un aumento de amplitud no puede interpretarse automáticamente como una mayor concentración.
 
