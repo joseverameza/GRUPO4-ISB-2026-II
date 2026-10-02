@@ -115,9 +115,9 @@ Dado que la señal es muy sensible a artefactos, se tomaron estas medidas:
 
 ## 4.4 Preguntas de dificultad variable
 
-<p align="center"><img src="images/opensignals_dificiles.jpeg" alt="OpenSignals Preguntas difíciles" width="700"><br><em>Fig 9. Señal EEG durante las preguntas de nivel universitario, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_dificiles.png" alt="OpenSignals Preguntas difíciles" width="700"><br><em>Fig 9. Señal EEG durante las preguntas de nivel universitario, vista en OpenSignals.</em></p>
 
-<p align="center"><img src="images/opensignals_faciles.jpeg" alt="OpenSignals Preguntas fáciles" width="700"><br><em>Fig 10. Señal EEG durante las preguntas fáciles, vista en OpenSignals.</em></p>
+<p align="center"><img src="images/opensignals_faciles.png" alt="OpenSignals Preguntas fáciles" width="700"><br><em>Fig 10. Señal EEG durante las preguntas fáciles, vista en OpenSignals.</em></p>
 
 ## 4.5 Música lofi y música estruendosa
 
@@ -208,6 +208,14 @@ En la señal en el tiempo (Fig 17) en su mayor rango presenta una amplitud const
 En la potencia relativa por banda (Fig 28), el registro de mirada fija presentó 5.6% de alpha y 9.1% de beta, frente a 8.3% y 10.1% en la lectura basal.
 
 ## 6.4 Preguntas de dificultad variable
+
+Debido a problemas con el BITalino utilizado inicialmente, esta parte de la adquisición se realizó con otro equipo que presentaba especificaciones diferentes. Esto representa una limitación, ya que cambios en la ganancia, filtrado o resolución pueden modificar la amplitud y la potencia de las señales registradas.
+
+En esta actividad se compararon preguntas fáciles y difíciles. Para las preguntas de mayor dificultad se esperaba una mayor participación de theta (4–8 Hz), asociada a tareas mentales, y de beta (12–25 Hz), relacionada con pensamiento activo y concentración.
+
+En las señales en el tiempo, las preguntas fáciles presentan valores aproximadamente entre −19 y 20 µV, mientras que en las difíciles se observan valores cercanos a −20 y 23 µV. A pesar de estos picos, la mayor parte de ambas señales presenta amplitudes similares, por lo que no se observa un aumento sostenido durante las preguntas difíciles. Algunos de los picos pueden corresponder también a artefactos por parpadeo o movimiento facial.
+
+En los espectrogramas, ambas señales presentan actividad entre 0 y 40 Hz, sin observarse una diferencia marcada en las bandas theta o beta. De manera similar, en la densidad espectral de potencia las curvas de preguntas fáciles y difíciles se encuentran prácticamente superpuestas en gran parte del espectro, con valores cercanos a 10⁻¹ – 3×10⁻¹ µV²/Hz en buena parte de las frecuencias medias. Por lo tanto, aunque se esperaba una mayor actividad durante las preguntas difíciles, en los resultados obtenidos no se observa una diferencia clara entre ambas condiciones.
 
 ## 6.5 Música lofi y música estruendosa
 
