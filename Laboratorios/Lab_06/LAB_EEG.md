@@ -64,6 +64,8 @@ Se realizaron cinco actividades experimentales para observar las variaciones de 
  
 ## 4.1 Lectura basal
  
+<p align="center"><img src="images/opensignals_basal.jpeg" alt="OpenSignals Basal" width="700"><br><em>Fig 1.OpenSiganls lectura basal. </em></p>
+ 
 
 
 ## 4.2 Apertura y cierre de ojos
