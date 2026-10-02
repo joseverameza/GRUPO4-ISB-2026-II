@@ -46,18 +46,35 @@ derecho y la "z" a la línea media.
 
 
 # 3. Procedimiento
-## 3.1. Actividades realizadas
+### 3.1 Configuración experimental
 
-Se realizaron cinco actividades experimentales para observar las variaciones de la señal EEG ante diferentes condiciones visuales, cognitivas y auditivas. Inicialmente, se registró una señal basal en condiciones de mínima estimulación externa. Posteriormente, se evaluaron los cambios asociados a la apertura y cierre de ojos, la fijación de la mirada en un punto, la resolución de preguntas de diferente dificultad y la escucha de música de distintos estilos e intensidades.
+1. Se conectó el BITalino Core BT a OpenSignals (r)evolution y se verificó la conexión.
+2. Se conectaron el sensor EEG y el cable de referencia a dos canales analógicos.
+3. Se limpió la piel con alcohol para retirar partículas y mejorar la conductividad,
+   y se colocaron los electrodos con gel en los dos snaps del sensor y en la referencia.
+4. El sensor se ubicó en la frente, sobre la posición [FP1 / FP2 / O2: completar]
+   del sistema 10-20, y la referencia sobre una zona ósea detrás de la oreja.
 
-## 3.2. Protocolo de adquisición
 
-1. Conectar el BITalino y comprobar la comunicación con OpenSignals (r)evolution.
-2. Conectar el sensor EEG y el cable de referencia a los canales correspondientes.
-3. Colocar los electrodos de medición y referencia, verificando su correcta adhesión.
-4. Iniciar la adquisición de la señal EEG y comprobar su estabilidad antes de comenzar las actividades.
-5. Realizar las actividades experimentales en el orden establecido, registrando las señales correspondientes.
-6. Guardar los registros obtenidos en cada condición para su posterior visualización y análisis.
+### 3.2 Control del entorno
+
+Dado que la señal es muy sensible a artefactos, se tomaron estas medidas:
+
+- Se apagaron las luces y el participante se ubicó de espaldas a la fuente de luz,
+  para eliminar estímulos visuales externos. Asimismo se le tapo los ojos y se colocó audifonos en el odio. 
+- El participante no habló ni movió la boca o la mandíbula, evitando artefactos EMG.
+- Se evitaron movimientos oculares rápidos y parpadeos.
+
+
+### 3.3 Fases de la dinámica
+
+| Fase | Descripción |
+|------|-------------|
+| Lectura basal | Registro en reposo, ojos cerrados, sin movimiento, audífonos colocados|
+| Apertura y cierre de ojos | 5 ciclos de 5 s por estado, ojos tapados, audífonos colocados |
+| Mirada fija en un punto| 30 s, ojos destapados, audifonos colocados|
+| Preguntas de dificultad variable | Preguntas susurradas (nivel universitario y luego fáciles), 1 oreja libre |
+| Música | Lofi vs. música estruendosa (1–1:30 min por canción), ojos tapados, audífonos colocados |
 
  
 # 4. Señal en OpenSignals
@@ -104,10 +121,9 @@ Se realizaron cinco actividades experimentales para observar las variaciones de 
 
 # 6. Análisis
 
-<p align="center"><img src="images/phyton_bandpower.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
-
 <p align="center"><img src="images/phyton_frecuencias.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
 
+<p align="center"><img src="images/phyton_bandpower.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
 
 
 
