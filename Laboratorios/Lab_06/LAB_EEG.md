@@ -64,7 +64,7 @@ Se realizaron cinco actividades experimentales para observar las variaciones de 
  
 ## 4.1 Lectura basal
  
-<p align="center"><img src="images/opensignals_basal.jpeg" alt="OpenSignals Basal" width="700"><br><em>Fig 1.Señal EEG en basal, vista en OpenSignals. </em></p>
+<p align="center"><img src="images/opensignals_basal.jpeg" alt="OpenSignals Basal" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
  
 
 
@@ -83,7 +83,11 @@ Se realizaron cinco actividades experimentales para observar las variaciones de 
 # 5. Señal procesada en Python
  
 ## 5.1 Lectura basal
- 
+**Tiempo**
+<p align="center"><img src="images/phyton_basal_tiempo.png" alt="Phyton Basal Tiempo" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
+
+**Espectrograma**
+<p align="center"><img src="images/phyton_basal_espectograma.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
 
 
 ## 5.2 Apertura y cierre de ojos
@@ -100,23 +104,27 @@ Se realizaron cinco actividades experimentales para observar las variaciones de 
 
 # 6. Análisis
 
-## 6.1. Comparación entre condiciones visuales
+<p align="center"><img src="images/phyton_bandpower.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
 
-[Comparar la señal basal, la apertura y cierre de ojos
-y la mirada fija. Describir los cambios observados en
-la amplitud, estabilidad y potencia alfa, si se calculó.]
+<p align="center"><img src="images/phyton_frecuencias.png" alt="Phyton Basal Espectrograma" width="700"><br><em>Fig X.Señal EEG en basal, vista en OpenSignals. </em></p>
 
-## 6.2. Comparación entre condiciones cognitivas
 
-[Comparar las señales obtenidas durante las preguntas
-universitarias y las preguntas sencillas. Considerar
-las limitaciones relacionadas con el cambio de BITalino.]
 
-## 6.3. Comparación entre estímulos auditivos
 
-[Comparar los registros obtenidos durante la música
-lofi y la música estruendosa. Describir las diferencias
-observadas y las posibles fuentes de variabilidad.]
+
+## 6.1. Lectura basal
+
+
+
+## 6.2. Apertura y cierre de ojos
+
+
+## 6.3. Mirada fija en un punto
+
+
+## 6.4 Preguntas de dificultad variable
+
+## 6.5 Música lofi y música estruendosa
 
 ## 6.4. Comparación general
 
