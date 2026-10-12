@@ -8,21 +8,20 @@
 ## Índice
 
 - [1. Introducción](#1-introducción)
-- [2. Materiales y herramientas](#2-materiales-y-herramientas)
-- [3. Fundamento teórico del laboratorio](#3-fundamento-teórico-del-laboratorio)
-  - [3.1 Adquisición y digitalización del ECG](#31-adquisición-y-digitalización-del-ecg)
-  - [3.2 Ruido, interferencias y análisis espectral](#32-ruido-interferencias-y-análisis-espectral)
-  - [3.3 Filtros digitales convencionales](#33-filtros-digitales-convencionales)
-  - [3.4 Filtrado adaptativo LMS](#34-filtrado-adaptativo-lms)
-  - [3.5 Transformada Wavelet y denoising](#35-transformada-wavelet-y-denoising)
-  - [3.6 Métricas de evaluación](#36-métricas-de-evaluación)
-- [4. Procedimiento experimental](#4-procedimiento-experimental)
-- [5. Resultados](#5-resultados)
-- [6. Análisis y comparación](#6-análisis-y-comparación)
-- [7. Respuestas al cuestionario](#7-respuestas-al-cuestionario)
-- [8. Síntesis e infografía](#8-síntesis-e-infografía)
-- [9. Conclusiones](#9-conclusiones)
-- [10. Referencias](#10-referencias)
+- [2. Fundamento teórico del laboratorio](#2-fundamento-teórico-del-laboratorio)
+  - [2.1 Adquisición y digitalización del ECG](#21-adquisición-y-digitalización-del-ecg)
+  - [2.2 Ruido, interferencias y análisis espectral](#22-ruido-interferencias-y-análisis-espectral)
+  - [2.3 Filtros digitales convencionales](#23-filtros-digitales-convencionales)
+  - [2.4 Filtrado adaptativo LMS](#24-filtrado-adaptativo-lms)
+  - [2.5 Transformada Wavelet y denoising](#25-transformada-wavelet-y-denoising)
+  - [2.6 Métricas de evaluación](#26-métricas-de-evaluación)
+- [3. Procedimiento experimental](#3-procedimiento-experimental)
+- [4. Resultados](#4-resultados)
+- [5. Análisis y comparación](#5-análisis-y-comparación)
+- [6. Respuestas al cuestionario](#6-respuestas-al-cuestionario)
+- [7. Síntesis e infografía](#7-síntesis-e-infografía)
+- [8. Conclusiones](#8-conclusiones)
+- [9. Referencias](#9-referencias)
 
 # 1. Introducción
 
@@ -32,18 +31,9 @@ En este laboratorio se trabajó con un ECG real registrado mediante **BITalino (
 
 **Objetivos:** identificar correctamente el canal ECG y sus parámetros de adquisición; reconocer ruido e interferencias en tiempo y frecuencia; implementar diferentes técnicas de filtrado; y evaluar cuánto ruido se reduce y cuánto se conserva de la morfología del ECG.
 
-# 2. Materiales y herramientas
+# 2. Fundamento teórico del laboratorio
 
-- Registro ECG `DII_BASAL.txt`, adquirido con BITalino (r)evolution y OpenSignals.
-- Google Colab / Jupyter Notebook para la ejecución y documentación del análisis.
-- **NumPy** y **Pandas** para el manejo de muestras y datos.
-- **Matplotlib** para representar las señales en tiempo y frecuencia.
-- **SciPy (`scipy.signal`)** para diseñar y aplicar filtros digitales.
-- **PyWavelets (`pywt`)** para la descomposición y reducción de ruido mediante Wavelet.
-
-# 3. Fundamento teórico del laboratorio
-
-## 3.1 Adquisición y digitalización del ECG
+## 2.1 Adquisición y digitalización del ECG
 
 El ECG registra diferencias de potencial originadas por la despolarización y repolarización cardíaca. Su morfología comprende la **onda P**, asociada a la despolarización auricular; el **complejo QRS**, asociado a la despolarización ventricular; y la **onda T**, relacionada con la repolarización ventricular.
 
@@ -71,7 +61,7 @@ Donde $b=10$ bits, $V_{CC}=3.3$ V y $G_{ECG}=1100$. Posteriormente se restó la 
 | Duración | 38.55 s |
 | Posibles pérdidas detectadas mediante `nSeq` | 0 |
 
-## 3.2 Ruido, interferencias y análisis espectral
+## 2.2 Ruido, interferencias y análisis espectral
 
 El **ruido** es una perturbación no deseada, generalmente aleatoria, que puede abarcar numerosas frecuencias. Una **interferencia** suele presentar una estructura reconocible, como una oscilación periódica causada por la red eléctrica. Ambos componentes pueden dificultar la identificación de las ondas del ECG.
 
@@ -91,7 +81,7 @@ Las amplitudes de las interferencias se fijaron como proporciones de la desviaci
 
 La **Transformada Rápida de Fourier (FFT)** permitió visualizar estas componentes en el dominio frecuencial: las senoides generan picos alrededor de sus frecuencias, mientras que el ruido de banda ancha eleva el fondo del espectro. Este análisis ayuda a decidir qué filtro aplicar.
 
-## 3.3 Filtros digitales convencionales
+## 2.3 Filtros digitales convencionales
 
 Los filtros convencionales utilizan coeficientes definidos previamente. En el laboratorio se aplicaron los siguientes:
 
@@ -111,7 +101,7 @@ $$
 
 Un valor bajo de $Q$ produce una muesca más ancha y puede afectar más componentes próximas; un valor alto produce una muesca más estrecha, que requiere mayor precisión en la frecuencia a eliminar. Los filtros se aplicaron con `sosfiltfilt` y `filtfilt`, que procesan la señal hacia adelante y hacia atrás para evitar el desfase, aunque pueden introducir cambios de amplitud y efectos de borde.
 
-## 3.4 Filtrado adaptativo LMS
+## 2.4 Filtrado adaptativo LMS
 
 Un filtro adaptativo modifica sus coeficientes durante el procesamiento para ajustarse a una interferencia. El laboratorio implementó un cancelador basado en el algoritmo **LMS (*Least Mean Squares*)**, que recibe el ECG contaminado y referencias correlacionadas con el ruido que desea estimar.
 
@@ -130,7 +120,7 @@ $$
 Donde $x[n]$ es el vector de referencias y $\mu$ controla el paso de adaptación. En el notebook se utilizó **$\mu=0.005$**. Un paso demasiado pequeño retrasa la convergencia y uno elevado puede provocar oscilaciones y degradar la señal. Como el ruido gaussiano no está correlacionado con estas referencias, el LMS implementado no está diseñado para eliminarlo.
 
 
-## 3.5 Transformada Wavelet y *denoising*
+## 2.5 Transformada Wavelet y *denoising*
 
 La **Transformada Wavelet Discreta (DWT)** permite estudiar componentes de la señal según su escala y localización temporal. Es útil en el ECG porque los complejos QRS son eventos breves, mientras que la línea de base y otras ondas varían más lentamente. A diferencia de una FFT global, la DWT permite identificar componentes transitorias y analizar su ubicación temporal.
 
@@ -157,7 +147,7 @@ Se aplicó **umbralización suave (*soft thresholding*)**, que anula los coefici
 
 Este procedimiento permite atenuar componentes de ruido de banda ancha, pero no garantiza eliminar interferencias sinusoidales intensas, cuyos coeficientes pueden superar el umbral establecido. Por ello, también se evaluó una estrategia **híbrida**, combinando filtros notch de 60 Hz y 120 Hz con un procesamiento posterior mediante Wavelet.
 
-## 3.6 Métricas de evaluación
+## 2.6 Métricas de evaluación
 
 La calidad del filtrado se evaluó comparando cada señal procesada con el ECG real original, empleado como referencia de este ejercicio. Se excluyeron los **primeros y últimos 2 segundos** para reducir los efectos de borde y el impacto inicial de la adaptación.
 
@@ -177,7 +167,7 @@ $$
 
 Estas métricas deben interpretarse junto con las gráficas, ya que una señal con menos error global todavía puede presentar cambios importantes en las ondas P, QRS o T.
 
-# 4. Procedimiento experimental
+# 3. Procedimiento experimental
 
 1. **Exploración de datos:** se leyó `DII_BASAL.txt`, se verificaron los metadatos y la continuidad del contador `nSeq`, y se extrajo el ECG de `A1`.
 2. **Señal original:** se convirtió la lectura ADC a milivoltios, se centró respecto a cero y se visualizaron el registro completo y una ventana de 4 segundos.
@@ -188,25 +178,25 @@ Estas métricas deben interpretarse junto con las gráficas, ya que una señal c
 7. **Wavelet e híbrido:** se descompuso la señal usando `db4`, se aplicó umbralización suave y se comparó con notch seguido de Wavelet.
 8. **Evaluación:** se calcularon RMSE, SNR y correlación; finalmente se elaboró una figura base para la infografía.
 
-# 5. Resultados
+# 4. Resultados
 
-## 5.1 ECG original y contaminación
-
-
-## 5.2 Filtros convencionales
+## 4.1 ECG original y contaminación
 
 
-## 5.3 LMS y Wavelet
+## 4.2 Filtros convencionales
 
 
-## 5.4 Comparación cuantitativa
+## 4.3 LMS y Wavelet
 
 
-# 6. Análisis y comparación
+## 4.4 Comparación cuantitativa
+
+
+# 5. Análisis y comparación
 
 E
 
-# 7. Respuestas al cuestionario
+# 6. Respuestas al cuestionario
 
 **1. ¿Por qué es importante conocer la frecuencia de muestreo de una señal biomédica?**  
 Porque permite construir correctamente el eje temporal y conocer el intervalo entre muestras. También determina el rango de frecuencias que puede representarse sin aliasing; por el criterio de Nyquist, la frecuencia de muestreo debe superar el doble de la frecuencia máxima de interés.
@@ -238,15 +228,15 @@ Se puede utilizar un filtro notch centrado en esa frecuencia. Por ejemplo, para 
 **10. ¿Por qué no debemos evaluar un filtro únicamente observando visualmente la señal?**  
 Porque una señal más suave no garantiza menor error ni conservación de la morfología. Conviene combinar la inspección del ECG y su espectro con métricas como RMSE, SNR y correlación, considerando las limitaciones de cada medida.
 
-# 8. Síntesis e infografía
+# 7. Síntesis e infografía
 
 L
 
-# 9. Conclusiones
+# 8. Conclusiones
 
 
 
-# 10. Referencias
+# 9. Referencias
 
 - Universidad Peruana Cayetano Heredia. *Laboratorio 7 — Filtrado de señales II: Filtros adaptativos y Transformada Wavelet aplicados a ECG*. Cuaderno práctico del curso Introducción a Señales Biomédicas, 2026.
 - PLUX Wireless Biosignals. *Documentación técnica del sensor ECG de BITalino y del software OpenSignals* (citada para la interpretación de los datos de adquisición y la conversión ADC).
