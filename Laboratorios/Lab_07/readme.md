@@ -129,20 +129,33 @@ $$
 
 Donde $x[n]$ es el vector de referencias y $\mu$ controla el paso de adaptación. En el notebook se utilizó **$\mu=0.005$**. Un paso demasiado pequeño retrasa la convergencia y uno elevado puede provocar oscilaciones y degradar la señal. Como el ruido gaussiano no está correlacionado con estas referencias, el LMS implementado no está diseñado para eliminarlo.
 
+
 ## 3.5 Transformada Wavelet y *denoising*
 
-La **Transformada Wavelet Discreta (DWT)** permite estudiar componentes de la señal según su escala y localización temporal. Es útil en el ECG porque los complejos QRS son eventos breves, mientras que la línea de base y otras ondas varían más lentamente. A diferencia de una FFT global, la DWT permite observar en qué instantes aparecen determinados detalles.
+La **Transformada Wavelet Discreta (DWT)** permite estudiar componentes de la señal según su escala y localización temporal. Es útil en el ECG porque los complejos QRS son eventos breves, mientras que la línea de base y otras ondas varían más lentamente. A diferencia de una FFT global, la DWT permite identificar componentes transitorias y analizar su ubicación temporal.
 
-En el laboratorio se utilizó la wavelet **Daubechies 4 (`db4`)** con **8 niveles de descomposición**. Cada nivel separa componentes de **aproximación (A)**, más lentas, y de **detalle (D)**, más rápidas. De forma aproximada, las interferencias de 120 Hz y 60 Hz se sitúan en las bandas D3 y D4, respectivamente.
+En el laboratorio se utilizó la wavelet **Daubechies 4 (`db4`)** con **8 niveles de descomposición**. En cada nivel se obtienen coeficientes de **aproximación (A)**, asociados a componentes de menor frecuencia, y de **detalle (D)**, asociados a componentes de mayor frecuencia. De forma aproximada, las interferencias de 120 Hz y 60 Hz se sitúan en las bandas D3 y D4, respectivamente.
 
-Para la reducción de ruido (*Wavelet denoising*) se descompuso la señal, se estimó el ruido a partir de los coeficientes de detalle D1 y se aplicó un umbral universal antes de reconstruirla:
+Para reducir el ruido mediante *Wavelet denoising*, se descompuso la señal y se estimó la desviación estándar del ruido a partir de los coeficientes de detalle D1. Posteriormente, se calculó el umbral universal mediante las siguientes expresiones:
 
 $$
-\sigma\approx\frac{\operatorname{mediana}(|D_1|)}{0.6745},\qquad
-\lambda=\sigma\sqrt{2\ln(N)}
+\sigma \approx \frac{\mathrm{median}(|D_1|)}{0.6745}
 $$
 
-Se utilizó **umbralización suave (*soft thresholding*)**, que anula coeficientes de pequeña magnitud y reduce los mayores. El umbral calculado fue **0.1289**. Este método puede disminuir el ruido de banda ancha, pero no garantiza retirar senoides intensas, cuyos coeficientes pueden superar el umbral. Por eso también se evaluó una solución **híbrida: notch de 60 y 120 Hz seguido de Wavelet**.
+$$
+\lambda = \sigma \sqrt{2\ln(N)}
+$$
+
+Donde:
+
+- $\sigma$: desviación estándar estimada del ruido.
+- $D_1$: coeficientes de detalle del primer nivel.
+- $N$: número de muestras de la señal.
+- $\lambda$: umbral utilizado para la reducción de ruido.
+
+Se aplicó **umbralización suave (*soft thresholding*)**, que anula los coeficientes cuya magnitud es inferior al umbral y reduce la magnitud de los restantes. El umbral calculado en el laboratorio fue **0.1289**.
+
+Este procedimiento permite atenuar componentes de ruido de banda ancha, pero no garantiza eliminar interferencias sinusoidales intensas, cuyos coeficientes pueden superar el umbral establecido. Por ello, también se evaluó una estrategia **híbrida**, combinando filtros notch de 60 Hz y 120 Hz con un procesamiento posterior mediante Wavelet.
 
 ## 3.6 Métricas de evaluación
 
