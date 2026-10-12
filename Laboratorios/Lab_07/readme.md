@@ -182,19 +182,78 @@ Estas métricas deben interpretarse junto con las gráficas, ya que una señal c
 
 ## 4.1 ECG original y contaminación
 
+La contaminación añadida modificó visiblemente el registro ECG y dificultó la identificación de las ondas de menor amplitud. Los complejos QRS continuaron siendo reconocibles debido a su mayor amplitud.
+
+<p align="center"><img src="images/ECG_contaminado.png" alt="ECG original vs contaminado" width="700"><br><em>Fig 1. Señal ECG original, interferencias simuladas y señal ECG contaminada.</em></p>
+
+En el dominio de la frecuencia se observó un aumento del contenido espectral de la señal contaminada, destacando los picos correspondientes a las interferencias añadidas de 60 Hz y 120 Hz.
+
+<p align="center"><img src="images/espectro_original_contaminado.png" alt="Espectro ECG original vs contaminado" width="700"><br><em>Fig 2. Espectro del ECG original y del ECG contaminado.</em></p>
 
 ## 4.2 Filtros convencionales
+
+El filtro pasa-banda redujo las componentes de alta frecuencia, obteniéndo una señal visualmente más cercana al ECG original, aunque con una ligera modificación de su amplitud.
+
+<p align="center"><img src="images/ECG_pasabanda.png" alt="ECG filtrado pasabanda" width="700"><br><em>Fig 3. Comparación del ECG original, ECG contaminado y señal filtrada mediante pasa-banda.</em></p>
+
+Los filtros Notch mostraron una eliminación más selectiva de las interferencias. La aplicación conjunta de los Notch de 60 y 120 Hz produjo una mejor recuperación que el uso únicamente del Notch de 60 Hz.
+
+<p align="center"><img src="./images/ECG_notch.png" alt="Comparación de los filtros Notch de 60 Hz y 60 + 120 Hz" width="700"><br><em>Fig 4. Comparación de los resultados obtenidos con los filtros Notch de 60 Hz y 60 + 120 Hz.</em></p>
 
 
 ## 4.3 LMS y Wavelet
 
+El filtro adaptativo LMS redujo las componentes sinusoidales utilizadas como referencia, manteniendo la forma general del ECG. Sin embargo, permaneció parte del ruido gaussiano presente en la señal.
+
+<p align="center"><img src="./images/ECG_adaptativo.png" alt="Comparación del ECG original, ECG contaminado y señal filtrada mediante LMS" width="700"><br><em>Fig 5. Comparación del ECG original, ECG contaminado y señal filtrada mediante LMS.</em></p>
+
+El procesamiento Wavelet redujo parte del ruido de banda ancha. Al combinar los filtros Notch con Wavelet se obtuvo una señal con menor interferencia y una buena conservación de la morfología respecto al ECG original.
+
+<p align="center"><img src="./images/convencional_vs_wavelet.png" alt="Comparación de los resultados obtenidos mediante Wavelet y el método híbrido Notch + Wavelet" width="700"><br><em>Fig 6. Comparación de los resultados obtenidos mediante Wavelet y el método híbrido Notch + Wavelet.</em></p>
+
 
 ## 4.4 Comparación cuantitativa
 
+La comparación mediante RMSE, SNR y correlación permitió complementar la evaluación visual de los métodos.
+
+| Método | RMSE (mV) ↓ | SNR (dB) ↑ | Correlación $r$ ↑ |
+|---|---:|---:|---:|
+| Contaminado (sin filtrar) | 0.0803 | 1.2186 | 0.7556 |
+| Pasa-banda | 0.0193 | 13.6134 | 0.9780 |
+| Notch 60 Hz | 0.0476 | 5.7609 | 0.8888 |
+| Notch 60 + 120 Hz | 0.0275 | 10.5407 | 0.9586 |
+| LMS adaptativo | 0.0281 | 10.3573 | 0.9577 |
+| Wavelet | 0.0388 | 7.5400 | 0.9077 |
+| Híbrido Notch + Wavelet | 0.0242 | 11.6570 | 0.9756 |
+
+El pasa-banda presentó el mayor SNR y el menor RMSE del experimento. El método híbrido Notch + Wavelet obtuvo el segundo mayor SNR y una correlación cercana a la obtenida con el pasa-banda, mientras que el Notch de 60 Hz aislado presentó la menor mejora entre los métodos de filtrado evaluados.
+
+<p align="center"><img src="./images/SNR_filtros.png" alt="Comparación del SNR obtenido con los diferentes métodos de filtrado" width="700"><br><em>Fig 7. Comparación del SNR obtenido con los diferentes métodos de filtrado.</em></p>
+
+La Figura 8 resume el efecto de la contaminación, la recuperación de la señal y el desempeño relativo de los métodos evaluados.
+
+<p align="center"><img src="./images/sintesis.png" alt="Resumen procesamiento ECG" width="700"><br><em>Fig 8. Resumen de los principales resultados del procesamiento del ECG: señal original, señal contaminada, filtrado pasa-banda, comparación espectral y SNR de los métodos evaluados.</em></p>
 
 # 5. Análisis y comparación
 
-E
+Los resultados muestran que el desempeño de cada método depende principalmente del tipo de contaminación que se desea eliminar. Aunque el filtro pasa-banda obtuvo los mejores valores cuantitativos del experimento, su acción no es completamente selectiva: además del ruido, también elimina contenido del ECG que se encuentra fuera de la banda establecida. Por ello, una mayor SNR no necesariamente implica que la señal sea la más adecuada para cualquier aplicación biomédica.
+
+Los filtros Notch fueron más específicos, ya que actuaron principalmente sobre las frecuencias conocidas de 60 y 120 Hz. Esto permitió eliminar las interferencias sinusoidales con poca modificación del resto del espectro; sin embargo, su capacidad para reducir el ruido gaussiano fue limitada. Además, requieren conocer previamente las frecuencias que se desean eliminar.
+
+El filtro LMS presentó un comportamiento similar al doble Notch, pero con la ventaja de modificar sus coeficientes durante el procesamiento. En este caso pudo estimar las interferencias de 60 y 120 Hz gracias a las referencias utilizadas. Su principal limitación fue que el ruido gaussiano permaneció en la señal debido a que no estaba correlacionado con dichas referencias.
+
+Por otro lado, el procesamiento mediante Wavelet permitió actuar sobre componentes distribuidas en diferentes escalas y reducir ruido de banda ancha mediante umbralización. Sin embargo, aplicado de manera independiente no eliminó completamente las interferencias sinusoidales. Al combinar Notch + Wavelet, primero se eliminaron las componentes de frecuencia conocida y posteriormente se redujo parte del ruido restante, obteniéndose un buen equilibrio entre reducción de ruido y conservación de la forma del ECG.
+
+| Criterio | Pasa-banda | Notch | LMS adaptativo | Wavelet | Híbrido |
+|---|---|---|---|---|---|
+| Reducción de interferencias 60/120 Hz | Alta | Alta | Alta | Media | Alta |
+| Reducción de ruido gaussiano | Media | Baja | Baja | Alta | Alta |
+| Conservación de la morfología | Alta | Alta | Alta | Media | Alta |
+| Distorsión introducida | Baja–media | Baja | Baja–media | Media | Baja–media |
+| Complejidad | Baja | Baja | Media | Media | Media–alta |
+| Requisito principal | Conocer banda de interés | Conocer frecuencia | Señal de referencia | Elegir wavelet y umbral | Configurar ambos métodos |
+
+En conjunto, ningún método puede considerarse universalmente superior. Para este experimento, el pasa-banda fue el más eficiente según las métricas calculadas, mientras que el método híbrido resultó conveniente cuando se buscó tratar simultáneamente interferencias de frecuencia conocida y ruido de banda ancha. En una aplicación biomédica, la selección del filtro debe realizarse considerando no solo la reducción del ruido, sino también la posible distorsión y la conservación de la información fisiológica de interés.
 
 # 6. Respuestas al cuestionario
 
@@ -230,11 +289,15 @@ Porque una señal más suave no garantiza menor error ni conservación de la mor
 
 # 7. Síntesis e infografía
 
-L
+En este laboratorio se analizó una señal ECG real adquirida mediante BITalino/OpenSignals, a la cual se añadieron interferencias de 60 Hz y 120 Hz, además de ruido gaussiano, para evaluar diferentes técnicas de filtrado. Se compararon un filtro pasa-banda Butterworth, filtros Notch, un filtro adaptativo LMS, Wavelet db4 y un método híbrido Notch + Wavelet.
+
+El filtro pasa-banda obtuvo el mejor desempeño cuantitativo, con un SNR de 13.61 dB, RMSE de 0.0193 mV y correlación de 0.9780, aunque modificó ligeramente la señal original. El método híbrido Notch + Wavelet alcanzó un SNR de 11.66 dB y mostró un buen equilibrio entre reducción de interferencias y conservación de la morfología del ECG.
+
+El LMS fue útil para cancelar componentes correlacionadas con referencias de 60 y 120 Hz, mientras que Wavelet permitió reducir ruido manteniendo información temporal importante. En conjunto, los resultados muestran que la elección del método depende del tipo de ruido y del compromiso entre reducción de interferencia, distorsión y preservación de la información fisiológica.
 
 # 8. Conclusiones
 
-
+En este laboratorio, los métodos de filtrado permitieron reducir de forma importante el ruido y las interferencias añadidas al ECG, mejorando la relación señal-ruido respecto a la señal contaminada. El filtro pasa-banda obtuvo el mejor desempeño cuantitativo, con un SNR de 13.61 dB, aunque también modificó parcialmente la señal original. El doble notch y el filtro LMS conservaron mejor la morfología del ECG, pero fueron menos eficaces frente al ruido gaussiano. El método Wavelet permitió reducir ruido de banda ancha preservando información temporal, aunque su desempeño dependió de la wavelet y del umbral seleccionados. La estrategia híbrida notch + Wavelet mostró un buen equilibrio entre reducción de interferencias y conservación de la forma del ECG. En cuanto a complejidad, los filtros convencionales son más simples de implementar, mientras que LMS y Wavelet requieren mayor ajuste de parámetros. En aplicaciones biomédicas, la elección del método debe considerar tanto la reducción del ruido como la preservación de la información fisiológica relevante.
 
 # 9. Referencias
 
