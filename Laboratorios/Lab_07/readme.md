@@ -179,61 +179,19 @@ Estas métricas deben interpretarse junto con las gráficas, ya que una señal c
 
 ## 5.1 ECG original y contaminación
 
-El registro original presentó amplitudes entre **−0.326 mV y 0.643 mV**, con una desviación estándar de **0.092 mV**. En una ventana de cuatro segundos se identificaron aproximadamente cinco complejos QRS, lo que permitió estimar una frecuencia cardíaca cercana a **75 lpm** mediante conteo visual.
-
-<p align="center"><img src="images/ecg_zoom.png" alt="Ventana del ECG original" width="750"><br><em>Fig. 1. Ventana de cuatro segundos de la señal ECG original.</em></p>
-
-Al añadir la contaminación, aparecieron oscilaciones que dificultaron especialmente la observación de las ondas de menor amplitud. En la FFT se identificaron componentes localizadas en 60 y 120 Hz y un aumento del fondo espectral.
-
-<p align="center"><img src="images/comparacion_contaminacion.png" alt="ECG original y contaminado" width="750"><br><em>Fig. 2. Comparación temporal entre el ECG original y el contaminado.</em></p>
-
-<p align="center"><img src="images/espectro_fft.png" alt="Análisis FFT" width="750"><br><em>Fig. 3. Espectros del ECG original y contaminado, utilizados para identificar las interferencias.</em></p>
 
 ## 5.2 Filtros convencionales
 
-El **pasa-banda de 0.5–40 Hz** redujo las interferencias introducidas y parte del ruido gaussiano de alta frecuencia. El **notch de 60 Hz** eliminó principalmente esa componente, pero dejó la de 120 Hz; al utilizar dos notch en cascada se redujeron ambas frecuencias, aunque permaneció el ruido de banda ancha.
-
-<p align="center"><img src="images/comparacion_pasabanda.png" alt="Comparación con pasa-banda" width="750"><br><em>Fig. 4. ECG original, contaminado y filtrado mediante pasa-banda.</em></p>
-
-<p align="center"><img src="images/comparacion_notch.png" alt="Comparación notch" width="750"><br><em>Fig. 5. Efecto de aplicar un notch de 60 Hz y dos notch de 60 y 120 Hz.</em></p>
 
 ## 5.3 LMS y Wavelet
 
-El LMS estimó progresivamente las interferencias usando las referencias disponibles. Durante los primeros instantes se observó el proceso de convergencia; después, la cancelación redujo las senoides sin eliminar de manera equivalente el ruido gaussiano.
-
-<p align="center"><img src="images/convergencia_lms.png" alt="Convergencia LMS" width="750"><br><em>Fig. 6. Adaptación de los coeficientes del LMS y salida del filtro durante los primeros segundos.</em></p>
-
-La descomposición Wavelet permitió diferenciar componentes rápidas, transitorios asociados al QRS y variaciones lentas. El *denoising* directo redujo el ruido de banda ancha, mientras que la combinación **notch + Wavelet** permitió abordar primero las interferencias periódicas y luego el ruido residual.
-
-<p align="center"><img src="images/comparacion_wavelet_hibrido.png" alt="Comparación Wavelet e híbrido" width="750"><br><em>Fig. 7. Comparación temporal del pasa-banda, Wavelet y el método híbrido.</em></p>
 
 ## 5.4 Comparación cuantitativa
 
-Las siguientes cifras proceden de la tabla final calculada en el notebook, usando la misma referencia ECG y la misma ventana de evaluación:
-
-| Método | RMSE (mV) | SNR (dB) | Correlación $r$ |
-|---|---:|---:|---:|
-| ECG contaminado, sin filtrar | 0.0803 | 1.2186 | 0.7556 |
-| **Pasa-banda 0.5–40 Hz** | **0.0193** | **13.6134** | **0.9780** |
-| Notch 60 Hz | 0.0476 | 5.7609 | 0.8888 |
-| Notch 60 + 120 Hz | 0.0275 | 10.5407 | 0.9586 |
-| LMS adaptativo | 0.0281 | 10.3573 | 0.9577 |
-| Wavelet (*denoising*) | 0.0388 | 7.5400 | 0.9077 |
-| Híbrido notch + Wavelet | 0.0242 | 11.6570 | 0.9756 |
-
-<p align="center"><img src="images/snr_metodos.png" alt="SNR por método" width="750"><br><em>Fig. 8. Comparación de SNR de los métodos evaluados frente al ECG original.</em></p>
 
 # 6. Análisis y comparación
 
-El **pasa-banda** presentó los mejores resultados cuantitativos del ensayo: RMSE de **0.0193 mV**, SNR de **13.61 dB** y correlación de **0.9780**. Respecto al ECG contaminado, la SNR mejoró aproximadamente **12.39 dB**. Esto concuerda con la reducción visual de oscilaciones no deseadas, aunque parte del contenido real del ECG también puede atenuarse por el límite superior de 40 Hz.
-
-Los **notch** mostraron un comportamiento selectivo: uno solo no fue suficiente para eliminar dos interferencias diferentes, pero la cascada logró una SNR de **10.54 dB**. El **LMS** alcanzó **10.36 dB** y permitió observar la ventaja de ajustar sus coeficientes, a costa de requerir una referencia y un intervalo de convergencia.
-
-El **Wavelet denoising** obtuvo **7.54 dB**, ya que la umbralización puede reducir ruido distribuido, pero no necesariamente suprimir senoides intensas. El método **híbrido** mejoró hasta **11.66 dB**, con una correlación de **0.9756**, lo que muestra que combinar técnicas puede ser útil cuando coexisten interferencias de banda estrecha y ruido de banda ancha.
-
-Para identificar cuánto puede distorsionar la señal un filtro, el notebook también aplicó los métodos al **ECG original sin contaminación artificial**. El pasa-banda generó un RMSE de **0.0178 mV**, mientras que los dos notch produjeron **0.0032 mV**. Esto confirma que un filtro puede introducir diferencias aunque no exista el ruido que pretende eliminar.
-
-En consecuencia, **el pasa-banda fue el mejor método según las métricas obtenidas en este experimento**, pero ello no significa que sea superior en todos los escenarios clínicos. La decisión depende de la contaminación presente, la morfología que debe conservarse y si el procesamiento será en tiempo real o fuera de línea.
+E
 
 # 7. Respuestas al cuestionario
 
@@ -269,31 +227,11 @@ Porque una señal más suave no garantiza menor error ni conservación de la mor
 
 # 8. Síntesis e infografía
 
-La práctica partió de un **ECG real** y permitió estudiar una contaminación simulada con interferencias de 60 y 120 Hz más ruido gaussiano. Se utilizaron herramientas de análisis temporal y espectral, y se compararon filtros convencionales, LMS y Wavelet. El mejor resultado cuantitativo de esta ejecución correspondió al pasa-banda, aunque el método híbrido también mostró una recuperación favorable.
-
-```text
-ECG real (BITalino / OpenSignals)
-          ↓
-Contaminación artificial (60 Hz + 120 Hz + ruido)
-          ↓
-Análisis temporal y espectral (FFT)
-          ↓
-Pasa-banda / Notch / LMS / Wavelet / Híbrido
-          ↓
-Comparación visual + RMSE + SNR + correlación
-          ↓
-Interpretación de resultados y conclusiones
-```
-
-**Infografía presentada por el grupo:**
-
-<p align="center"><img src="Infografía_S7.jpeg" alt="Infografía del Laboratorio 7" width="750"><br><em>Infografía del Laboratorio 7 (archivo ubicado en la misma carpeta del README).</em></p>
+L
 
 # 9. Conclusiones
 
-El laboratorio permitió comprobar que las perturbaciones pueden dificultar la interpretación del ECG y que cada técnica de filtrado responde de manera distinta según las características del ruido. Los filtros notch redujeron interferencias localizadas, el LMS permitió adaptar la estimación de estas componentes y Wavelet facilitó el análisis temporal por escalas y la atenuación de ruido de banda ancha.
 
-En los datos analizados, el **pasa-banda de 0.5–40 Hz** presentó la mayor SNR (**13.61 dB**) y el menor RMSE (**0.0193 mV**), mientras que el método híbrido obtuvo una SNR de **11.66 dB**. No obstante, el mejor valor de una métrica no garantiza por sí solo la conservación completa de la información fisiológica. Por ello, un procesamiento adecuado debe valorar conjuntamente la reducción de ruido, la morfología de las ondas, la distorsión introducida y el propósito de la aplicación biomédica.
 
 # 10. Referencias
 
