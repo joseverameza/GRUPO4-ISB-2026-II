@@ -102,7 +102,13 @@ Las tres contracciones reales tuvieron valores muy similares (RMS de 0.213 a 0.2
 
 # 5. Conclusiones
 
+El procesamiento de la señal sEMG permitió mejorar la calidad de los registros mediante el filtrado de interferencias, conservando la información relevante de la actividad muscular. Sin embargo, la presencia de muestras saturadas durante las contracciones evidenció algunas limitaciones en la adquisición de la señal.
 
+La detección de contracciones mediante un umbral RMS presentó dificultades debido a su cercanía con el nivel de ruido, lo que generó falsas detecciones. Esto demuestra la importancia de establecer un umbral adecuado para identificar correctamente los periodos de actividad muscular.
+
+Las características frecuenciales mostraron una mayor capacidad para diferenciar entre reposo y contracción que las características de amplitud. En la clasificación, la CNN presentó el mejor desempeño promedio frente a LDA y SVM, aunque las diferencias en las condiciones de evaluación limitan una comparación directa entre los modelos.
+
+La validación por ciclos permitió evaluar de manera más realista la capacidad de generalización de los clasificadores, evitando resultados demasiado optimistas. Finalmente, no se encontró evidencia significativa de fatiga muscular, lo que indica que las contracciones registradas no presentaron cambios frecuenciales suficientes para identificar este fenómeno.
 
 # 6. Referencias
 
