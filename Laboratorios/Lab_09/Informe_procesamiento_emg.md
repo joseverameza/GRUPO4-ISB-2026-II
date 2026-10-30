@@ -3,7 +3,7 @@
 
 **Grupo 4 — 2026-II**  
 **Integrantes:** Astrid Sophia Mejía Barreto, Geraldine Mayte Segura Villarreal, José Fernando Vera Meza y Solangel Macedo Pereira.  
-**Fecha de laboratorio:** 04/09/2026.
+**Fecha de laboratorio:** 23/10/2026.
 
 ## Índice
 
