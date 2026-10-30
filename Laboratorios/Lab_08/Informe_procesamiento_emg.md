@@ -95,7 +95,8 @@ La validación por ciclos fue necesaria: el mismo modelo dio **0.871 con KFold a
 
 ## 4.6 Análisis de fatiga
 
-
+Las tres contracciones reales tuvieron valores muy similares (RMS de 0.213 a 0.282 mV y MDF de 70.3 a 78.1 Hz). Con todas las contracciones analizadas no hubo tendencia significativa (MDF: ρ = 0.16, p = 0.726), por lo que no se evidencia fatiga.
+ 
 
 <p align="center"><img src="./images/fatiga_rms_mnf_mdf.png" alt="RMS, MNF y MDF por contracción" width="700"><br><em>Fig 7. RMS, MNF y MDF en función del número de contracción.</em></p>
 
