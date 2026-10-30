@@ -26,7 +26,21 @@
 # 2. Fundamento teórico del laboratorio
 # 3. Procedimiento
 
+1. **Adquisición de datos:** se registraron señales sEMG durante periodos de reposo y contracción muscular, y se verificó la presencia de muestras saturadas en el ADC.
 
+2. **Señal original:** se convirtieron los valores del ADC a milivoltios y se visualizaron las señales para analizar sus amplitudes y características temporales.
+
+3. **Filtrado:** se redujo la interferencia de 60 Hz y se compararon las señales originales y filtradas mediante su representación temporal y densidad espectral de potencia (PSD). Además, se calcularon el RMS y la SNR.
+
+4. **Detección de contracciones:** se calculó la envolvente RMS y se aplicó un umbral para identificar los periodos de actividad muscular. Posteriormente, se segmentó la señal en ventanas de reposo, contracción y transición.
+
+5. **Extracción de características:** se calcularon parámetros temporales y frecuenciales, como RMS, ZC, WAMP, MNF, MDF y potencia espectral, para caracterizar las señales de reposo y contracción.
+
+6. **Selección de características:** se utilizó la razón de Fisher para evaluar la capacidad discriminante de las características y se analizó su correlación para identificar posibles redundancias.
+
+7. **Clasificación:** se implementaron los modelos LDA, SVM y CNN, utilizando características extraídas y espectrogramas. Se compararon sus desempeños mediante la exactitud balanceada y métodos de validación KFold y GroupKFold.
+
+8. **Análisis de fatiga:** se evaluó la evolución del RMS, MNF y MDF durante las contracciones para identificar posibles cambios asociados a la fatiga muscular.
 
 # 4. Resultados
 
