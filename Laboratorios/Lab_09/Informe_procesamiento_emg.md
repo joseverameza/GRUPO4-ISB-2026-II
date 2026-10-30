@@ -33,6 +33,140 @@ Objetivos:
 - Calcular e interpretar características de la señal por ventanas.
 
 # 2. Fundamento teórico del laboratorio
+
+### 2.1 Señal sEMG
+El músculo se organiza en unidades motoras (motoneurona y las fibras musculares que controla). Cada vez que la motoneurona dispara, sus fibras generan un pequeño potencial eléctrico. Sin embargo, el electrodo de superficie no ve cada unidad por separado, sino la suma de los potenciales de todas las unidades activas. Es por ello que la señal parece ruido aleatorio.
+
+Asimismo, el cuerpo aumenta la fuerza de dos formas: reclutando más unidades motoras o haciendo que cada una dispare más rápido. Estos casos aumentan la amplitud de la señal.
+
+| Propiedad | Valor típico |
+|---|---|
+| Amplitud | De microvoltios (reposo) a pocos milivoltios |
+| Banda útil | Aprox. 20–450 Hz (según la fuente, 10–500 Hz) |
+| Frecuencias donde hay más energía | Aprox. 50–150 Hz |
+
+Hay que tener en cuenta que la piel y la grasa actúan como un filtro pasabajas, por eso en superficie la señal tiene menos frecuencias altas que dentro del músculo.
+
+### 2.2 Adquisición y conversión 
+El BITalino mide la diferencia de voltaje entre dos electrodos sobre el músculo, usando un tercero como referencia. Se restan ambas señales para reducir el ruido que les llega como la interferencia de la red. La señal se amplifica, filtra y digitaliza con un conversor analógico-digital (ADC) de 10 bits, que entrega valores enteros de 0 a 1023.
+
+La frecuencia de muestreo fue $F_s = 1000$ Hz, así que la frecuencia máxima que se puede representar es 500 Hz (Nyquist), es suficiente para la banda de la sEMG. El tiempo de cada muestra es:
+
+$$t[n] = \frac{n}{f_s}$$
+
+Para pasar del valor del ADC a milivoltios se usa la ecuación de la hoja técnica del sensor:
+
+$$EMG_{mV} = \frac{\left(\dfrac{ADC}{2^{n}} - \dfrac{1}{2}\right) V_{CC}}{G_{EMG}} \times 1000$$
+
+con $n=10$ bits, $V_{CC}=3.3$ V y $G_{EMG}=1009$. Esto da un rango medible de aproximadamente **±1.63 mV**; si la señal es mayor, el ADC se satura.
+
+| Parámetro | Valor |
+|---|---|
+| Sensor / canal | EMGBITREV / A1 |
+| Músculo | Antebrazo |
+| Frecuencia de muestreo | 1000 Hz |
+| Resolución | 10 bits |
+| BASELINE (reposo) | 48 300 muestras (48.3 s) |
+| PRUEBA (contracciones) | 122 550 muestras (122.5 s) |
+
+### 2.3 Ruido, saturación y calidad de la señal
+| Fuente | Qué es | Cómo se reduce |
+|---|---|---|
+| Interferencia de la red | Oscilación a 60 Hz (y 120 Hz, etc.) | Filtro notch |
+| Artefactos de movimiento | Frecuencias bajas (menos de 20 Hz) | Filtro pasa-altos |
+| Ruido electrónico | Ruido aleatorio en todas las frecuencias | Se mide con el registro en reposo |
+| Saturación | La señal se nivela en el máximo o mínimo del ADC | Se evita al grabar; los filtros no la corrigen |
+
+**Espectro (método de Welch).** Se usa para ver en qué frecuencias está la potencia de la señal, se calcula la densidad espectral de potencia (PSD). El método de Welch divide la señal en segmentos, calculando el espectro de cada uno y los promedia, da estimación más estable que una sola FFT. Se visualizan las interferencias de red como picos angostos.
+
+**Saturación.** Una muestra está saturada si su valor del ADC es 0 o 1023. El recorte elimina los picos más altos y distorsiona sobre todo la curtosis, que tiende a disminuir.
+
+**Relación señal-ruido (SNR).** Se estima usando el reposo como referencia del ruido:
+
+$$SNR \approx 20\log_{10}\!\left(\frac{RMS_{prueba}}{RMS_{baseline}}\right)\ \text{dB}$$
+
+### 2.4 Filtrado
+Primero se resta la media para centrar la señal en cero, luego se aplican dos filtros:
+
+| Filtro | Configuración | Para qué sirve |
+|---|---|---|
+| Pasa-banda Butterworth | Orden 4, 20–450 Hz | Quitar derivas, movimiento y ruido de alta frecuencia |
+| Notch | 60 Hz, $Q=30$ | Quitar la interferencia de la red |
+
+El ancho del notch depende de $Q$:
+
+$$BW \approx \frac{f_0}{Q}$$
+
+Con $Q=30$ la muesca es angosta (unos 2 Hz), así que casi no afecta las frecuencias vecinas. Los filtros se aplicaron hacia adelante y hacia atrás (`filtfilt`) para que la señal no se desfase; esto sirve para análisis posterior, no para tiempo real.
+
+### 2.5 Detección de las contracciones
+
+Como la sEMG oscila alrededor de cero, se calcula su **envolvente RMS**, una curva suave que sigue la amplitud de la señal. Con una ventana móvil de $W$ muestras (200 ms):
+
+$$RMS[n] = \sqrt{\frac{1}{W}\sum_{k=n-W/2}^{n+W/2} x[k]^{2}}$$
+
+Se considera que hay contracción cuando la envolvente supera un umbral calculado con el reposo:
+
+$$\text{umbral} = \mu_{reposo} + k\,\sigma_{reposo}, \qquad k = 5$$
+
+### 2.6 Ventanas y etiquetado
+
+La sEMG cambia con el tiempo, así que las características se calculan en ventanas cortas. Se usaron ventanas de 250 ms con 50 % de solapamiento. Cada ventana se etiqueta según qué fracción de ella cae dentro de una contracción:
+
+| Etiqueta | Criterio |
+|---|---|
+| Contracción | 80 % o más dentro de una contracción |
+| Reposo | 5 % o menos |
+| Transición | El resto |
+
+La amplitud se reporta en mV, sin normalizar
+
+### 2.7 Características
+
+Una característica es un número que resume una ventana de $N$ muestras $x_i$. En el laboratorio se calcularon 15, en cuatro grupos.
+
+**Amplitud**
+
+| Característica | Fórmula |
+|---|---|
+| MAV (valor absoluto medio) | $\displaystyle \frac{1}{N}\sum \lvert x_i\rvert$ |
+| RMS | $\displaystyle \sqrt{\frac{1}{N}\sum x_i^{2}}$ |
+| iEMG | $\displaystyle \sum \lvert x_i\rvert$ |
+| VAR (varianza) | $\displaystyle \frac{1}{N-1}\sum (x_i-\bar{x})^{2}$ |
+
+El RMS aumenta con la fuerza, depende del músculo y de la persona. Con ventanas del mismo tamaño, iEMG es MAV multiplicado por $N$, así que dan la misma información.
+
+**Complejidad** ZC, SSC y WAMP solo cuentan los cambios mayores a un umbral de ruido $\varepsilon$, se tomó como $3\sigma$ del reposo.
+
+| Característica | Qué mide |
+|---|---|
+| WL (longitud de forma de onda) | $\displaystyle \sum \lvert x_{i+1}-x_i\rvert$: cuánto "recorre" la señal |
+| ZC (cruces por cero) | Veces que la señal cambia de signo (con cambio mayor a $\varepsilon$) |
+| SSC (cambios de pendiente) | Veces que la señal cambia de subir a bajar (mayor a $\varepsilon$) |
+| WAMP | Veces que la diferencia entre muestras seguidas supera $\varepsilon$ |
+
+**Estadísticas (forma de la distribución).** La asimetría indica si la distribución es simétrica (0). La curtosis vale 0 para una distribución gaussiana, mayor si hay picos aislados. Con muchas unidades motoras activas la sEMG se parece a una gaussiana.
+
+**Espectrales** Se calculan a partir de la PSD de Welch entre 20 y 450 Hz:
+
+| Característica | Qué es |
+|---|---|
+| MNF (frecuencia media) | $\displaystyle \frac{\sum f_j P_j}{\sum P_j}$: el centro del espectro |
+| MDF (frecuencia mediana) | Frecuencia que divide la potencia en dos mitades iguales |
+| Potencia por bandas | Fracción de potencia en 20–80, 80–150 y 150–450 Hz |
+
+### 2.8 Interpretación
+
+| Lo que se quiere saber | Qué se mira |
+|---|---|
+| Esfuerzo muscular | Amplitud (RMS) |
+| Cuándo se activa el músculo | Amplitud sobre un umbral |
+| Fatiga | RMS que aumenta y MDF/MNF que disminuyen con el tiempo |
+
+Con la fatiga, el espectro se desplaza a frecuencias más bajas. Para detectarla bien se necesitan contracciones sostenidas y de intensidad controlada, poeque con contracciones cortas y pausas, o con saturación, puede no notarse.
+
+
+
 # 3. Procedimiento
 
 1. **Adquisición de datos:** se registraron señales sEMG durante periodos de reposo y contracción muscular, y se verificó la presencia de muestras saturadas en el ADC.
