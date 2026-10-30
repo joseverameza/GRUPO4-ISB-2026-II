@@ -9,6 +9,14 @@
 
 - [1. Introducción](#1-introducción)
 - [2. Fundamento teórico del laboratorio](#2-fundamento-teorico-del-laboratorio)
+  - [2.1 Señal sEMG](#21-señal-semg)
+  - [2.2 Adquisición y conversión](#22-adquisición-y-conversión)
+  - [2.3 Ruido, saturación y calidad de la señal](#23-ruido-saturación-y-calidad-de-la-señal)
+  - [2.4 Filtrado](#24-filtrado)
+  - [2.5 Detección de las contracciones](#25-detección-de-las-contracciones)
+  - [2.6 Ventanas y etiquetado](#26-ventanas-y-etiquetado)
+  - [2.7 Características](#27-características)
+  - [2.8 Interpretación](#28-interpretación)
 - [3. Procedimiento](#3-procedimiento)
 - [4. Resultados](#4-resultados)
   - [4.1 Adquisición y saturación](#41-adquisición-y-saturación)
@@ -77,7 +85,7 @@ con $n=10$ bits, $V_{CC}=3.3$ V y $G_{EMG}=1009$. Esto da un rango medible de ap
 | Ruido electrónico | Ruido aleatorio en todas las frecuencias | Se mide con el registro en reposo |
 | Saturación | La señal se nivela en el máximo o mínimo del ADC | Se evita al grabar; los filtros no la corrigen |
 
-**Espectro (método de Welch).** Se usa para ver en qué frecuencias está la potencia de la señal, se calcula la densidad espectral de potencia (PSD). El método de Welch divide la señal en segmentos, calculando el espectro de cada uno y los promedia, da estimación más estable que una sola FFT. Se visualizan las interferencias de red como picos angostos.
+**Espectro** Se usa para ver en qué frecuencias está la potencia de la señal, se calcula la densidad espectral de potencia (PSD). El método de Welch divide la señal en segmentos, calculando el espectro de cada uno y los promedia, da estimación más estable que una sola FFT. Se visualizan las interferencias de red como picos angostos.
 
 **Saturación.** Una muestra está saturada si su valor del ADC es 0 o 1023. El recorte elimina los picos más altos y distorsiona sobre todo la curtosis, que tiende a disminuir.
 
@@ -140,12 +148,12 @@ El RMS aumenta con la fuerza, depende del músculo y de la persona. Con ventanas
 
 | Característica | Qué mide |
 |---|---|
-| WL (longitud de forma de onda) | $\displaystyle \sum \lvert x_{i+1}-x_i\rvert$: cuánto "recorre" la señal |
+| WL (longitud de forma de onda) | $\displaystyle \sum \lvert x_{i+1}-x_i\rvert$: cuánto recorre la señal |
 | ZC (cruces por cero) | Veces que la señal cambia de signo (con cambio mayor a $\varepsilon$) |
 | SSC (cambios de pendiente) | Veces que la señal cambia de subir a bajar (mayor a $\varepsilon$) |
 | WAMP | Veces que la diferencia entre muestras seguidas supera $\varepsilon$ |
 
-**Estadísticas (forma de la distribución).** La asimetría indica si la distribución es simétrica (0). La curtosis vale 0 para una distribución gaussiana, mayor si hay picos aislados. Con muchas unidades motoras activas la sEMG se parece a una gaussiana.
+**Estadísticas** La asimetría indica si la distribución es simétrica (0). La curtosis vale 0 para una distribución gaussiana, mayor si hay picos aislados. Con muchas unidades motoras activas la sEMG se parece a una gaussiana.
 
 **Espectrales** Se calculan a partir de la PSD de Welch entre 20 y 450 Hz:
 
