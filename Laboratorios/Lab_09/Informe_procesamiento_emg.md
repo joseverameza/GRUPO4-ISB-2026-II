@@ -21,7 +21,16 @@
 - [6. Referencias](#6-referencias)
 
 # 1. Introducción
+La electromiografía de superficie (sEMG) registra la actividad eléctrica de un músculo mediante electrodos colocados sobre la piel. La señal es muy pequeña (de microvoltios a pocos milivoltios) y se contamina fácilmente con ruido electrónico, interferencia de la red eléctrica, movimiento de los electrodos, saturación del conversor, entre otros. Es por ello, antes de analizarla hay que filtrarla y luego resumirla en números llamados características.
 
+En este laboratorio se trabajó con dos registros de un músculo del antebrazo, adquiridos con BITalino (r)evolution y OpenSignals: uno en reposo (BASELINE), usado como referencia del ruido, y otro con contracciones repetidas separadas por reposo (PRUEBA). Primero se convirtió la señal a milivoltios y se revisó su calidad. Después se filtró, se detectaron automáticamente las contracciones, se dividió la señal en ventanas y se calcularon características de cada ventana para compararlas entre reposo y contracción.
+
+Objetivos:
+
+- Explicar de dónde viene la señal sEMG y cuáles son sus rangos típicos.
+- Convertir, filtrar y evaluar la calidad de una señal real de BITalino.
+- Detectar los periodos de contracción con la envolvente y un umbral.
+- Calcular e interpretar características de la señal por ventanas.
 
 # 2. Fundamento teórico del laboratorio
 # 3. Procedimiento
