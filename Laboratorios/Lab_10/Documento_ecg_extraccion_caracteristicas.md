@@ -77,25 +77,77 @@ Dentro de feature extraction se trabajan las siguientes familias:
 
 # 3. Procedimiento
 
-
+El procedimiento se organizó en dos partes: primero se revisaron los registros y se eligió una derivación; luego se procesaron sus latidos, se calcularon características y se compararon clasificadores.
 
 ## 3.1 Parte A — Conociendo los datos
 
-
+1. **Inventario y conversión:** se cargaron los 12 registros de OpenSignals, correspondientes a las derivaciones DI, DII y DIII en las condiciones basal, hiperventilación, hipoventilación y aeróbica. Se revisaron los metadatos, los paquetes perdidos y las muestras saturadas. Los valores del ADC se convirtieron a milivoltios con la ecuación del sensor ECG de BITalino.
+2. **Inspección y control de calidad:** se visualizaron seis segundos de cada señal para comparar la polaridad del QRS y detectar artefactos. Se identificó automáticamente la polaridad, se detectaron los picos R con una implementación simplificada de Pan-Tompkins y se marcaron como anómalos los intervalos RR que se alejaban más del 35 % de la mediana local. También se calculó la frecuencia cardiaca media por condición y derivación.
+3. **Selección de derivación:** se eligió DII porque contenía las cuatro condiciones, mantenía el QRS positivo y presentaba menos problemas de calidad que DI y DIII.
 
 ## 3.2 Parte B — Extracción de características y clasificación
 
-
+1. **Filtrado y detección de latidos:** en DII se centraron las señales y se aplicó un filtro Butterworth pasa-banda de 0.5–40 Hz, seguido de un filtro *notch* de 60 Hz. Para detectar cada pico R se usó un pasa-banda de 5–15 Hz, derivación, elevación al cuadrado, integración móvil de 150 ms y un umbral con periodo refractario.
+2. **Segmentación:** se conservaron los latidos con intervalos RR válidos y una ventana completa de 200 ms antes y 400 ms después del pico R. Se descartaron el primer y el último latido de cada registro, además de los latidos con intervalos anómalos.
+3. **Extracción de características:** se describió cada latido mediante 24 características de cinco familias: ritmo, morfología, estadísticas básicas y de orden superior, y frecuencia. Estas últimas incluyeron parámetros de FFT y energías relativas de cuatro niveles de la transformada wavelet discreta db4.
+4. **Clasificación y evaluación:** se compararon Árbol de Decisión, Regresión Logística, Random Forest, KNN y SVM usando exactitud y F1 macro. La validación se realizó en tres pliegues, agrupando los latidos por bloques de 10 s para evitar que latidos consecutivos de un mismo bloque quedaran simultáneamente en entrenamiento y prueba.
 
 # 4. Resultados
 
 ## 4.1 Parte A — Calidad de los registros y elección de derivación
 
+Se encontraron los 12 archivos esperados, con datos reales del grupo. La inspección visual mostró QRS positivo en la mayoría de los registros; el QRS de la condición aeróbica en DI fue negativo y se invirtió para el análisis. La revisión de saturación e intervalos RR dio los siguientes resultados:
 
+<p align="center"><img src="./images/registros_tres_derivaciones.png" alt="Señales ECG filtradas en las tres derivaciones y cuatro condiciones" width="800"><br><em>Fig. 1. Seis segundos de los registros ECG filtrados por condición y derivación.</em></p>
+
+| Derivación | Registros que requieren revisión | Evaluación general |
+|---|---|---|
+| DI | Aeróbica: 55.6 % de RR anómalos y 274 muestras saturadas; 10 latidos detectados y 2 válidos | Un registro problemático |
+| DII | Hipoventilación: 2.3 % de RR anómalos; sin saturación | Tres registros buenos y uno para revisar |
+| DIII | Basal: 1.8 % de RR anómalos; hiperventilación: 39.4 %; hipoventilación: 15.8 %; aeróbica: 19.0 % | Un registro para revisar y tres problemáticos |
+
+Se seleccionó DII: presentó menos registros problemáticos que las otras derivaciones, conservó el QRS positivo en las cuatro condiciones y permitió trabajar con los cuatro grupos. La frecuencia cardiaca media calculada para esta derivación fue:
+
+| Condición | Latidos válidos | RR anómalos | Frecuencia cardiaca media |
+|---|---:|---:|---:|
+| Basal | 54 | 0.0 % | 88.2 lpm |
+| Hiperventilación | 59 | 0.0 % | 115.5 lpm |
+| Hipoventilación | 40 | 2.3 % | 81.4 lpm |
+| Aeróbica | 73 | 0.0 % | 146.4 lpm |
+
+La frecuencia cardiaca fue mayor en la condición aeróbica, seguida por hiperventilación, basal e hipoventilación. Este orden es consistente con el aumento esperado durante la actividad física. Los registros aeróbicos de las tres derivaciones se tomaron en momentos diferentes, por lo que sus frecuencias cardiacas no son mediciones simultáneas.
+
+<p align="center"><img src="./images/frecuencia_cardiaca.png" alt="Frecuencia cardiaca por condición y derivación y tacograma de DI" width="800"><br><em>Fig. 2. Frecuencia cardiaca media por condición y derivación (izquierda) y tacograma de la derivación DI (derecha), calculados con intervalos RR no anómalos.</em></p>
 
 ## 4.2 Parte B — Características y clasificación
 
+En DII, el detector encontró 56, 61, 44 y 75 latidos en las condiciones basal, hiperventilación, hipoventilación y aeróbica, respectivamente. Después del control de calidad y la segmentación se conservaron **226 latidos** de 600 muestras cada uno: 54 basales, 59 de hiperventilación, 40 de hipoventilación y 73 aeróbicos. De cada latido se calcularon 24 características.
 
+<p align="center"><img src="./images/filtrado_ecg.png" alt="Comparación de la señal ECG antes y después del filtrado" width="800"><br><em>Fig. 3. Comparación temporal y espectral de un registro ECG antes y después del filtrado.</em></p>
+
+<p align="center"><img src="./images/latidos_promedio.png" alt="Latidos promedio por condición" width="700"><br><em>Fig. 4. Latido promedio de cada condición en DII, alineado por el pico R.</em></p>
+
+La frecuencia cardiaca y la fracción de energía entre 5 y 15 Hz destacaron al comparar las condiciones. La condición aeróbica presentó la mayor frecuencia cardiaca media (146.5 lpm en los latidos segmentados) y una amplitud media de onda T mayor que las otras condiciones. Los latidos basales e hipoventilados mostraron características más parecidas entre sí.
+
+<p align="center"><img src="./images/caracteristicas_por_condicion.png" alt="Distribución de características estandarizadas por condición" width="800"><br><em>Fig. 5. Distribución de características seleccionadas por condición; los valores están estandarizados para facilitar su comparación.</em></p>
+
+La validación agrupada produjo los siguientes resultados:
+
+| Modelo | Exactitud | F1 macro |
+|---|---:|---:|
+| Árbol de Decisión | 0.805 ± 0.060 | 0.646 ± 0.126 |
+| Regresión Logística | 0.834 ± 0.097 | 0.754 ± 0.158 |
+| Random Forest | 0.877 ± 0.061 | 0.764 ± 0.160 |
+| KNN (k = 5) | 0.821 ± 0.099 | 0.669 ± 0.190 |
+| SVM (RBF) | 0.826 ± 0.083 | 0.674 ± 0.179 |
+
+<p align="center"><img src="./images/comparacion_clasificadores.png" alt="Comparación de exactitud y F1 macro de los clasificadores" width="700"><br><em>Fig. 6. Comparación del desempeño de los cinco clasificadores con validación por bloques.</em></p>
+
+Random Forest obtuvo el mayor F1 macro (0.764), seguido de Regresión Logística (0.754). La diferencia entre ambos fue pequeña frente a la variación entre pliegues, por lo que estos resultados no permiten afirmar que Random Forest sea claramente superior. La matriz de confusión mostró que los errores más frecuentes ocurrieron entre las clases basal e hipoventilación, coherente con la similitud observada en sus características.
+
+<p align="center"><img src="./images/matriz_confusion_importancia.png" alt="Matriz de confusión e importancia de características de Random Forest" width="800"><br><em>Fig. 7. Matriz de confusión del mejor modelo e importancia de características estimada por Random Forest.</em></p>
+
+La validación también afectó sustancialmente la métrica: para Random Forest sin características de ritmo, el F1 macro fue 0.940 al mezclar latidos al azar, pero 0.615 al separarlos por bloques de 10 s. El primer valor es optimista porque latidos cercanos pueden compartir características y aparecer en entrenamiento y prueba. Por ello, se reportan como referencia principal los resultados de la validación por bloques.
 
 # 5. Cuestionario final
 
@@ -103,7 +155,9 @@ Dentro de feature extraction se trabajan las siguientes familias:
 
 # 6. Conclusiones
 
+La revisión de los registros permitió elegir DII por su QRS positivo y mejor calidad general. La frecuencia cardiaca fue mayor en la condición aeróbica. El procesamiento produjo 226 latidos con 24 características; la frecuencia cardiaca y la energía entre 5–15 Hz ayudaron a distinguir condiciones, aunque basal e hipoventilación fueron similares.
 
+Random Forest obtuvo el mayor F1 macro (0.764), con resultados cercanos a Regresión Logística. La validación por bloques evitó estimaciones optimistas por fuga de información. Como se analizó una sola persona y hubo registros con saturación o intervalos anómalos, los resultados describen esta sesión y no deben generalizarse clínicamente.
 
 # 7. Referencias
 
