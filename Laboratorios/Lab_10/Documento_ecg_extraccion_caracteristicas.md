@@ -150,23 +150,6 @@ Random Forest obtuvo el mayor F1 macro (0.764), seguido de Regresión Logística
 La validación también afectó sustancialmente la métrica: para Random Forest sin características de ritmo, el F1 macro fue 0.940 al mezclar latidos al azar, pero 0.615 al separarlos por bloques de 10 s. El primer valor es optimista porque latidos cercanos pueden compartir características y aparecer en entrenamiento y prueba. Por ello, se reportan como referencia principal los resultados de la validación por bloques.
 
 # 5. Cuestionario final
-
-### Pregunta 1 — ¿Qué derivación funciona mejor?
-Ejecuta `experimento("D1")`, `experimento("D2")` y `experimento("D3")`. ¿Con qué derivación y qué modelo obtienes el mejor F1? ¿Coincide con la calidad que viste en la Parte A?
-
-### Pregunta 2 — ¿Importa la polaridad?
-En **D2**, compara `experimento("D2", invertir="auto")` con `experimento("D2", invertir=False)`. ¿Cambia el número de latidos detectados? Usando la tabla devuelta (`res, tab, resumen = experimento(...)`), compara el promedio de `amp_R` y `amp_S`. ¿Qué onda está midiendo realmente `amp_R` en cada caso? ¿Cambia el F1?
-
-### Pregunta 3 — Pares de condiciones: ¿cuál es más difícil de distinguir?
-En tu derivación, clasifica solo **dos** condiciones: `["basal", "aerobica"]` y `["basal", "hiperventilacion"]`. Para cada par, compara todas las características con `columnas=RITMO`. ¿Qué par es más difícil y por qué?
-
-### Pregunta 4 — Sensibilidad del detector
-Cambia `factor_umbral` a **0.1**, **0.3** y **0.7**. ¿Cómo cambian los latidos detectados y válidos en el archivo con más problemas de calidad (Parte A)? ¿Qué valor elegirías y por qué?
-
-### Pregunta 5 — ¿Cuántas características necesitamos?
-Usa solo las **5 características más importantes** del Random Forest (gráfico de B.7), por ejemplo `columnas=imp.tail(5).index.tolist()`. ¿El F1 baja mucho respecto a las 24? ¿Qué ventaja práctica tendría usar menos características?
-
-**Respuestas:**
 ### Pregunta 1 — ¿Qué derivación funciona mejor?
 Se obtiene el mejor F1 con la tercera derivación y el modelo Random Forest (0.806), mayor que con la segunda derivación y el modelo Random Forest (0.764). Sin embargo, la tercera derivación presenta mayor cantidad de % RR anómalos en sus cuatro condiciones; en cambio, la segunda derivación solo presenta un % RR anómalo en hipoventilación, de 2.3 %, mucho menor que en la tercera derivación (1.8 %, 39.4 %, 15.8 % y 19.0 %).
 
