@@ -111,6 +111,18 @@ Las diferencias son de 1 a 2 puntos porcentuales y no hay una prueba estadístic
 
 ### Pregunta 2 — ¿Ayuda el ICA?
 
+| Configuración | Mejor F1 (modelo) | Épocas de parpadeo | Curtosis media | Pico a pico medio (µV) |
+|---|---|---|---|---|
+| Con ICA, rechazando saturadas | 0.572 (KNN) | — | — | — |
+| Sin ICA, rechazando saturadas | 0.575 (KNN) | — | — | — |
+| Con ICA, **sin** rechazar saturadas | 0.572 (KNN) | — | — | — |
+| Sin ICA, **sin** rechazar saturadas | 0.575 (KNN) | — | — | — |
+
+- **En el par de músicas, el ICA no cambia el F1.** Las diferencias entre configuraciones son de 0.003 a 0.013 (por ejemplo, Árbol de Decisión 0.532 con ICA vs. 0.519 sin ICA), muy por debajo de la variación entre pliegues (± 0.046 a 0.137). Además, con F1 ≈ 0.5 ninguna configuración separa las clases mejor que el azar.
+- **Rechazar o no saturadas tampoco cambia el F1:** los valores son idénticos en ambos casos.
+- **No se puede evaluar el efecto del ICA sobre parpadeos y masticación,** porque esos datos no se cargaron.
+
+**Conclusión:** con los datos disponibles no se puede responder cuándo se nota más el efecto del ICA. Teóricamente debería notarse más cuando no se descartan las épocas con artefactos, porque el ICA corrige transitorios estereotipados como los parpadeos que de otro modo permanecerían en la señal.
 
 ### Pregunta 3 — ¿Qué pasa si no quitamos las interferencias?
 
