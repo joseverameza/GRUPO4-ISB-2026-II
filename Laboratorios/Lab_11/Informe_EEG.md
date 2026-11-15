@@ -102,6 +102,20 @@ Dar al clasificador miles de puntos crudos (canales × frecuencia de muestreo ×
 
 
 # 5. Cuestionario final
+### Pregunta 1 — ¿Se distingue la música relajante de la estresante?
+
+
+### Pregunta 2 — ¿Ayuda el ICA?
+
+
+### Pregunta 3 — ¿Qué pasa si no quitamos las interferencias?
+
+
+### Pregunta 4 — Normalizar, ¿ayuda o perjudica?
+
+### Pregunta 5 — Duración de la época
+
+
 
 # 6. Conclusiones
 
