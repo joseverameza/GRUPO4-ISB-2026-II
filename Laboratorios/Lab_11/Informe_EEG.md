@@ -103,7 +103,11 @@ Dar al clasificador miles de puntos crudos (canales × frecuencia de muestreo ×
 
 # 5. Cuestionario final
 ### Pregunta 1 — ¿Se distingue la música relajante de la estresante?
+Ambas se grabaron con el mismo equipo (2A:08), con 2 minutos de diferencia. El F1 macro va de 0.450 (Random Forest) a 0.572 (KNN), con mucha variación entre pliegues (± 0.046 a 0.137). Con dos clases, un F1 cercano a 0.5 equivale al azar, así que no hay una separación fiable entre ambas músicas.
 
+Las bandas cambian poco: la relajante tiene más alfa (19.6 % vs. 17.8 %) y algo más de gamma (22.1 % vs. 21.4 %), mientras que la estresante tiene más beta (44.5 % vs. 42.9 %), delta (6.4 % vs. 5.9 %) y theta (9.6 % vs. 9.3 %). Por eso la relación alfa/beta es mayor en la relajante (0.501 vs. 0.425), y la entropía (0.875 vs. 0.882) y theta/beta (0.227 en ambas) prácticamente no varían. La frecuencia pico sí difiere (17.1 Hz en la relajante vs. 12.6 Hz en la estresante).
+
+Las diferencias son de 1 a 2 puntos porcentuales y no hay una prueba estadística que indique si superan la variabilidad entre épocas. Beta y gamma suman cerca de dos tercios de la potencia en ambas, lo que sugiere contaminación muscular o ruido de alta frecuencia y no solo actividad cerebral. Además, la estresante necesitó más correcciones de transitorios (4 vs. 2 ICs) y conservó menos épocas (35 vs. 45), lo que apunta a más artefactos en esa grabación. Al ser una sola grabación por música, no se puede generalizar.
 
 ### Pregunta 2 — ¿Ayuda el ICA?
 
