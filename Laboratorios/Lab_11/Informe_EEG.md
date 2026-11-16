@@ -31,6 +31,17 @@ En este laboratorio se procesa las señales EEG adquiridas en el LAB 06 con el s
 
 
 # 2. Teoría de clase
+El EEG es una señal no estacionaria y no lineal del orden de microvoltios. A diferencia de una señal estacionaria como el ECG, donde se repite la morfología P-QRS-T, no tiene una forma fija. El flujo de trabajo empieza por la adquisición, sigue con el filtrado y el preprocesamiento (ICA, MICA), luego la extracción de características y termina en el modelado con IA.
+
+Por la conducción de volumen, actividad de otras neuronas puede colarse en la señal. Los principales artefactos vienen del movimiento ocular, que tiene más potencia y amplitud, de los músculos de la mandíbula y el cuello, de la actividad cardíaca y de la red eléctrica a 60 Hz. El artefacto cardíaco se puede eliminar grabando el ECG al mismo tiempo y filtrándolo. En general se usan filtros pasa altas, pasa bajas, notch o rechaza banda, y en Python se trabaja con MNE-Python.
+
+En el preprocesamiento primero hay que identificar el origen del ruido. En la zona frontal, por ejemplo, aparece el ruido del músculo frontal y del orbicular de los párpados, y también puede haber ruido del temporal, el masetero, el trapecio y el esternocleidomastoideo. El CAR le resta a cada electrodo el promedio de todos, lo cual funciona si la señal está limpia, pero si hay ruido termina afectándola. El filtro laplaciano, en cambio, usa solo N vecinos ubicados a una distancia de 2 a 6 cm. La normalización lleva las variables a un mismo rango. ICA, mediante FastICA, separa la señal en N componentes, y ayuda tener anotaciones de movimiento como referencia. MICA también estima N componentes.
+
+Como el EOG comparte ancho de banda con el EEG, se usa la PSD (frecuencia vs. potencia) para identificar los artefactos. Conviene pasarla a decibelios: por debajo de -20 dB la señal está muy atenuada y entre 0 y -20 dB se analiza. Si aparece un pico fuerte, sería un artefacto y habría que revisar las anotaciones de la adquisición.
+
+Las características se extraen según los canales, la frecuencia y el tiempo, y se agrupan por dominio: tiempo, frecuencia, tiempo-frecuencia, espacial/red y no lineal. Con ellas se arma una tabla en Python que permite identificar enfermedades o evaluar desórdenes mentales.
+
+Finalmente, existen redes ya entrenadas para EEG como EEGNet, ShallowConvNet y DeepConvNet, donde en lugar de entrenar desde cero se ajustan los pesos al propósito específico. La tendencia actual va hacia los transformers y el speech encoding, que busca asociar la actividad cerebral con el habla para ayudar, por ejemplo, a personas con problemas del habla.
 
 ## 2.1 Origen y características de la señal EEG
 
