@@ -13,10 +13,12 @@
 
 - [1. Introducción](#1-introducción)
 - [2. Teoría de clase](#2-teoría-de-clase)
-
 - [3. Procedimiento](#3-procedimiento)
-
+  - [3.1 Preparación y filtrado de las señales](#31-preparación-y-filtrado-de-las-señales)
+  - [3.2 ICA, extracción de características y clasificación](#32-ica-extracción-de-características-y-clasificación)
 - [4. Resultados](#4-resultados)
+  - [4.1 Calidad y filtrado](#41-calidad-y-filtrado)
+  - [4.2 Características y clasificación](#42-características-y-clasificación)
 - [5. Cuestionario final](#5-cuestionario-final)
 - [6. Conclusiones](#6-conclusiones)
 - [7. Referencias](#7-referencias)
@@ -88,18 +90,59 @@ Dar al clasificador miles de puntos crudos (canales × frecuencia de muestreo ×
 | Espacial / red | ¿Qué zonas se activan o sincronizan? | CSP, coherencia, PLV, PLI |
 | No lineal | ¿Qué tan compleja es la señal? | Entropía diferencial, entropía muestral, dimensión fractal de Higuchi |
 
-
-
-
-
-
-
 # 3. Procedimiento
 
+## 3.1 Parte A - Conociendo nuestros datos
 
+1. **Lectura y conversión:** se cargaron siete registros de un participante: tres basales, ojos abiertos, parpadeo y masticación, música relajante y música estresante. Se identificó el canal EEG en cada archivo y se convirtieron las cuentas del ADC de 10 bits a microvoltios con la fórmula del sensor BITalino. También se revisaron frecuencia de muestreo, paquetes perdidos y muestras saturadas.
+2. **Inspección de calidad:** se compararon diez segundos de cada señal y se calculó la densidad espectral de potencia con el método de Welch. Se buscaron muestras saturadas, picos estrechos y componentes de alta amplitud que pudieran corresponder a artefactos.
+3. **Filtrado:** según los parámetros del cuaderno, se descartaron los primeros cuatro segundos, se aplicó un Butterworth pasa-banda de 1–45 Hz con filtrado de fase cero, un notch configurado en 40 Hz y filtros notch adicionales en las líneas estrechas detectadas para cada registro. Las épocas que contenían muestras saturadas se excluyeron.
+
+## 3.2 Parte B - Tratamiento y extracción de características
+
+1. **Reducción de artefactos:** para el ICA de un canal, se descompuso cada señal en seis sub-bandas wavelet que se trataron como canales virtuales. Se calcularon métricas de las componentes; las asociadas a transitorios se corrigieron mediante umbralado wavelet y las identificadas como interferencia se eliminaron.
+2. **Segmentación y características:** se dividieron las señales limpias en épocas de dos segundos, sin normalización por registro. Cada época se describió con 22 características temporales, espectrales y de complejidad: potencia absoluta y relativa por banda, frecuencia pico, SEF90, entropía, parámetros de Hjorth, desviación estándar, asimetría, curtosis y amplitud pico a pico, entre otras.
+3. **Clasificación:** se compararon Árbol de Decisión, Regresión Logística, Random Forest, KNN (k = 5) y SVM con kernel RBF. Se estandarizaron las características dentro de cada modelo y se usó validación cruzada estratificada de tres pliegues, agrupando las épocas por registro y bloques de diez segundos para reducir la fuga entre épocas cercanas.
 
 # 4. Resultados
 
+## 4.1 Calidad y filtrado
+
+Las salidas guardadas muestran siete registros sin paquetes perdidos. La tabla de lectura indica 1000 Hz para todos; registra 32 muestras saturadas en ojos abiertos (0.1 %) y ninguna en los demás archivos. La inspección espectral guardada no muestra un pico destacado en 40 Hz (razón de potencia de 1.0 en los siete registros).
+
+<p align="center"><img src="./images/lab12_registros_crudos.png" alt="Diez segundos de los siete registros EEG crudos" width="800"><br><em>Fig. 1. Señales crudas de los siete registros; las líneas punteadas indican el rango del sensor.</em></p>
+
+<p align="center"><img src="./images/lab12_psd_registros.png" alt="Densidad espectral de potencia de los registros EEG" width="800"><br><em>Fig. 2. PSD de las señales crudas y comparación de la potencia próxima a 40 Hz.</em></p>
+
+Después del filtrado se visualizaron la señal y sus ritmos. La música relajante y la estresante presentan distribuciones de potencia relativas similares: en ambas domina beta (42.9 % y 44.5 %, respectivamente), seguida por gamma (22.1 % y 21.4 %). La relajante muestra una proporción alfa algo mayor (19.6 % frente a 17.8 %). Estas diferencias son descriptivas y no demuestran por sí solas una diferencia estadísticamente significativa entre las condiciones.
+
+<p align="center"><img src="./images/lab12_ritmos_cerebrales.png" alt="Señal EEG filtrada y sus bandas de frecuencia" width="800"><br><em>Fig. 3. Descomposición de un registro basal filtrado en las bandas delta, theta, alfa, beta y gamma.</em></p>
+
+**Inconsistencia que requiere verificación:** el texto explicativo del cuaderno asume un muestreo de 100 Hz y atribuye a aliasing de 60 Hz un componente en 40 Hz; en cambio, sus salidas guardadas indican 1000 Hz y una razón de potencia en 40 Hz de 1.0. También difieren algunos resultados de calidad descritos en el texto del cuaderno y los de las celdas ejecutadas. Por ello, el notch de 40 Hz y las cifras anteriores deben confirmarse volviendo a ejecutar el notebook con los archivos originales antes de interpretar este pico como alias de la red eléctrica.
+
+## 4.2 Características y clasificación
+
+El ICA trató componentes asociados a transitorios en los siete registros. En el ejemplo de parpadeo y masticación, la salida reporta una reducción de varianza de 31.2 % después del procesamiento; este cambio ilustra el efecto del método en ese registro, pero no equivale por sí mismo a una mejora de clasificación.
+
+<p align="center"><img src="./images/lab12_ica_comparacion.png" alt="Comparación temporal y espectral antes y después del ICA" width="800"><br><em>Fig. 4. Señal y PSD de parpadeo y masticación antes y después del procesamiento ICA.</em></p>
+
+Se obtuvieron **305 épocas** y **22 características**: 177 basales, 14 de ojos abiertos, 34 de parpadeo y masticación, 45 de música relajante y 35 de música estresante. La cantidad desigual de épocas —en particular, las 14 de ojos abiertos— debe considerarse al comparar las métricas. La visualización muestra diferencias entre condiciones en las potencias de banda y en las características estandarizadas, aunque hay solapamiento entre varias clases.
+
+<p align="center"><img src="./images/lab12_caracteristicas_condicion.png" alt="Potencia relativa y características EEG estandarizadas por condición" width="800"><br><em>Fig. 5. Potencia relativa media por banda y distribución de características seleccionadas, estandarizadas para compararlas.</em></p>
+
+La validación agrupada produjo los siguientes resultados:
+
+| Modelo | Exactitud | F1 macro |
+|---|---:|---:|
+| Árbol de Decisión | 0.833 | 0.689 ± 0.060 |
+| Regresión Logística | 0.826 | 0.648 ± 0.025 |
+| Random Forest | 0.823 | 0.670 ± 0.026 |
+| KNN (k = 5) | 0.816 | 0.599 ± 0.047 |
+| SVM (RBF) | 0.826 | 0.589 ± 0.050 |
+
+El Árbol de Decisión obtuvo el mayor F1 macro (0.689), seguido de Random Forest (0.670). Sin embargo, la matriz de confusión muestra errores entre las dos clases de música: de las épocas relajantes, 14 se clasificaron como estresantes; de las estresantes, 22 se clasificaron como relajantes. Además, el conjunto está desbalanceado y el cuaderno permite predecir el dispositivo de registro con un F1 macro cercano a 0.98. Como las condiciones no están distribuidas de forma uniforme entre los dos dispositivos, parte del desempeño podría deberse a diferencias de equipo y no al estado registrado; por tanto, estas métricas no deben interpretarse como evidencia de generalización clínica.
+
+<p align="center"><img src="./images/lab12_clasificacion.png" alt="Matriz de confusión y características más importantes" width="800"><br><em>Fig. 6. Matriz de confusión del Árbol de Decisión y diez características más importantes del Random Forest.</em></p>
 
 # 5. Cuestionario final
 ### Pregunta 1 — ¿Se distingue la música relajante de la estresante?
