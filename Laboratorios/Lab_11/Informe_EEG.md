@@ -179,12 +179,28 @@ Las diferencias son de 1 a 2 puntos porcentuales y no hay una prueba estadístic
 **Conclusión:** con los datos disponibles no se puede responder cuándo se nota más el efecto del ICA. Teóricamente debería notarse más cuando no se descartan las épocas con artefactos, porque el ICA corrige transitorios estereotipados como los parpadeos que de otro modo permanecerían en la señal.
 
 ### Pregunta 3 — ¿Qué pasa si no quitamos las interferencias?
-
+En nuestros datos no hay aliasing. Con Fs = 1000 Hz, Nyquist es 500 Hz, así que la red de 60 Hz no se pliega a 40 Hz. En A.4, el pico en 40 Hz vale 1.0 en los 7 registros, es decir, no sobresale nada. Por eso el notch de 40 Hz no quita ninguna interferencia y solo elimina actividad real entre ~38 y 42 Hz, dentro de gamma. El notch de 60 Hz sí se puede aplicar porque está por debajo de Nyquist, pero casi no cambia nada: el pasa-banda de 1 a 45 Hz ya atenúa los 60 Hz. Sin notch, no se espera que el ICA elimine componentes de red, ya que en la Pregunta 1 no eliminó ninguna (0 ICs de red en ambas músicas). El F1 podría subir al dejar una interferencia cuando esta aparece en un solo equipo: funciona como una “huella” del dispositivo, y el modelo separa las condiciones por el equipo y no por la fisiología. En nuestros datos esto no debería pasar con los 40 Hz, porque esa interferencia no existe.
+El detector no encontró líneas angostas en los registros basales, así que su rel_theta y su f_pico no deberían cambiar. Las líneas aparecen en las dos músicas (4.6 Hz, ~12.5 a 12.8 % de la potencia, equipo 78:F6) y en ojos abiertos (2.55 Hz y 8.45 Hz). Si no se quitan, la theta de las músicas aumentaría artificialmente y su frecuencia pico podría desplazarse hacia 4.6 Hz. En ojos abiertos se inflarían delta y alfa.
 
 ### Pregunta 4 — Normalizar, ¿ayuda o perjudica?
+Normalizar perjudica la clasificación de la condición: el F1 baja en los 5 modelos, y el mejor pasa de 0.689 (Árbol de Decisión) a 0.608 (Random Forest). En cambio, el dispositivo se sigue reconociendo casi perfecto, con F1 entre 0.979 y 0.991 normalizado frente a 0.963 y 0.984 sin normalizar. El z-score no elimina la huella del equipo, que también está en la forma del espectro.
+
+Las características que dejan de ser útiles son las de amplitud absoluta:
+
+desv_est queda cerca de 1 en todas las condiciones (0.96 a 1.00), cuando antes iba de 1.91 a 2.93.
+hj_actividad queda cerca de 0 (−0.05 a 0.00), cuando antes iba de 0.55 a 0.92.
+pico_a_pico se vuelve muy parecido entre clases (5.50 a 6.01), cuando antes iba de 11.33 a 17.40.
+
+Con la normalización se pierde, por ejemplo, la mayor amplitud de parpadeo y masticación, que era una diferencia real entre condiciones.
+
 
 ### Pregunta 5 — Duración de la época
+Época	Resolución 1/T	Épocas válidas	Mejor F1	F1 promedio
+1 s	1.00 Hz	612	0.665 (RF)	0.592
+2 s	0.50 Hz	305	0.689 (Árbol)	0.639
+4 s	0.25 Hz	150	0.708 (RF)	0.664
 
+Al alargar la época, el número de épocas se reduce casi a la mitad cada vez y la resolución en frecuencia mejora. El F1 sube tanto en el mejor modelo como en el promedio de los cinco, porque las estimaciones espectrales son más estables. Elegiría 4 s, que da el mejor resultado y todavía deja 150 épocas. Hay que tener en cuenta que ojos abiertos dura solo 33 s (29 s tras el recorte inicial), así que con 4 s esa condición queda con muy pocas épocas, alrededor de 7. Si se prioriza tener más datos por condición, 2 s es un buen término medio.
 
 
 # 6. Conclusiones
