@@ -195,10 +195,11 @@ Con la normalización se pierde, por ejemplo, la mayor amplitud de parpadeo y ma
 
 
 ### Pregunta 5 — Duración de la época
-Época	Resolución 1/T	Épocas válidas	Mejor F1	F1 promedio
-1 s	1.00 Hz	612	0.665 (RF)	0.592
-2 s	0.50 Hz	305	0.689 (Árbol)	0.639
-4 s	0.25 Hz	150	0.708 (RF)	0.664
+| Época | Resolución 1/T | Épocas válidas | Mejor F1 | F1 promedio |
+|---|---|---|---|---|
+| 1 s | 1.00 Hz | 612 | 0.665 (RF) | 0.592 |
+| 2 s | 0.50 Hz | 305 | 0.689 (Árbol) | 0.639 |
+| 4 s | 0.25 Hz | 150 | 0.708 (RF) | 0.664 |
 
 Al alargar la época, el número de épocas se reduce casi a la mitad cada vez y la resolución en frecuencia mejora. El F1 sube tanto en el mejor modelo como en el promedio de los cinco, porque las estimaciones espectrales son más estables. Elegiría 4 s, que da el mejor resultado y todavía deja 150 épocas. Hay que tener en cuenta que ojos abiertos dura solo 33 s (29 s tras el recorte inicial), así que con 4 s esa condición queda con muy pocas épocas, alrededor de 7. Si se prioriza tener más datos por condición, 2 s es un buen término medio.
 
