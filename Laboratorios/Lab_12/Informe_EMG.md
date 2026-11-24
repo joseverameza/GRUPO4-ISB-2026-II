@@ -1,6 +1,6 @@
 ﻿# Detección de fatiga muscular mediante sEMG
 
-**Proyecto privado:** [fatiga-semg-grupo4](https://studio.edgeimpulse.com/studio/1171872)
+**Proyecto público:** [fatiga-semg-grupo4](https://studio.edgeimpulse.com/public/1171902/live) 
 
 ## Índice
 
